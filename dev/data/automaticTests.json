@@ -1,0 +1,2218 @@
+[{
+  "id": 1,
+  "title": "Thruster 1",
+  "name": "Blackout prevention load reduction",
+  "status": "loaded",
+  "result": "",
+  "message": "",
+  "duration": 180,
+  "purpose": "Whole lotta purpose here",
+  "alarmListBeforeTest": "1111111111111111\n22222222222222222222\n3333333333333333333\n"
+}, {
+  "id": 2,
+  "name": "Signal failure gyro compass flags",
+  "status": "loaded",
+  "message": "",
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 3,
+  "name": "Failure in DGPS high HDOP",
+  "status": "running",
+  "message": "",
+  "duration": 180,
+  "time": 123,
+  "purpose": "Whole lotta purpose here",
+  "progress": 33
+}, {
+  "id": 4,
+  "name": "Running test",
+  "status": "loaded",
+  "message": "",
+  "progress": 3,
+  "verifications": [{
+    "title": "Expecting alarm",
+    "message": "Text in <b>bold</b>",
+    "name": "CC1 - Broken Loop Detected RPM Fb Thruster BowTunnel2 - BowTunnel2"
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 5,
+  "name": "Blackout prevention load reduction",
+  "status": "loaded",
+  "message": "",
+  "progress": 3,
+  "verifications": [{
+    "title": "Expecting alarm",
+    "message": "Text in <b>bold</b>",
+    "name": "CC1 - Broken Loop Detected RPM Fb Thruster BowTunnel2 - BowTunnel2"
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 6,
+  "name": "Signal failure gyro compass flags",
+  "result": "passed",
+  "status": "completed",
+  "message": "",
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 7,
+  "name": "Blackout prevention load reduction",
+  "status": "completed",
+  "message": "Step back sir: Could not find OutputSignal \"FailureEastNoisePower\" in module GPS1 Could not find OutputSignal \"FailureEastNoisePower\" in module GPS1 Could not find OutputSignal \"FailureEastNoisePower\" in module GPS1 Could not find OutputSignal \"FailureEastNoisePower\" in module GPS1",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 8,
+  "name": "Signal failure gyro compass flags",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 9,
+  "name": "Blackout prevention load reduction",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 10,
+  "name": "Signal failure gyro compass flags",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 11,
+  "name": "Failure in DGPS high HDOP",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 12,
+  "name": "Blackout prevention load reduction",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 13,
+  "name": "Signal failure gyro compass flags",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 14,
+  "name": "Blackout prevention load reduction",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 15,
+  "name": "Signal failure gyro compass flags",
+  "status": "completed",
+  "message": "Step back sir: Could not find OutputSignal \"FailureEastNoisePower\" in module GPS1 Could not find OutputSignal \"FailureEastNoisePower\" in module GPS1 Could not find OutputSignal \"FailureEastNoisePower\" in module GPS1 Could not find OutputSignal \"FailureEastNoisePower\" in module GPS1",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 16,
+  "name": "Failure in DGPS high HDOP",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 17,
+  "name": "Signal failure gyro compass flags",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 18,
+  "name": "Blackout prevention load reduction",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 19,
+  "name": "Signal failure gyro compass flags",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 20,
+  "name": "Failure in DGPS high HDOP",
+  "result": "failed",
+  "status": "completed",
+  "message": "",
+  "verifications": [{
+    "name": "Expecting alarm CC1 - Simulated RPM FB is used for Thruster BowTunnel2 - BowTunnel2",
+    "result": "failure",
+    "message": "No alarms detected."
+  }],
+  "purpose": "Whole lotta purpose here"
+}, {
+  "id": 21,
+  "key": "\r\r\r\r\r\rValidation - Station-keeping performance in sea state SMOOTH",
+  "title": "\r\r\r\r\r\rValidation",
+  "name": "Station-keeping performance in sea state SMOOTH",
+  "alarmListBeforeTest": "alarm1\nalarm2\nalarm3",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has station keeping ability",
+  "result": "passed",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "passed",
+    "message": "he he hey he",
+    "testId": 1
+  }],
+  "comment": ""
+}, {
+  "id": 22,
+  "key": "\r\r\r\r\rValidation - Setpoint changes in sea state SMOOTH",
+  "title": "\r\r\r\r\rValidation",
+  "name": "Setpoint changes in sea state SMOOTH",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has ability to perform setpoint and heading changes",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 120,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position should stabilize at setpoint within 5.0 meters for at least 30 seconds",
+    "title": "Vessel position should stabilize at setpoint",
+    "details": "Should stabilize within 5.0 meters for at least 30 seconds",
+    "result": "",
+    "message": "",
+    "testId": 2
+  }, {
+    "id": 0,
+    "key": "Vessel heading should stabilize at setpoint within 3.0 degrees for at least 30 seconds.",
+    "title": "Vessel heading should stabilize at setpoint",
+    "details": "Should stabilize within 3.0 degrees for at least 30 seconds.",
+    "result": "",
+    "message": "",
+    "testId": 2
+  }],
+  "comment": ""
+}, {
+  "id": 23,
+  "key": "\r\r\r\rValidation - Station-keeping performance in sea state MODERATE with blackout on port side",
+  "title": "\r\r\r\rValidation",
+  "name": "Station-keeping performance in sea state MODERATE with blackout on port side",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has station keeping ability in worst case single failure conditions",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 3
+  }],
+  "comment": ""
+}, {
+  "id": 24,
+  "key": "\r\r\r\rValidation - Station-keeping performance in sea state MODERATE with blackout on starboard side",
+  "title": "\r\r\r\rValidation",
+  "name": "Station-keeping performance in sea state MODERATE with blackout on starboard side",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has station keeping ability in worst case single failure conditions",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 4
+  }],
+  "comment": ""
+}, {
+  "id": 25,
+  "key": "\r\r\rValidation - Setpoint changes in sea state MODERATE with blackout on port side",
+  "title": "\r\r\rValidation",
+  "name": "Setpoint changes in sea state MODERATE with blackout on port side",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has ability to perform setpoint and heading changes in worst case single failure conditions",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 180,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position should stabilize at setpoint within 5.0 meters for at least 30 seconds",
+    "title": "Vessel position should stabilize at setpoint",
+    "details": "Should stabilize within 5.0 meters for at least 30 seconds",
+    "result": "",
+    "message": "",
+    "testId": 5
+  }, {
+    "id": 0,
+    "key": "Vessel heading should stabilize at setpoint within 3.0 degrees for at least 30 seconds.",
+    "title": "Vessel heading should stabilize at setpoint",
+    "details": "Should stabilize within 3.0 degrees for at least 30 seconds.",
+    "result": "",
+    "message": "",
+    "testId": 5
+  }],
+  "comment": ""
+}, {
+  "id": 26,
+  "key": "\r\r\rValidation - Setpoint changes in sea state MODERATE with blackout on starboard side",
+  "title": "\r\r\rValidation",
+  "name": "Setpoint changes in sea state MODERATE with blackout on starboard side",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has ability to perform setpoint and heading changes in worst case single failure conditions",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 180,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position should stabilize at setpoint within 5.0 meters for at least 30 seconds",
+    "title": "Vessel position should stabilize at setpoint",
+    "details": "Should stabilize within 5.0 meters for at least 30 seconds",
+    "result": "",
+    "message": "",
+    "testId": 6
+  }, {
+    "id": 0,
+    "key": "Vessel heading should stabilize at setpoint within 3.0 degrees for at least 30 seconds.",
+    "title": "Vessel heading should stabilize at setpoint",
+    "details": "Should stabilize within 3.0 degrees for at least 30 seconds.",
+    "result": "",
+    "message": "",
+    "testId": 6
+  }],
+  "comment": ""
+}, {
+  "id": 27,
+  "key": "\r\r\rValidation - Setpoint changes with loss of all group A sensors and pos-refs in sea state MODERATE",
+  "title": "\r\r\rValidation",
+  "name": "Setpoint changes with loss of all group A sensors and pos-refs in sea state MODERATE",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has ability to perform setpoint and heading changes if all group A sensors and pos-ref systems are unavailable",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 180,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position should stabilize at setpoint within 5.0 meters for at least 30 seconds",
+    "title": "Vessel position should stabilize at setpoint",
+    "details": "Should stabilize within 5.0 meters for at least 30 seconds",
+    "result": "",
+    "message": "",
+    "testId": 7
+  }, {
+    "id": 0,
+    "key": "Vessel heading should stabilize at setpoint within 3.0 degrees for at least 30 seconds.",
+    "title": "Vessel heading should stabilize at setpoint",
+    "details": "Should stabilize within 3.0 degrees for at least 30 seconds.",
+    "result": "",
+    "message": "",
+    "testId": 7
+  }],
+  "comment": ""
+}, {
+  "id": 28,
+  "key": "\r\r\rValidation - Setpoint changes with loss of all group B sensors and pos-refs in sea state MODERATE",
+  "title": "\r\r\rValidation",
+  "name": "Setpoint changes with loss of all group B sensors and pos-refs in sea state MODERATE",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has ability to perform setpoint and heading changes if all group B sensors and pos-ref systems are unavailable",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 180,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position should stabilize at setpoint within 5.0 meters for at least 30 seconds",
+    "title": "Vessel position should stabilize at setpoint",
+    "details": "Should stabilize within 5.0 meters for at least 30 seconds",
+    "result": "",
+    "message": "",
+    "testId": 8
+  }, {
+    "id": 0,
+    "key": "Vessel heading should stabilize at setpoint within 3.0 degrees for at least 30 seconds.",
+    "title": "Vessel heading should stabilize at setpoint",
+    "details": "Should stabilize within 3.0 degrees for at least 30 seconds.",
+    "result": "",
+    "message": "",
+    "testId": 8
+  }],
+  "comment": ""
+}, {
+  "id": 29,
+  "key": "\r\r\rValidation - Setpoint changes with loss of all group C sensors and pos-refs in sea state MODERATE",
+  "title": "\r\r\rValidation",
+  "name": "Setpoint changes with loss of all group C sensors and pos-refs in sea state MODERATE",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has ability to perform setpoint and heading changes if all group C sensors and pos-ref systems are unavailable",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 180,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position should stabilize at setpoint within 5.0 meters for at least 30 seconds",
+    "title": "Vessel position should stabilize at setpoint",
+    "details": "Should stabilize within 5.0 meters for at least 30 seconds",
+    "result": "",
+    "message": "",
+    "testId": 9
+  }, {
+    "id": 0,
+    "key": "Vessel heading should stabilize at setpoint within 3.0 degrees for at least 30 seconds.",
+    "title": "Vessel heading should stabilize at setpoint",
+    "details": "Should stabilize within 3.0 degrees for at least 30 seconds.",
+    "result": "",
+    "message": "",
+    "testId": 9
+  }],
+  "comment": ""
+}, {
+  "id": 30,
+  "key": "\r\rValidation - Station-keeping performance in sea state ROUGH",
+  "title": "\r\rValidation",
+  "name": "Station-keeping performance in sea state ROUGH",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has station keeping ability",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 10
+  }],
+  "comment": ""
+}, {
+  "id": 31,
+  "key": "\rValidation - Setpoint changes in sea state ROUGH",
+  "title": "\rValidation",
+  "name": "Setpoint changes in sea state ROUGH",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system has ability to perform setpoint and heading changes",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 180,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position should stabilize at setpoint within 8.0 meters for at least 30 seconds",
+    "title": "Vessel position should stabilize at setpoint",
+    "details": "Should stabilize within 8.0 meters for at least 30 seconds",
+    "result": "",
+    "message": "",
+    "testId": 11
+  }, {
+    "id": 0,
+    "key": "Vessel heading should stabilize at setpoint within 5.0 degrees for at least 30 seconds.",
+    "title": "Vessel heading should stabilize at setpoint",
+    "details": "Should stabilize within 5.0 degrees for at least 30 seconds.",
+    "result": "",
+    "message": "",
+    "testId": 11
+  }],
+  "comment": ""
+}, {
+  "id": 32,
+  "key": "CyScan 1 - Increased noise in position measurement (range and bearing)",
+  "title": "CyScan 1",
+  "name": "Increased noise in position measurement (range and bearing)",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on CyScan signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nInaccurate Reference System CyScan - CyScan,\nVoting Error Reference System CyScan - CyScan",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Inaccurate Reference System CyScan - CyScan,\nVoting Error Reference System CyScan - CyScan",
+    "result": "",
+    "message": "",
+    "testId": 12
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 12
+  }],
+  "comment": ""
+}, {
+  "id": 33,
+  "key": "CyScan 1 - Slowly drifting range measurement",
+  "title": "CyScan 1",
+  "name": "Slowly drifting range measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on CyScan signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nInaccurate Reference System CyScan - CyScan,\nVoting Error Reference System CyScan - CyScan",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Inaccurate Reference System CyScan - CyScan,\nVoting Error Reference System CyScan - CyScan",
+    "result": "",
+    "message": "",
+    "testId": 13
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 13
+  }],
+  "comment": ""
+}, {
+  "id": 34,
+  "key": "DGPS 1 - Increased noise in both east and north position from DGPS",
+  "title": "DGPS 1",
+  "name": "Increased noise in both east and north position from DGPS",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling DGPS failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 180,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nInaccurate Reference System DGPS 1 - DGPS 1,\nVoting Error Reference System DGPS 1 - DGPS 1,\nLost Reference System DGPS 1 - DGPS 1",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Inaccurate Reference System DGPS 1 - DGPS 1,\nVoting Error Reference System DGPS 1 - DGPS 1,\nLost Reference System DGPS 1 - DGPS 1",
+    "result": "",
+    "message": "",
+    "testId": 14
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 14
+  }],
+  "comment": ""
+}, {
+  "id": 35,
+  "key": "DGPS 1 - Increased noise in east position from DGPS",
+  "title": "DGPS 1",
+  "name": "Increased noise in east position from DGPS",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling DGPS failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 180,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nInaccurate Reference System DGPS 1 - DGPS 1,\nVoting Error Reference System DGPS 1 - DGPS 1,\nLost Reference System DGPS 1 - DGPS 1",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Inaccurate Reference System DGPS 1 - DGPS 1,\nVoting Error Reference System DGPS 1 - DGPS 1,\nLost Reference System DGPS 1 - DGPS 1",
+    "result": "",
+    "message": "",
+    "testId": 15
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 15
+  }],
+  "comment": ""
+}, {
+  "id": 36,
+  "key": "DGPS 1 - Invalid HDOP indicator from DGPS",
+  "title": "DGPS 1",
+  "name": "Invalid HDOP indicator from DGPS",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling DGPS failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm High HDOP Reference System DGPS 1 - DGPS 1",
+    "title": "Expecting alarm",
+    "details": "High HDOP Reference System DGPS 1 - DGPS 1",
+    "result": "",
+    "message": "",
+    "testId": 16
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Lost Reference System DGPS 1 - DGPS 1",
+    "title": "Expecting alarm",
+    "details": "Lost Reference System DGPS 1 - DGPS 1",
+    "result": "",
+    "message": "",
+    "testId": 16
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 16
+  }],
+  "comment": ""
+}, {
+  "id": 37,
+  "key": "DGPS 1 - Loss of differential correction indicated by quality indicator from DGPS",
+  "title": "DGPS 1",
+  "name": "Loss of differential correction indicated by quality indicator from DGPS",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling DGPS failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 195,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm No Differential data Reference System DGPS 1 - DGPS 1",
+    "title": "Expecting alarm",
+    "details": "No Differential data Reference System DGPS 1 - DGPS 1",
+    "result": "",
+    "message": "",
+    "testId": 17
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Lost Reference System DGPS 1 - DGPS 1",
+    "title": "Expecting alarm",
+    "details": "Lost Reference System DGPS 1 - DGPS 1",
+    "result": "",
+    "message": "",
+    "testId": 17
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 17
+  }],
+  "comment": ""
+}, {
+  "id": 38,
+  "key": "DGPS 1 - Old differential data received by DGPS",
+  "title": "DGPS 1",
+  "name": "Old differential data received by DGPS",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling DGPS failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 120,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Differential Age Timeout Reference System DGPS 1 - DGPS 1",
+    "title": "Expecting alarm",
+    "details": "Differential Age Timeout Reference System DGPS 1 - DGPS 1",
+    "result": "",
+    "message": "",
+    "testId": 18
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Lost Reference System DGPS 1 - DGPS 1",
+    "title": "Expecting alarm",
+    "details": "Lost Reference System DGPS 1 - DGPS 1",
+    "result": "",
+    "message": "",
+    "testId": 18
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 18
+  }],
+  "comment": ""
+}, {
+  "id": 39,
+  "key": "DGPS 2 - Increased noise in north position from DGPS",
+  "title": "DGPS 2",
+  "name": "Increased noise in north position from DGPS",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling DGPS failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 180,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nInaccurate Reference System DGPS 2 - DGPS 2,\nVoting Error Reference System DGPS 2 - DGPS 2,\nLost Reference System DGPS 2 - DGPS 2",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Inaccurate Reference System DGPS 2 - DGPS 2,\nVoting Error Reference System DGPS 2 - DGPS 2,\nLost Reference System DGPS 2 - DGPS 2",
+    "result": "",
+    "message": "",
+    "testId": 19
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 19
+  }],
+  "comment": ""
+}, {
+  "id": 40,
+  "key": "DGPS 2 - Invalid data indicated by quality indicator from DGPS",
+  "title": "DGPS 2",
+  "name": "Invalid data indicated by quality indicator from DGPS",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling DGPS failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 195,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm No Differential data Reference System DGPS 2 - DGPS 2",
+    "title": "Expecting alarm",
+    "details": "No Differential data Reference System DGPS 2 - DGPS 2",
+    "result": "",
+    "message": "",
+    "testId": 20
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Lost Reference System DGPS 2 - DGPS 2",
+    "title": "Expecting alarm",
+    "details": "Lost Reference System DGPS 2 - DGPS 2",
+    "result": "",
+    "message": "",
+    "testId": 20
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 20
+  }],
+  "comment": ""
+}, {
+  "id": 41,
+  "key": "DGPS 2 - Stops sending position telegram (GGA)",
+  "title": "DGPS 2",
+  "name": "Stops sending position telegram (GGA)",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling DGPS failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 120,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Lost Reference System DGPS 2 - DGPS 2",
+    "title": "Expecting alarm",
+    "details": "Lost Reference System DGPS 2 - DGPS 2",
+    "result": "",
+    "message": "",
+    "testId": 21
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 21
+  }],
+  "comment": ""
+}, {
+  "id": 42,
+  "key": "Generator 1 - Breaker status signal failure while only generator 1 connected to bus",
+  "title": "Generator 1",
+  "name": "Breaker status signal failure while only generator 1 connected to bus",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on generator circuit breaker feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Generator Breaker Open Port Gen 1 - ",
+    "title": "Expecting alarm",
+    "details": "Generator Breaker Open Port Gen 1 - ",
+    "result": "",
+    "message": "",
+    "testId": 22
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 22
+  }],
+  "comment": ""
+}, {
+  "id": 43,
+  "key": "Generator 2 - Breaker status signal failure while only generator 2 connected to bus",
+  "title": "Generator 2",
+  "name": "Breaker status signal failure while only generator 2 connected to bus",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on generator circuit breaker feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Generator Breaker Open Port Gen 2 - ",
+    "title": "Expecting alarm",
+    "details": "Generator Breaker Open Port Gen 2 - ",
+    "result": "",
+    "message": "",
+    "testId": 23
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 23
+  }],
+  "comment": ""
+}, {
+  "id": 44,
+  "key": "Generator 3 - Generator power measurement feedback fails to high value",
+  "title": "Generator 3",
+  "name": "Generator power measurement feedback fails to high value",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on generator feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 24
+  }],
+  "comment": ""
+}, {
+  "id": 45,
+  "key": "Generator 4 - Generator power measurement feedback fails to high value",
+  "title": "Generator 4",
+  "name": "Generator power measurement feedback fails to high value",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on generator feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 25
+  }],
+  "comment": ""
+}, {
+  "id": 46,
+  "key": "GyroCompass 1 - Heading measurement fails to out of legal range value",
+  "title": "GyroCompass 1",
+  "name": "Heading measurement fails to out of legal range value",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on GyroCompass signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Lost Heading Sensor Gyro 1 - Gyro 1",
+    "title": "Expecting alarm",
+    "details": "Lost Heading Sensor Gyro 1 - Gyro 1",
+    "result": "",
+    "message": "",
+    "testId": 26
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Off Limit Heading Sensor Gyro 1 - Gyro 1",
+    "title": "Expecting alarm",
+    "details": "Off Limit Heading Sensor Gyro 1 - Gyro 1",
+    "result": "",
+    "message": "",
+    "testId": 26
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 26
+  }],
+  "comment": ""
+}, {
+  "id": 47,
+  "key": "GyroCompass 1 - Increased noise in heading measurement",
+  "title": "GyroCompass 1",
+  "name": "Increased noise in heading measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on GyroCompass signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Inaccurate Heading Sensor Gyro 1 - Gyro 1",
+    "title": "Expecting alarm",
+    "details": "Inaccurate Heading Sensor Gyro 1 - Gyro 1",
+    "result": "",
+    "message": "",
+    "testId": 27
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Voting Error Heading Sensor Gyro 1 - Gyro 1",
+    "title": "Expecting alarm",
+    "details": "Voting Error Heading Sensor Gyro 1 - Gyro 1",
+    "result": "",
+    "message": "",
+    "testId": 27
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 27
+  }],
+  "comment": ""
+}, {
+  "id": 48,
+  "key": "GyroCompass 1 - Stops sending heading telegram (HDT)",
+  "title": "GyroCompass 1",
+  "name": "Stops sending heading telegram (HDT)",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on GyroCompass signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Lost Heading Sensor Gyro 1 - Gyro 1",
+    "title": "Expecting alarm",
+    "details": "Lost Heading Sensor Gyro 1 - Gyro 1",
+    "result": "",
+    "message": "",
+    "testId": 28
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 28
+  }],
+  "comment": ""
+}, {
+  "id": 49,
+  "key": "GyroCompass 2 - Stops sending rotation telegram (ROT)",
+  "title": "GyroCompass 2",
+  "name": "Stops sending rotation telegram (ROT)",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on GyroCompass signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Lost Rotation Sensor ROT 2 - ROT 2",
+    "title": "Expecting alarm",
+    "details": "Lost Rotation Sensor ROT 2 - ROT 2",
+    "result": "",
+    "message": "",
+    "testId": 29
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 29
+  }],
+  "comment": ""
+}, {
+  "id": 50,
+  "key": "GyroCompass 3 - Drifting heading measurement",
+  "title": "GyroCompass 3",
+  "name": "Drifting heading measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on GyroCompass signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Inaccurate Heading Sensor Gyro 3 - Gyro 3",
+    "title": "Expecting alarm",
+    "details": "Inaccurate Heading Sensor Gyro 3 - Gyro 3",
+    "result": "",
+    "message": "",
+    "testId": 30
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Voting Error Heading Sensor Gyro 3 - Gyro 3",
+    "title": "Expecting alarm",
+    "details": "Voting Error Heading Sensor Gyro 3 - Gyro 3",
+    "result": "",
+    "message": "",
+    "testId": 30
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 30
+  }],
+  "comment": ""
+}, {
+  "id": 51,
+  "key": "GyroCompass 3 - Faulty offset added to heading measurement",
+  "title": "GyroCompass 3",
+  "name": "Faulty offset added to heading measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on GyroCompass signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 90,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Inaccurate Heading Sensor Gyro 3 - Gyro 3",
+    "title": "Expecting alarm",
+    "details": "Inaccurate Heading Sensor Gyro 3 - Gyro 3",
+    "result": "",
+    "message": "",
+    "testId": 31
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Voting Error Heading Sensor Gyro 3 - Gyro 3",
+    "title": "Expecting alarm",
+    "details": "Voting Error Heading Sensor Gyro 3 - Gyro 3",
+    "result": "",
+    "message": "",
+    "testId": 31
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 31
+  }],
+  "comment": ""
+}, {
+  "id": 52,
+  "key": "RadaScan 1 - Faulty offset added to bearing measurement",
+  "title": "RadaScan 1",
+  "name": "Faulty offset added to bearing measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on RadaScan signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Inaccurate Reference System RadaScan - RadaScan",
+    "title": "Expecting alarm",
+    "details": "Inaccurate Reference System RadaScan - RadaScan",
+    "result": "",
+    "message": "",
+    "testId": 32
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Voting Error Reference System RadaScan - RadaScan",
+    "title": "Expecting alarm",
+    "details": "Voting Error Reference System RadaScan - RadaScan",
+    "result": "",
+    "message": "",
+    "testId": 32
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 32
+  }],
+  "comment": ""
+}, {
+  "id": 53,
+  "key": "RadaScan 1 - Slowly drifting range measurement",
+  "title": "RadaScan 1",
+  "name": "Slowly drifting range measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on RadaScan signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Inaccurate Reference System RadaScan - RadaScan",
+    "title": "Expecting alarm",
+    "details": "Inaccurate Reference System RadaScan - RadaScan",
+    "result": "",
+    "message": "",
+    "testId": 33
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Voting Error Reference System RadaScan - RadaScan",
+    "title": "Expecting alarm",
+    "details": "Voting Error Reference System RadaScan - RadaScan",
+    "result": "",
+    "message": "",
+    "testId": 33
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 33
+  }],
+  "comment": ""
+}, {
+  "id": 54,
+  "key": "Thruster 1 - Failure flag set by remote IO unit",
+  "title": "Thruster 1",
+  "name": "Failure flag set by remote IO unit",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm General Fault Thruster Bow 1 - Bow 1",
+    "title": "Expecting alarm",
+    "details": "General Fault Thruster Bow 1 - Bow 1",
+    "result": "",
+    "message": "",
+    "testId": 34
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 34
+  }],
+  "comment": ""
+}, {
+  "id": 55,
+  "key": "Thruster 1 - Faulty negative offset added to RPM feedback ",
+  "title": "Thruster 1",
+  "name": "Faulty negative offset added to RPM feedback ",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals.",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nError Positive RPM Thruster Bow 1 - Bow 1,\nCommand/Feedback Difference Positive RPM Thruster Bow 1 - Bow 1",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Error Positive RPM Thruster Bow 1 - Bow 1,\nCommand/Feedback Difference Positive RPM Thruster Bow 1 - Bow 1",
+    "result": "",
+    "message": "",
+    "testId": 35
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Not In Zero Thruster Bow 1 - Bow 1",
+    "title": "Expecting alarm",
+    "details": "Not In Zero Thruster Bow 1 - Bow 1",
+    "result": "",
+    "message": "",
+    "testId": 35
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 35
+  }],
+  "comment": ""
+}, {
+  "id": 56,
+  "key": "Thruster 1 - Warning flag set by remote IO unit",
+  "title": "Thruster 1",
+  "name": "Warning flag set by remote IO unit",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm General Fault Thruster Bow 1 - Bow 1",
+    "title": "Expecting alarm",
+    "details": "General Fault Thruster Bow 1 - Bow 1",
+    "result": "",
+    "message": "",
+    "testId": 36
+  }, {
+    "id": 0,
+    "key": "Expecting Thruster Bow 1 to stay enabled",
+    "title": "Thruster disabled",
+    "details": "Expecting Thruster Bow 1 to stay enabled",
+    "result": "",
+    "message": "",
+    "testId": 36
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 36
+  }],
+  "comment": ""
+}, {
+  "id": 57,
+  "key": "Thruster 2 - Failure flag set by remote IO unit",
+  "title": "Thruster 2",
+  "name": "Failure flag set by remote IO unit",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm General Fault Thruster Bow 2 - Bow 2",
+    "title": "Expecting alarm",
+    "details": "General Fault Thruster Bow 2 - Bow 2",
+    "result": "",
+    "message": "",
+    "testId": 37
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 37
+  }],
+  "comment": ""
+}, {
+  "id": 58,
+  "key": "Thruster 2 - RPM feedback fails to high value",
+  "title": "Thruster 2",
+  "name": "RPM feedback fails to high value",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nError Negative RPM Thruster Bow 2 - Bow 2,\nCommand/Feedback Difference Negative RPM Thruster Bow 2 - Bow 2",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Error Negative RPM Thruster Bow 2 - Bow 2,\nCommand/Feedback Difference Negative RPM Thruster Bow 2 - Bow 2",
+    "result": "",
+    "message": "",
+    "testId": 38
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Not In Zero Thruster Bow 2 - Bow 2",
+    "title": "Expecting alarm",
+    "details": "Not In Zero Thruster Bow 2 - Bow 2",
+    "result": "",
+    "message": "",
+    "testId": 38
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 38
+  }],
+  "comment": ""
+}, {
+  "id": 59,
+  "key": "Thruster 3 - Faulty positive offset added to RPM feedback ",
+  "title": "Thruster 3",
+  "name": "Faulty positive offset added to RPM feedback ",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals.",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nError Negative RPM Thruster BowAzi - BowAzi,\nCommand/Feedback Difference Negative RPM Thruster BowAzi - BowAzi",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Error Negative RPM Thruster BowAzi - BowAzi,\nCommand/Feedback Difference Negative RPM Thruster BowAzi - BowAzi",
+    "result": "",
+    "message": "",
+    "testId": 39
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Not In Zero Thruster BowAzi - BowAzi",
+    "title": "Expecting alarm",
+    "details": "Not In Zero Thruster BowAzi - BowAzi",
+    "result": "",
+    "message": "",
+    "testId": 39
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 39
+  }],
+  "comment": ""
+}, {
+  "id": 60,
+  "key": "Thruster 3 - RPM feedback fails to high value",
+  "title": "Thruster 3",
+  "name": "RPM feedback fails to high value",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nError Negative RPM Thruster BowAzi - BowAzi,\nCommand/Feedback Difference Negative RPM Thruster BowAzi - BowAzi",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Error Negative RPM Thruster BowAzi - BowAzi,\nCommand/Feedback Difference Negative RPM Thruster BowAzi - BowAzi",
+    "result": "",
+    "message": "",
+    "testId": 40
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Not In Zero Thruster BowAzi - BowAzi",
+    "title": "Expecting alarm",
+    "details": "Not In Zero Thruster BowAzi - BowAzi",
+    "result": "",
+    "message": "",
+    "testId": 40
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 40
+  }],
+  "comment": ""
+}, {
+  "id": 61,
+  "key": "Thruster 3 - Ready signal failure",
+  "title": "Thruster 3",
+  "name": "Ready signal failure",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Ready signal lost Thruster BowAzi - BowAzi",
+    "title": "Expecting alarm",
+    "details": "Ready signal lost Thruster BowAzi - BowAzi",
+    "result": "",
+    "message": "",
+    "testId": 41
+  }, {
+    "id": 0,
+    "key": "Expecting Thruster BowAzi to be disabled",
+    "title": "Thruster disabled",
+    "details": "Expecting Thruster BowAzi to be disabled",
+    "result": "",
+    "message": "",
+    "testId": 41
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 41
+  }],
+  "comment": ""
+}, {
+  "id": 62,
+  "key": "Thruster 3 - Running signal failure",
+  "title": "Thruster 3",
+  "name": "Running signal failure",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Running signal lost Thruster BowAzi - BowAzi",
+    "title": "Expecting alarm",
+    "details": "Running signal lost Thruster BowAzi - BowAzi",
+    "result": "",
+    "message": "",
+    "testId": 42
+  }, {
+    "id": 0,
+    "key": "Expecting Thruster BowAzi to be disabled",
+    "title": "Thruster disabled",
+    "details": "Expecting Thruster BowAzi to be disabled",
+    "result": "",
+    "message": "",
+    "testId": 42
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 42
+  }],
+  "comment": ""
+}, {
+  "id": 63,
+  "key": "Thruster 3 - Thruster rotates without being commanded",
+  "title": "Thruster 3",
+  "name": "Thruster rotates without being commanded",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling thruster failure",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nError CW Rotation Thruster BowAzi - BowAzi,\nCommand/Feedback Difference CW Rotation Thruster BowAzi - BowAzi",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Error CW Rotation Thruster BowAzi - BowAzi,\nCommand/Feedback Difference CW Rotation Thruster BowAzi - BowAzi",
+    "result": "",
+    "message": "",
+    "testId": 43
+  }, {
+    "id": 0,
+    "key": "Expecting alarm Not In Zero Thruster BowAzi - BowAzi",
+    "title": "Expecting alarm",
+    "details": "Not In Zero Thruster BowAzi - BowAzi",
+    "result": "",
+    "message": "",
+    "testId": 43
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 43
+  }],
+  "comment": ""
+}, {
+  "id": 64,
+  "key": "Thruster 4 - Failure flag set by remote IO unit",
+  "title": "Thruster 4",
+  "name": "Failure flag set by remote IO unit",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm General Fault Thruster Port Azi - Port Azi",
+    "title": "Expecting alarm",
+    "details": "General Fault Thruster Port Azi - Port Azi",
+    "result": "",
+    "message": "",
+    "testId": 44
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 44
+  }],
+  "comment": ""
+}, {
+  "id": 65,
+  "key": "Thruster 4 - Ready signal failure",
+  "title": "Thruster 4",
+  "name": "Ready signal failure",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Ready signal lost Thruster Port Azi - Port Azi",
+    "title": "Expecting alarm",
+    "details": "Ready signal lost Thruster Port Azi - Port Azi",
+    "result": "",
+    "message": "",
+    "testId": 45
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 45
+  }],
+  "comment": ""
+}, {
+  "id": 66,
+  "key": "Thruster 4 - Sudden stop of thruster",
+  "title": "Thruster 4",
+  "name": "Sudden stop of thruster",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling a thruster failure",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Ready signal lost Thruster Port Azi - Port Azi",
+    "title": "Expecting alarm",
+    "details": "Ready signal lost Thruster Port Azi - Port Azi",
+    "result": "",
+    "message": "",
+    "testId": 46
+  }, {
+    "id": 0,
+    "key": "Expecting Thruster Port Azi to be disabled",
+    "title": "Thruster disabled",
+    "details": "Expecting Thruster Port Azi to be disabled",
+    "result": "",
+    "message": "",
+    "testId": 46
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 46
+  }],
+  "comment": ""
+}, {
+  "id": 67,
+  "key": "Thruster 5 - Ready signal failure",
+  "title": "Thruster 5",
+  "name": "Ready signal failure",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on thruster feedback signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Ready signal lost Thruster Stbd Azi - Stbd Azi",
+    "title": "Expecting alarm",
+    "details": "Ready signal lost Thruster Stbd Azi - Stbd Azi",
+    "result": "",
+    "message": "",
+    "testId": 47
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 47
+  }],
+  "comment": ""
+}, {
+  "id": 68,
+  "key": "Thruster 5 - Sudden stop of thruster",
+  "title": "Thruster 5",
+  "name": "Sudden stop of thruster",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling a thruster failure",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Ready signal lost Thruster Stbd Azi - Stbd Azi",
+    "title": "Expecting alarm",
+    "details": "Ready signal lost Thruster Stbd Azi - Stbd Azi",
+    "result": "",
+    "message": "",
+    "testId": 48
+  }, {
+    "id": 0,
+    "key": "Expecting Thruster Stbd Azi to be disabled",
+    "title": "Thruster disabled",
+    "details": "Expecting Thruster Stbd Azi to be disabled",
+    "result": "",
+    "message": "",
+    "testId": 48
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 48
+  }],
+  "comment": ""
+}, {
+  "id": 69,
+  "key": "VRU 1 - Frozen pitch measurement",
+  "title": "VRU 1",
+  "name": "Frozen pitch measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling VRU failures and VRU signal failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 240,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Frozen VRU Sensor VRU 1 Auxiliary - VRU 1",
+    "title": "Expecting alarm",
+    "details": "Frozen VRU Sensor VRU 1 Auxiliary - VRU 1",
+    "result": "",
+    "message": "",
+    "testId": 49
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 49
+  }],
+  "comment": ""
+}, {
+  "id": 70,
+  "key": "VRU 2 - Drifting roll measurement",
+  "title": "VRU 2",
+  "name": "Drifting roll measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling VRU failures and VRU signal failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Voting Error VRU Sensor VRU 2 Auxiliary - VRU 2",
+    "title": "Expecting alarm",
+    "details": "Voting Error VRU Sensor VRU 2 Auxiliary - VRU 2",
+    "result": "",
+    "message": "",
+    "testId": 50
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 50
+  }],
+  "comment": ""
+}, {
+  "id": 71,
+  "key": "VRU 2 - Faulty offset added to pitch measurement",
+  "title": "VRU 2",
+  "name": "Faulty offset added to pitch measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling VRU failures and VRU signal failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Voting Error VRU Sensor VRU 2 Auxiliary - VRU 2",
+    "title": "Expecting alarm",
+    "details": "Voting Error VRU Sensor VRU 2 Auxiliary - VRU 2",
+    "result": "",
+    "message": "",
+    "testId": 51
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 51
+  }],
+  "comment": ""
+}, {
+  "id": 72,
+  "key": "VRU 3 - Drifting pitch measurement",
+  "title": "VRU 3",
+  "name": "Drifting pitch measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling VRU failures and VRU signal failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Voting Error VRU Sensor VRU 3 Auxiliary - VRU 3",
+    "title": "Expecting alarm",
+    "details": "Voting Error VRU Sensor VRU 3 Auxiliary - VRU 3",
+    "result": "",
+    "message": "",
+    "testId": 52
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 52
+  }],
+  "comment": ""
+}, {
+  "id": 73,
+  "key": "VRU 3 - Frozen roll measurement",
+  "title": "VRU 3",
+  "name": "Frozen roll measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling VRU failures and VRU signal failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 240,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Frozen VRU Sensor VRU 3 Auxiliary - VRU 3",
+    "title": "Expecting alarm",
+    "details": "Frozen VRU Sensor VRU 3 Auxiliary - VRU 3",
+    "result": "",
+    "message": "",
+    "testId": 53
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 53
+  }],
+  "comment": ""
+}, {
+  "id": 74,
+  "key": "VRU 3 - High noise in pitch measurement",
+  "title": "VRU 3",
+  "name": "High noise in pitch measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling VRU failures and VRU signal failures",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Voting Error VRU Sensor VRU 3 Auxiliary - VRU 3",
+    "title": "Expecting alarm",
+    "details": "Voting Error VRU Sensor VRU 3 Auxiliary - VRU 3",
+    "result": "",
+    "message": "",
+    "testId": 54
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 54
+  }],
+  "comment": ""
+}, {
+  "id": 75,
+  "key": "Wind sensor 1 - Faulty positive offset added to wind speed measurement",
+  "title": "Wind sensor 1",
+  "name": "Faulty positive offset added to wind speed measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on wind sensor measurement signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Voting Error Wind Sensor Wind 1 Auxiliary - Wind 1",
+    "title": "Expecting alarm",
+    "details": "Voting Error Wind Sensor Wind 1 Auxiliary - Wind 1",
+    "result": "",
+    "message": "",
+    "testId": 55
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 55
+  }],
+  "comment": ""
+}, {
+  "id": 76,
+  "key": "Wind sensor 1 - Frozen wind direction measurement",
+  "title": "Wind sensor 1",
+  "name": "Frozen wind direction measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on wind sensor signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 56
+  }],
+  "comment": ""
+}, {
+  "id": 77,
+  "key": "Wind sensor 1 - Illegal wind speed measurement",
+  "title": "Wind sensor 1",
+  "name": "Illegal wind speed measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on wind sensor signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nLost Wind Sensor Wind 1 Auxiliary - Wind 1,\nLost Wind Sensor Wind 1 Primary - Wind 1,\nLost Wind Sensor Wind 1 Secondary - Wind 1",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Lost Wind Sensor Wind 1 Auxiliary - Wind 1,\nLost Wind Sensor Wind 1 Primary - Wind 1,\nLost Wind Sensor Wind 1 Secondary - Wind 1",
+    "result": "",
+    "message": "",
+    "testId": 57
+  }, {
+    "id": 0,
+    "key": "Expecting at least one of the following alarms:\nOff Limit Wind Sensor Wind 1 Auxiliary - Wind 1,\nOff Limit Wind Sensor Wind 1 Primary - Wind 1,\nOff Limit Wind Sensor Wind 1 Secondary - Wind 1",
+    "title": "Expecting at least one of the following alarms",
+    "details": "Off Limit Wind Sensor Wind 1 Auxiliary - Wind 1,\nOff Limit Wind Sensor Wind 1 Primary - Wind 1,\nOff Limit Wind Sensor Wind 1 Secondary - Wind 1",
+    "result": "",
+    "message": "",
+    "testId": 57
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 57
+  }],
+  "comment": ""
+}, {
+  "id": 78,
+  "key": "Wind sensor 1 - Increased noise in wind direction measurement",
+  "title": "Wind sensor 1",
+  "name": "Increased noise in wind direction measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on wind sensor signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Voting Error Wind Sensor Wind 1 Auxiliary - Wind 1",
+    "title": "Expecting alarm",
+    "details": "Voting Error Wind Sensor Wind 1 Auxiliary - Wind 1",
+    "result": "",
+    "message": "",
+    "testId": 58
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 58
+  }],
+  "comment": ""
+}, {
+  "id": 79,
+  "key": "Wind sensor 2 - Drifting wind direction measurement",
+  "title": "Wind sensor 2",
+  "name": "Drifting wind direction measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on wind sensor signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Voting Error Wind Sensor Wind 2 Auxiliary - Wind 2",
+    "title": "Expecting alarm",
+    "details": "Voting Error Wind Sensor Wind 2 Auxiliary - Wind 2",
+    "result": "",
+    "message": "",
+    "testId": 59
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 59
+  }],
+  "comment": ""
+}, {
+  "id": 80,
+  "key": "Wind sensor 2 - Slowly drifting wind speed measurement",
+  "title": "Wind sensor 2",
+  "name": "Slowly drifting wind speed measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on wind sensor signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 120,
+  "verifications": [{
+    "id": 0,
+    "key": "Expecting alarm Voting Error Wind Sensor Wind 2 Auxiliary - Wind 2",
+    "title": "Expecting alarm",
+    "details": "Voting Error Wind Sensor Wind 2 Auxiliary - Wind 2",
+    "result": "",
+    "message": "",
+    "testId": 60
+  }, {
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 60
+  }],
+  "comment": ""
+}, {
+  "id": 81,
+  "key": "Wind sensor 3 - Frozen wind speed measurement",
+  "title": "Wind sensor 3",
+  "name": "Frozen wind speed measurement",
+  "alarmListBeforeTest": "",
+  "status": "loaded",
+  "detailedStatus": "",
+  "purpose": "To verify that the DP control system is capable of handling signal failures on wind sensor signals",
+  "result": "Not run",
+  "errorMessage": "",
+  "progress": 0,
+  "duration": 60,
+  "verifications": [{
+    "id": 0,
+    "key": "Vessel position within boundaries. Distance: 5.0m. Heading: 3.0 degrees",
+    "title": "Vessel position within boundaries",
+    "details": "Distance: 5.0m. Heading: 3.0 degrees",
+    "result": "",
+    "message": "",
+    "testId": 61
+  }],
+  "comment": ""
+}]

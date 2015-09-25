@@ -1,0 +1,104 @@
+.logo {
+  width:170px;
+  height:50px;
+  margin-left:10px;
+  margin-top:2px;
+}
+
+.navbar-inverse {
+  background-color: rgb(27,27,27);
+}
+
+.navbar-default {
+  border-width: 0px;
+  font-size: 16px;
+  margin-bottom: 0;
+
+  .brand-container {
+    height:32px;
+    a {
+      color: @life;
+      &:hover, &:focus {
+        color: saturate(@life, 30%);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .signature-brand {
+    line-height:32px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+
+    &:hover {
+      text-decoration:none;
+    }
+
+  }
+
+  .navbar-right:last-child {
+    margin-right: 15px;
+  }
+
+  .navbar-nav li a,
+  .navbar-link {
+    color:#999999;
+    
+    &:hover {
+      color:#ffffff;
+      text-decoration:none
+    }
+  }
+
+  .navbar-nav li.active {
+    -webkit-box-shadow: inset 3px 2px 5px rgba(0,0,0,0.6), inset -3px 2px 5px rgba(0,0,0,0.6);
+    -moz-box-shadow: inset 3px 2px 5px rgba(0,0,0,0.6), inset -3px 2px 5px rgba(0,0,0,0.6);
+    box-shadow: inset 3px 2px 5px rgba(0,0,0,0.6), inset -3px 2px 5px rgba(0,0,0,0.6);  
+  }
+}
+
+.navbar-collapse {
+  width:910px;
+  .navbar-text {
+    margin:10px;
+  }
+}
+
+.sub-nav {
+  top: 60px;
+  width:200px;
+  margin:10px 0px;
+  background-color: rgba(15,15,15,0.7);
+  position:fixed;
+}
+
+.sub-nav li a:hover {
+    background-color: rgba(27,27,27,0.6);
+}
+
+.sub-nav > li > a {
+  border-radius: 0px;
+}
+
+.modal-nav {
+  li.active {
+    a, a:hover, a:focus {
+      color: #555555;
+      cursor: default;
+      background-color: #ffffff;
+      border: 1px solid #dddddd;
+      border-bottom-color: transparent;  
+    }
+  }
+  li {
+    a:hover {
+      background-color: @gray-lighter;
+      color: lighten(@brand-primary, 10%);
+    }
+  }
+}  

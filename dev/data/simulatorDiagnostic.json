@@ -1,0 +1,495 @@
+{
+  "runtimeChart": [{
+    "name": "CB2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 17.946180000000002,
+      "percentage": 0.23056779920615267,
+      "relative": 0.004119948746937481
+    }
+  }, {
+    "name": "Waves",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 384.27513,
+      "percentage": 4.937065771866671,
+      "relative": 0.0882189881257592
+    }
+  }, {
+    "name": "Gen4",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 1.9310999999999998,
+      "percentage": 0.02481026474976855,
+      "relative": 0.0004433273836109394
+    }
+  }, {
+    "name": "Bus1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 1.16325,
+      "percentage": 0.014945129962284849,
+      "relative": 0.00026705016777247437
+    }
+  }, {
+    "name": "CB3",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 8.83049,
+      "percentage": 0.11345181231949858,
+      "relative": 0.0020272373402219273
+    }
+  }, {
+    "name": "AliveCounterThrCard07",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 0.9845700000000001,
+      "percentage": 0.01264949633094072,
+      "relative": 0.00022603016005479914
+    }
+  }, {
+    "name": "AliveCounterThrCard01",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 1.22025,
+      "percentage": 0.01567745096623949,
+      "relative": 0.00028013579817267296
+    }
+  }, {
+    "name": "CB4",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 11.286190000000001,
+      "percentage": 0.14500199985303214,
+      "relative": 0.0025909984380073263
+    }
+  }, {
+    "name": "THR4",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 233.97342,
+      "percentage": 3.006028944440367,
+      "relative": 0.05371385434369191
+    }
+  }, {
+    "name": "Bus3",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 1.19738,
+      "percentage": 0.01538362322307383,
+      "relative": 0.00027488547594017225
+    }
+  }, {
+    "name": "BT1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 8.80775,
+      "percentage": 0.11315965478213143,
+      "relative": 0.002022016862409638
+    }
+  }, {
+    "name": "THR1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 396.18859000000003,
+      "percentage": 5.090126771652171,
+      "relative": 0.09095399048273378
+    }
+  }, {
+    "name": "AliveCounterThrCard08",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 0.8477100000000001,
+      "percentage": 0.010891155057234893,
+      "relative": 0.00019461087274653277
+    }
+  }, {
+    "name": "AliveCounterThrCard09",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 1.83979,
+      "percentage": 0.023637137892380866,
+      "relative": 0.00042236512199967383
+    }
+  }, {
+    "name": "VRU3",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 14.152370000000001,
+      "percentage": 0.181825926433992,
+      "relative": 0.0032489944404712084
+    }
+  }, {
+    "name": "CB6",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 8.0665,
+      "percentage": 0.10363626979649321,
+      "relative": 0.0018518462740912654
+    }
+  }, {
+    "name": "HPR1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 145.45505,
+      "percentage": 1.8687682148468863,
+      "relative": 0.03339247410776157
+    }
+  }, {
+    "name": "AliveCounterThrCard02",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 0.99217,
+      "percentage": 0.012747139131468006,
+      "relative": 0.0002277749107748256
+    }
+  }, {
+    "name": "Current",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 8.7127,
+      "percentage": 0.11193847738869478,
+      "relative": 0.0020001959997861486
+    }
+  }, {
+    "name": "VRU2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 17.98039,
+      "percentage": 0.23100732028589455,
+      "relative": 0.004127802420902231
+    }
+  }, {
+    "name": "PowerDistribution",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 310.23234,
+      "percentage": 3.985783485754344,
+      "relative": 0.07122080244611848
+    }
+  }, {
+    "name": "THR2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 405.09522,
+      "percentage": 5.204556810660109,
+      "relative": 0.0929987074703008
+    }
+  }, {
+    "name": "GyroCompass3",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 8.842,
+      "percentage": 0.11359968977134978,
+      "relative": 0.0020298797192729147
+    }
+  }, {
+    "name": "AliveCounterThrCard04",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 0.96941,
+      "percentage": 0.01245472463936261,
+      "relative": 0.0002225498415132726
+    }
+  }, {
+    "name": "WindSensor3",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 10.583020000000001,
+      "percentage": 0.13596785668898329,
+      "relative": 0.0024295699690861394
+    }
+  }, {
+    "name": "CB5",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 10.23322,
+      "percentage": 0.13147371831734583,
+      "relative": 0.0023492655214722886
+    }
+  }, {
+    "name": "VesselStateStatistics",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 19.827840000000002,
+      "percentage": 0.2547428718430174,
+      "relative": 0.004551926067969721
+    }
+  }, {
+    "name": "AliveCounterThrCard10",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 0.85912,
+      "percentage": 0.011037747735394935,
+      "relative": 0.0001972302945512041
+    }
+  }, {
+    "name": "Gen3",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 1.13662,
+      "percentage": 0.014602994728332003,
+      "relative": 0.0002609366530784868
+    }
+  }, {
+    "name": "GPS2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 221.74445,
+      "percentage": 2.8489143551819254,
+      "relative": 0.0509064195788653
+    }
+  }, {
+    "name": "Gen2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 1.13655,
+      "percentage": 0.0146020953867482,
+      "relative": 0.0002609205830060655
+    }
+  }, {
+    "name": "CB1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 9.043479999999999,
+      "percentage": 0.11618825180427575,
+      "relative": 0.0020761339791506694
+    }
+  }, {
+    "name": "Bus2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 2.57352,
+      "percentage": 0.03306390789644471,
+      "relative": 0.0005908093253950726
+    }
+  }, {
+    "name": "CyScan2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 22.52685,
+      "percentage": 0.28941904224448434,
+      "relative": 0.005171544441766915
+    }
+  }, {
+    "name": "GyroCompass2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 13.080459999999999,
+      "percentage": 0.1680543087612022,
+      "relative": 0.003002913421483894
+    }
+  }, {
+    "name": "THR3",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 248.30459,
+      "percentage": 3.190152046234133,
+      "relative": 0.057003896340576364
+    }
+  }, {
+    "name": "Gen1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 1.16702,
+      "percentage": 0.014993565930441146,
+      "relative": 0.00026791565595859275
+    }
+  }, {
+    "name": "AliveCounterThrCard03",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 1.00739,
+      "percentage": 0.012942681687260805,
+      "relative": 0.00023126900366414178
+    }
+  }, {
+    "name": "CB9",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 9.051020000000001,
+      "percentage": 0.11628512374058837,
+      "relative": 0.0020778649555229065
+    }
+  }, {
+    "name": "AliveCounterThrCard06",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 3.85843,
+      "percentage": 0.04957209353138081,
+      "relative": 0.0008857892790357603
+    }
+  }, {
+    "name": "CyScan1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 27.57129,
+      "percentage": 0.35422868023025544,
+      "relative": 0.006329608957836703
+    }
+  }, {
+    "name": "Clock",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 8.02847,
+      "percentage": 0.10314767036174945,
+      "relative": 0.0018431156333172383
+    }
+  }, {
+    "name": "CB8",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 13.54796,
+      "percentage": 0.1740606257673214,
+      "relative": 0.003110238548011839
+    }
+  }, {
+    "name": "GyroCompass1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 9.568010000000001,
+      "percentage": 0.12292727524645695,
+      "relative": 0.002196551623252708
+    }
+  }, {
+    "name": "CB7",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 9.666879999999999,
+      "percentage": 0.12419753099489544,
+      "relative": 0.0022192494526854733
+    }
+  }, {
+    "name": "WindSensor1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 13.69628,
+      "percentage": 0.17596620210603287,
+      "relative": 0.003144288735747935
+    }
+  }, {
+    "name": "GPS1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 240.52312,
+      "percentage": 3.0901777668895196,
+      "relative": 0.05521748510565999
+    }
+  }, {
+    "name": "Hull",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 4355.92312,
+      "percentage": 55.96375425241461,
+      "relative": 1
+    }
+  }, {
+    "name": "TI2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 6.24942,
+      "percentage": 0.08029090400937217,
+      "relative": 0.0014346947427299865
+    }
+  }, {
+    "name": "VRU1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 14.9735,
+      "percentage": 0.19237558864411963,
+      "relative": 0.0034375032771469115
+    }
+  }, {
+    "name": "WindSensor2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 8.87233,
+      "percentage": 0.11398936163187512,
+      "relative": 0.0020368426520805997
+    }
+  }, {
+    "name": "TI1",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 4.72121,
+      "percentage": 0.06065686398387179,
+      "relative": 0.001083859808802135
+    }
+  }, {
+    "name": "AliveCounterThrCard05",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 1.16319,
+      "percentage": 0.01494435909807016,
+      "relative": 0.0002670363934246847
+    }
+  }, {
+    "name": "Wind",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 66.99131,
+      "percentage": 0.8606867262357296,
+      "relative": 0.015379360047107533
+    }
+  }, {
+    "name": "BT2",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 8.39723,
+      "percentage": 0.10788540182522861,
+      "relative": 0.0019277727748326283
+    }
+  }, {
+    "name": "THR5",
+    "description": "Simulation model",
+    "runtime": {
+      "absolute": 218.77562,
+      "percentage": 2.810771608407001,
+      "relative": 0.050224857963057895
+    }
+  }, {
+    "name": "SimulationService",
+    "description": "Simulation service",
+    "runtime": {
+      "absolute": 1.1631099999999999,
+      "percentage": 0.014943331279117239,
+      "relative": 0.00026701802762763173
+    }
+  }, {
+    "name": "SignatureSimulationService",
+    "description": "Simulation service",
+    "runtime": {
+      "absolute": 3.39086,
+      "percentage": 0.0435648771836778,
+      "relative": 0.0007784480824353943
+    }
+  }, {
+    "name": "StatisticsSimulationService",
+    "description": "Simulation service",
+    "runtime": {
+      "absolute": 0.69945,
+      "percentage": 0.008986349582738137,
+      "relative": 0.0001605744593582267
+    }
+  }, {
+    "name": "DefaultDataLogger",
+    "description": "Simulation service",
+    "runtime": {
+      "absolute": 1.1709100000000001,
+      "percentage": 0.015043543627026824,
+      "relative": 0.00026880869284029056
+    }
+  }, {
+    "name": "IOSystem",
+    "description": "Simulation service",
+    "runtime": {
+      "absolute": 201.25516,
+      "percentage": 2.585673347758806,
+      "relative": 0.04620264280513748
+    }
+  }],
+  "engine": {
+    "runtime": 124.37,
+    "realtime": 1.0011540531033245
+  }
+}

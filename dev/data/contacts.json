@@ -1,0 +1,20 @@
+{
+  "contacts": [
+    {
+      "competence": "Type approval",
+      "name": "Mikhail Lindblad",
+      "company": "DNVGL",
+      "skype": "lindblad.misha",
+      "email": "mikhail.lindblad@dnvgl.com",
+      "phone": "+4797637106"
+    },
+    {
+      "competence": "Motor maintenance",
+      "name": "Jason Statham",
+      "company": "Sorters",
+      "skype": "jason.statham",
+      "email": "jason.statham@sorters.io",
+      "phone": "+79211111111"
+    }
+  ]
+}

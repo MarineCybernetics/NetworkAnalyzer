@@ -1,0 +1,31 @@
+.status-group {
+  width: 105px;
+}
+
+.toggle-image {
+  width: 30px; 
+  height: 30px;
+  padding-right: 2px;
+  img {
+    height: 100%;
+    width: 100%;
+    -webkit-transition: all 0.3s ease; /* Safari and Chrome */
+    -moz-transition: all 0.3s ease; /* Firefox */
+    -o-transition: all 0.3s ease; /* IE 9 */
+    -ms-transition: all 0.3s ease; /* Opera */
+    transition: all 0.3s ease;
+  }
+}
+
+.not-selected img {
+  cursor: pointer;
+} 
+
+.not-selected:hover img,
+.selected img {
+  -webkit-transform:scale(1.15); /* Safari and Chrome */
+  -moz-transform:scale(1.15); /* Firefox */
+  -ms-transform:scale(1.15); /* IE 9 */
+  -o-transform:scale(1.15); /* Opera */
+  transform:scale(1.15);
+}

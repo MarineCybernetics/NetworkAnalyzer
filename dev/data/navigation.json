@@ -1,0 +1,22 @@
+[
+  {
+    "href": "/signature",
+    "text": "Tests"
+  },
+  {
+    "href": "/scripteditor/index.html",
+    "text": "Editor"
+  },
+  {
+    "href": "/custom-gui",
+    "text": "Simulator"
+  },
+  {
+    "href": "/signature/index.html#/debug",
+    "text": "Debug"
+  },
+  {
+    "href": "/signature/kafka",
+    "text": "Kafka"
+  }
+]

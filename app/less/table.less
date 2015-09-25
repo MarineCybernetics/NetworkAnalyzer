@@ -1,0 +1,67 @@
+.table>thead>tr>th,
+.table>tbody>tr>td
+{
+  border:0px;
+}
+
+.table {
+  th {
+    height: 45px;
+    color: #368282;
+  }
+
+  tbody tr.clickable {
+    cursor: pointer;
+  }
+
+  .id-column {
+    width: 5%;
+  }
+
+  th.id-column {
+    text-align: center;
+  }
+
+  td.id-column {
+    text-align: right;
+  }
+
+  .checkbox-column {
+    text-align: center;
+    width: 5%;
+  }
+
+  .progress-column {
+    width: 10%;
+    text-align: center;
+  }
+
+  .test-column {
+    width: 85%;
+  }
+
+  .icon-column {
+    width: 6em;
+    text-align: center;
+  }
+}
+
+.table-container {
+  padding: 30px 30px 10px 30px;
+  background-color: white;
+  border-radius: 10px 10px 0px 0px;
+  border: 2px solid rgb(221, 221, 221);
+}
+
+.automatic .table tbody tr.active-test:hover td, .automatic .table tbody tr.active-test:hover th {
+  background-color: transparent;
+}
+
+.automatic tr.active-test a{
+  color:#fff;
+}
+
+.automatic tr.active-test:hover a{
+  color:#fff;
+  text-decoration:underline;
+}
