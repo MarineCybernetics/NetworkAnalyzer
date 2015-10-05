@@ -71,6 +71,10 @@ module.exports = {
       res.json(contacts);
     });
 
+    app.get("/nmap", function(req, res) {
+      res.json(contacts);
+    });
+
     app.get("/ajax/vessel_data*", function(req, res) {
       var signalId = req.query.signal_id;
       switch (signalId) {

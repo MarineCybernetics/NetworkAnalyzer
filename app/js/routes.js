@@ -9,7 +9,10 @@ var React = require('react'),
   ThrusterInfo = require('./components/thruster/ThrusterInfo'),
   Status = require('./components/thruster/Status'),
   Contacts = require('./components/thruster/Contacts'),
-  Documents = require('./components/thruster/Documents');
+  Documents = require('./components/thruster/Documents'),
+  Analysor = require('./components/Analysor'),
+  PLCInfo = require('./components/plc/PLCInfo'),
+  Nmap = require('./components/plc/Nmap');
 
 var Route = Router.Route,
     Redirect = Router.Redirect,
@@ -29,6 +32,11 @@ var routes = (
       <Redirect from="/kafka" to="/kafka/internalCluster" />
     </Route>
     <Route name="charts" handler={Charts} />
+    <Route name="analysor" handler={Analysor}>
+      <Route name="plc" path="/analysor/plc/:plcId" handler={PLCInfo}>
+        <Route name="nmap" path="nmap" handler={Nmap} />
+      </Route>
+    </Route>
     <Redirect from="/" to="vessel" />
   </Route>
 );

@@ -45,6 +45,7 @@ var Navbar = React.createClass({
             <Tab to="vessel"><strong>Vessel</strong></Tab>
             <Tab to="kafka"><strong>Kafka</strong></Tab>
             <Tab to="charts"><strong>Charts</strong></Tab>
+            <Tab to="analysor"><strong>Analysor</strong></Tab>
           </ul>
           <p className="navbar-text pull-right brand-container">
             <a href="#" className="signature-brand">

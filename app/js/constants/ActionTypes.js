@@ -14,6 +14,10 @@ module.exports = keyMirror({
   THRUSTER_CLICK: null,
   CLOSE_THRUSTER_INFO: null,
 
+  PLC_CLICK: null,
+  CLOSE_PLC_INFO: null,
+  REQUEST_NMAP_DATA_SUCCESS: null,
+
   CANCEL_ALL_PRESSED: null,
   MESSAGER_RECEIVED: null,
   REQUEST_CONTACTS_DATA_SUCCESS: null,
