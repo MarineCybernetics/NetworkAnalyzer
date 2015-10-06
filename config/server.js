@@ -71,7 +71,9 @@ module.exports = {
       res.json(contacts);
     });
 
-    app.get("/nmap", function(req, res) {
+    app.get("/nmap/:plcId", function(req, res) {
+      console.log('server');
+      console.log(req.params.plcId); 
       res.json(contacts);
     });
 

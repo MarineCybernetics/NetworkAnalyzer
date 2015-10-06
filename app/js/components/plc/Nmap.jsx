@@ -25,8 +25,12 @@ var Nmap = React.createClass({
 
 var Status = React.createClass({
   displayName: "Status",
+  contextTypes: {
+    router: React.PropTypes.func
+  },
   componentDidMount: function() {
-    PLCActionCreators.startNmapDataRequest();
+    var plcId = this.context.router.getCurrentParams().plcId;
+    PLCActionCreators.startNmapDataRequest(plcId);
     NmapStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function() {
