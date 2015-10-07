@@ -73,7 +73,7 @@ module.exports = {
     });
 
     app.get("/nmap/:plcId", function(req, res) {
-      res.json(mockedTXT.getNmapData());
+      res.json(mockedTXT.getNmapData(req.params.plcId));
     });
 
     app.get("/ajax/vessel_data*", function(req, res) {

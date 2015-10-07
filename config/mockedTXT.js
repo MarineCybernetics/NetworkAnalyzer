@@ -1,10 +1,12 @@
 "use strict";
 
 var fs = require('fs'),
-    nmapProvider = require('../provider/nmapProvider');
+    nmapProvider = require('../provider/nmapProvider'),
+    txtData = "./dev/txtdata/";
 
 module.exports = {
-  getNmapData: function() {
-    return nmapProvider("./dev/txtdata/nmap_107.txt").getLatest();
+  getNmapData: function(node) {
+    var filePath = txtData + node + "_nmap.txt";
+    return nmapProvider(filePath).getLatest();
   }
 };
