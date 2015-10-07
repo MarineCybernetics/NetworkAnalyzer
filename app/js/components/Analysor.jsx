@@ -25,17 +25,22 @@ var Analysor = React.createClass({
   },
   render: function() {
     return (
-      <div>
+      <div style={{"textAlign": "center"}}>
         <RouteHandler />
-          <div className="col-lg-8 col-md-12" style={{"text-Align": "center"}}>
-            <svg version="1.1" id="to_1" x="0px" y="0px" width="1000" height="500" style={{"border-style":"solid","border-width":"2px","border-color":"black","background":"white"}} viewBox="0 0 1000 500">
-              <line x1="64" y1="364" x2="464" y2="436" style={{"stroke":"rgb(255,0,0)","stroke-width":"2","cursor":"pointer"}} onClick={this._onClick} />
-              <line x1="364" y1="64" x2="464" y2="436" style={{"stroke":"rgb(255,0,0)","stroke-width":"2","cursor":"pointer"}} onClick={this._onClick} />
-              <Switches id = "1" transform="translate(400, 372)"/> 
-              <PLC id = "plc1" transform="translate(0, 300)" />
-              <Server id = "3" transform="translate(300, 0)" />
+        <div className="row" style={{"textAlign": "center"}}>
+          <div className="1" style={{"textAlign": "center"}}>
+            <svg version="1.1" id="to_1" x="0px" y="0px" width="90%" height="600" preserveAspectRatio="xMidYMid meet" style={{"textAlign": "center", "borderStyle":"solid","borderWidth":"2px","borderColor":"black","backgroundColor":"white"}} viewBox="0 0 900 600">
+              <line x1="450" y1="500" x2="450" y2="10" style={{"stroke":"rgb(255,0,0)","strokeWidth":"2","cursor":"pointer"}} onClick={this._onClick} />
+              <line x1="286" y1="104" x2="450" y2="104" style={{"stroke":"rgb(255,0,0)","strokeWidth":"2","cursor":"pointer"}} onClick={this._onClick} />
+              <line x1="614" y1="204" x2="450" y2="204" style={{"stroke":"rgb(255,0,0)","strokeWidth":"2","cursor":"pointer"}} onClick={this._onClick} />
+              <line x1="614" y1="400" x2="450" y2="400" style={{"stroke":"rgb(255,0,0)","strokeWidth":"2","cursor":"pointer"}} onClick={this._onClick} />
+              <Switches id = "1" transform="translate(386, 436)"/> 
+              <PLC id = "plc1" transform="translate(222, 40)" />
+              <Server id = "3" transform="translate(550, 140)" />
+              <PLC id = "chair1" transform="translate(550, 336)" />
             </svg>
           </div>
+        </div>  
       </div>
     );
   },
