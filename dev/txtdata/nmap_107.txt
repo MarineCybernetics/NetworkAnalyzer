@@ -1,0 +1,55 @@
+
+Starting Nmap 6.47 ( http://nmap.org ) at 2015-09-25 09:30 CEST
+NSE: Loaded 29 scripts for scanning.
+Initiating ARP Ping Scan at 09:30
+Scanning 192.168.10.107 [1 port]
+Completed ARP Ping Scan at 09:30, 0.04s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 09:30
+Completed Parallel DNS resolution of 1 host. at 09:30, 0.04s elapsed
+Initiating SYN Stealth Scan at 09:30
+Scanning 192.168.10.107 [65536 ports]
+Discovered open port 80/tcp on 192.168.10.107
+SYN Stealth Scan Timing: About 37.27% done; ETC: 09:32 (0:00:52 remaining)
+Discovered open port 102/tcp on 192.168.10.107
+Completed SYN Stealth Scan at 09:31, 72.68s elapsed (65536 total ports)
+Initiating Service scan at 09:31
+Scanning 2 services on 192.168.10.107
+Completed Service scan at 09:32, 16.06s elapsed (2 services on 1 host)
+Initiating OS detection (try #1) against 192.168.10.107
+Retrying OS detection (try #2) against 192.168.10.107
+Retrying OS detection (try #3) against 192.168.10.107
+Retrying OS detection (try #4) against 192.168.10.107
+Retrying OS detection (try #5) against 192.168.10.107
+NSE: Script scanning 192.168.10.107.
+NSE: Starting runlevel 1 (of 1) scan.
+Initiating NSE at 09:32
+Completed NSE at 09:32, 30.12s elapsed
+Nmap scan report for 192.168.10.107
+Host is up (0.0012s latency).
+Scanned at 2015-09-25 09:30:40 CEST for 133s
+Not shown: 65534 closed ports
+PORT    STATE SERVICE   VERSION
+80/tcp  open  http
+102/tcp open  iso-tsap?
+MAC Address: 00:1B:1B:01:DF:38 (Siemens AG,)
+No exact OS matches for host (If you know what OS is running on it, see http://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=6.47%E=4%D=9/25%OT=80%CT=1%CU=38037%PV=Y%DS=1%DC=D%G=Y%M=001B1B%T
+OS:M=5604F8A5%P=x86_64-unknown-linux-gnu)SEQ(SP=102%GCD=1%ISR=10C%TI=I%CI=I
+OS:%II=I%SS=S%TS=U)OPS(O1=M5B4%O2=M578%O3=M200%O4=M200%O5=M218%O6=M109)WIN(
+OS:W1=800%W2=800%W3=800%W4=800%W5=800%W6=800)ECN(R=Y%DF=N%T=56%W=800%O=M5B4
+OS:%CC=N%Q=)T1(R=Y%DF=N%T=56%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=Y%DF=N%T=56%
+OS:W=800%S=O%A=S+%F=AS%O=M109%RD=0%Q=)T4(R=Y%DF=N%T=56%W=0%S=A%A=Z%F=R%O=%R
+OS:D=0%Q=)T5(R=Y%DF=N%T=74%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=N%T=74%W=
+OS:0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=N%T=74%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U
+OS:1(R=Y%DF=N%T=74%IPL=38%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=97FC%RUD=G)IE(R=Y%
+OS:DFI=N%T=74%CD=Z)
+
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=244 (Good luck!)
+IP ID Sequence Generation: Incremental
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 133.26 seconds
+           Raw packets sent: 66001 (2.908MB) | Rcvd: 65618 (2.627MB)

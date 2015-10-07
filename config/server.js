@@ -7,7 +7,8 @@ var mockedJSON = require('./mockedJSON.js'),
     navigation = mockedJSON.getNavigation(),
     weatherDaily = mockedJSON.getWeatherDaily(),
     contacts = mockedJSON.getContacts(),
-    evaStatus = mockedJSON.getEvaStatus();
+    evaStatus = mockedJSON.getEvaStatus(),
+    mockedTXT = require('./mockedTXT.js');
 
 module.exports = {
   drawRoutes: function(app, dataProviders) {
@@ -72,9 +73,9 @@ module.exports = {
     });
 
     app.get("/nmap/:plcId", function(req, res) {
-      console.log('server');
-      console.log(req.params.plcId); 
-      res.json(contacts);
+      console.log("yeah");
+      console.log("llll" + mockedTXT.getNmapData().resolutions[0].data + "kkkk");
+      res.json(mockedTXT.getNmapData());
     });
 
     app.get("/ajax/vessel_data*", function(req, res) {

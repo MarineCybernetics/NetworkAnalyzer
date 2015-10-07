@@ -1,0 +1,81 @@
+
+Starting Nmap 6.47 ( http://nmap.org ) at 2015-09-25 09:50 CEST
+NSE: Loaded 29 scripts for scanning.
+Initiating ARP Ping Scan at 09:50
+Scanning 192.168.10.126 [1 port]
+Completed ARP Ping Scan at 09:50, 0.05s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 09:50
+Completed Parallel DNS resolution of 1 host. at 09:50, 0.04s elapsed
+Initiating SYN Stealth Scan at 09:50
+Scanning 192.168.10.126 [65536 ports]
+Increasing send delay for 192.168.10.126 from 0 to 5 due to 11 out of 14 dropped probes since last increase.
+Discovered open port 80/tcp on 192.168.10.126
+Increasing send delay for 192.168.10.126 from 5 to 10 due to 11 out of 18 dropped probes since last increase.
+Increasing send delay for 192.168.10.126 from 10 to 20 due to 11 out of 19 dropped probes since last increase.
+Increasing send delay for 192.168.10.126 from 20 to 40 due to max_successful_tryno increase to 4
+Increasing send delay for 192.168.10.126 from 40 to 80 due to max_successful_tryno increase to 5
+SYN Stealth Scan Timing: About 0.71% done
+SYN Stealth Scan Timing: About 1.28% done; ETC: 11:09 (1:18:22 remaining)
+SYN Stealth Scan Timing: About 14.45% done; ETC: 11:17 (1:14:23 remaining)
+SYN Stealth Scan Timing: About 19.64% done; ETC: 11:17 (1:10:01 remaining)
+SYN Stealth Scan Timing: About 24.77% done; ETC: 11:17 (1:05:38 remaining)
+SYN Stealth Scan Timing: About 29.85% done; ETC: 11:17 (1:01:15 remaining)
+SYN Stealth Scan Timing: About 34.93% done; ETC: 11:17 (0:56:51 remaining)
+SYN Stealth Scan Timing: About 40.00% done; ETC: 11:17 (0:52:27 remaining)
+SYN Stealth Scan Timing: About 45.02% done; ETC: 11:17 (0:48:05 remaining)
+SYN Stealth Scan Timing: About 50.04% done; ETC: 11:17 (0:43:42 remaining)
+SYN Stealth Scan Timing: About 55.06% done; ETC: 11:17 (0:39:19 remaining)
+SYN Stealth Scan Timing: About 60.08% done; ETC: 11:17 (0:34:56 remaining)
+SYN Stealth Scan Timing: About 65.09% done; ETC: 11:17 (0:30:33 remaining)
+Discovered open port 102/tcp on 192.168.10.126
+SYN Stealth Scan Timing: About 70.11% done; ETC: 11:17 (0:26:10 remaining)
+SYN Stealth Scan Timing: About 75.13% done; ETC: 11:17 (0:21:46 remaining)
+SYN Stealth Scan Timing: About 80.15% done; ETC: 11:17 (0:17:23 remaining)
+SYN Stealth Scan Timing: About 85.17% done; ETC: 11:17 (0:12:59 remaining)
+SYN Stealth Scan Timing: About 90.19% done; ETC: 11:17 (0:08:35 remaining)
+SYN Stealth Scan Timing: About 95.21% done; ETC: 11:17 (0:04:12 remaining)
+Completed SYN Stealth Scan at 11:17, 5255.90s elapsed (65536 total ports)
+Initiating Service scan at 11:17
+Scanning 2 services on 192.168.10.126
+Completed Service scan at 11:19, 76.30s elapsed (2 services on 1 host)
+Initiating OS detection (try #1) against 192.168.10.126
+Retrying OS detection (try #2) against 192.168.10.126
+NSE: Script scanning 192.168.10.126.
+NSE: Starting runlevel 1 (of 1) scan.
+Initiating NSE at 11:19
+Completed NSE at 11:19, 30.02s elapsed
+Nmap scan report for 192.168.10.126
+Host is up (0.0014s latency).
+Scanned at 2015-09-25 09:50:13 CEST for 5367s
+Not shown: 65534 closed ports
+PORT    STATE SERVICE   VERSION
+80/tcp  open  http
+102/tcp open  iso-tsap?
+MAC Address: 00:1B:1B:7D:78:CC (Siemens AG,)
+OS fingerprint not ideal because: Didn't receive UDP response. Please try again with -sSU
+Aggressive OS guesses: Siemens Simatic 300 programmable logic controller (95%), Siemens SPS programmable logic controller (95%), IBM OS/2 Warp 2.0 (94%), Radware LinkProof load balancer (92%), Priva building management system (92%), Brother MFC-7820N or MFC-9420CN printer (92%), Senao NL-2611CB3 PLUS WAP (92%), Seiko NS-2232 serial-to-IP bridge (91%), Netopia 2247 ADSL router (91%), Dell PowerConnect 3324 switch (91%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=6.47%E=4%D=9/25%OT=80%CT=1%CU=%PV=Y%DS=1%DC=D%G=N%M=001B1B%TM=560511AC%P=x86_64-unknown-linux-gnu)
+SEQ(SP=100%GCD=1%ISR=10D%TI=I%CI=I%TS=U)
+OPS(O1=M5B4%O2=M578%O3=M200%O4=M200%O5=M218%O6=M109)
+WIN(W1=800%W2=800%W3=800%W4=800%W5=800%W6=800)
+ECN(R=Y%DF=N%TG=40%W=800%O=M5B4%CC=N%Q=)
+T1(R=Y%DF=N%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=Y%DF=N%TG=40%W=800%S=O%A=S+%F=AS%O=M109%RD=0%Q=)
+T4(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=N)
+IE(R=N)
+
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: Incremental
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 5366.65 seconds
+           Raw packets sent: 65756 (2.897MB) | Rcvd: 65563 (2.623MB)
