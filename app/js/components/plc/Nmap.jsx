@@ -22,19 +22,26 @@ var Status = React.createClass({
     return NmapStore.getNmapData();
   },
   render: function() {
-    var nmap = this.state; 
+    var nmapsList = <div />
+    var nmaps = this.state.resolutions;
 
-    if (nmap !== undefined) {
-    return (
-      <div className="col-lg-3 col-md-6 col-sm-12">
-        <div className="well">
-          <h6>Nmap: <strong>{nmap}</strong></h6>
-        </div>
-      </div>
-        );
+    if (nmaps !== undefined) {
+      nmapsList = nmaps.map(function(one, index) {
+        return(
+          <h6 key={index}><strong>{one}</strong></h6>
+        );  
+      });     
     };
 
-    return <div />;   
+    return (
+      <div className="row">
+        <div className="col-lg-3 col-md-6 col-sm-12">
+          <div className="well">
+            {nmapsList}
+          </div>
+        </div> 
+      </div>
+    );  
 
   },
   _onChange: function() {

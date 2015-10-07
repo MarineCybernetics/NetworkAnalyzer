@@ -73,8 +73,6 @@ module.exports = {
     });
 
     app.get("/nmap/:plcId", function(req, res) {
-      console.log("yeah");
-      console.log("llll" + mockedTXT.getNmapData().resolutions[0].data + "kkkk");
       res.json(mockedTXT.getNmapData());
     });
 

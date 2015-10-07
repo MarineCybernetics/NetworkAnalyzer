@@ -10,7 +10,7 @@ var allEmpty = function(lines) {
 };
 
 var readOnce = function(filename, handler, lineParser) {
-	var nwStat = {errors: []},
+	var nwStat = {errors: [], resolutions: []},
 		start = Date.now();
     var data = fileSystem.readFileSync(filename, 'utf8');
 
@@ -26,8 +26,6 @@ var readOnce = function(filename, handler, lineParser) {
 
 	nwStat.elapsed = Date.now() - start;
 	handler(nwStat);
-	console.log("1");
-	console.log(nwStat.resolutions[0].data);
 
 	return nwStat;
 };

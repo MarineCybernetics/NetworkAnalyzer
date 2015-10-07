@@ -1,7 +1,13 @@
 module.exports = function(filename, observe) {
 	var fileReader = require('../file-reader/fr'),
-		resolutionRE = /^(Nmap\sscan\sreport\sfor\s\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/i;
-
+	    resolutionRE = [];
+	    
+	resolutionRE[0] = /^Nmap\sscan\sreport\sfor\s\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}/i;
+	resolutionRE[1] = /^PORT\s+STATE\s+SERVICE\s+VERSION/i;
+	resolutionRE[2] = /^\d+\/\w+\s+\w+\s+.+/i;
+	resolutionRE[3] = /^MAC\s+Address:\s+\w+:\w+:\w+:\w+:\w+:\w+\s.+/i;
+	resolutionRE[4] = /^No exact OS matches for host/i;
+                       
 	var setTimestamp = function(resolutions) {
 		if (resolutions.timestamp == null) {
 			resolutions.timestamp = new Date().toLocaleString();
@@ -9,23 +15,25 @@ module.exports = function(filename, observe) {
 	};
 
 	var lineParser = function(line, result) {
-		var matches = line.match(resolutionRE);
+		var matches = []; 
+		matches[0] = line.match(resolutionRE[0]);
+        matches[1] = line.match(resolutionRE[1]);
+        matches[2] = line.match(resolutionRE[2]);
+        matches[3] = line.match(resolutionRE[3]);
+        matches[4] = line.match(resolutionRE[4]);
+
 		if (result.resolutions == undefined) {
 			result.resolutions = [];
 		}
-		if (matches != null) {
-			var data = matches[1];
-			var res = {};
-			res.data = data;
-			result.resolutions.push(res);
-			console.log("2");
-            console.log(result.resolutions[0].data);
-		}
+
+        for (var i = 0; i < matches.length; i++) {
+			if (matches[i] != null) {
+				result.resolutions.push(matches[i][0]);
+			}
+		};
 	};
 
 	var readHandler = function(data) {
-		console.log("3");
-		console.log(data.resolutions[0].data);
 		if (data.errors !== undefined && data.errors.length > 0) {
 			return;
 		}
@@ -33,18 +41,15 @@ module.exports = function(filename, observe) {
 		if (observe !== undefined) {
 			observe(data);
 		}
-		console.log("4");
-		console.log(data.resolutions[0].data);
 	};
 
-	var localResolutions = fileReader.readOnce(filename, readHandler, lineParser);
+	var localResolutions = {};
+	localResolutions = fileReader.readOnce(filename, readHandler, lineParser);
 	fileReader.startWatching(filename, readHandler, lineParser);
 
 	var nmapProvider = {};
 
 	nmapProvider.getLatest = function() {
-		console.log("5");
-		console.log(localResolutions.resolutions[0].data);
 		return localResolutions;
 	};
 
