@@ -35,7 +35,7 @@ var Status = React.createClass({
 
     return (
       <div className="row">
-        <div className="col-lg-3 col-md-6 col-sm-12">
+        <div className="col-lg-10 col-md-10 col-sm-12">
           <div className="well">
             {nmapsList}
           </div>

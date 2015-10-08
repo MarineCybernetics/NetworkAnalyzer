@@ -70,9 +70,6 @@ var Vessel = React.createClass({
               <Thruster id="thr5" transform="matrix(0.064,0,0,0.064,0.036457,18.077309)" />
             </svg>
           </div>
-          <div className="col-lg-2 col-md-8 col-sm-10">
-              <YammerEmbedded />
-          </div>
         </div>
         <div className="row">
           <div className="col-md-12">

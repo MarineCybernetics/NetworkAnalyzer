@@ -61,11 +61,11 @@ var ServerInfo = React.createClass({
   },
   handleHotkey: function(evt) {
     if (evt.keyCode === KEYCODE_ESC) {
-      AppActionCreators.navigateTo('analysor');
+      AppActionCreators.navigateTo('topology');
     }
   },
   _onClick: function() {
-    AppActionCreators.navigateTo('analysor');
+    AppActionCreators.navigateTo('topology');
   },
   _onModalDialogClick: function(evt) {
     evt.stopPropagation();

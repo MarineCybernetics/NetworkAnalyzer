@@ -24,6 +24,7 @@ module.exports = keyMirror({
   CLOSE_SERVER_INFO: null,
 
   REQUEST_NMAP_DATA_SUCCESS: null,
+  REQUEST_HIERARCHY_SUCCESS: null,
 
   CANCEL_ALL_PRESSED: null,
   MESSAGER_RECEIVED: null,

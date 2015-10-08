@@ -276,8 +276,6 @@ var PLC = React.createClass({
      id="path22051-1"
      style={{"fill":"#4e9a06","fillOpacity":"1","fillRule":"nonzero","stroke":"#ffffff","strokeWidth":"0.40000001","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","display":"inline"}} />    
    
-
-
   </g>);
   },
   _onClick: function() {
