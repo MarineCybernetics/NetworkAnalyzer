@@ -3,8 +3,8 @@
 var NmapServerActionCreators = require('../actions/NmapServerActionCreators');
 
 var NmapAPI = {
-	requestNmap: function(plcId) {
-		var Url = '/nmap/' + plcId;
+	requestNmap: function(nodeId) {
+		var Url = '/nmap/' + nodeId;
 		$.get(Url, function(response) {
 			NmapServerActionCreators.handleNmapSuccess(response);
 		});

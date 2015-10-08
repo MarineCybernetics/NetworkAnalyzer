@@ -7,6 +7,7 @@ module.exports = function(filename, observe) {
 	resolutionRE[2] = /^\d+\/\w+\s+\w+\s+.+/i;
 	resolutionRE[3] = /^MAC\s+Address:\s+\w+:\w+:\w+:\w+:\w+:\w+\s.+/i;
 	resolutionRE[4] = /^No exact OS matches for host/i;
+	resolutionRE[5] = /^OS details:.+/i;
                        
 	var setTimestamp = function(resolutions) {
 		if (resolutions.timestamp == null) {
@@ -21,6 +22,7 @@ module.exports = function(filename, observe) {
         matches[2] = line.match(resolutionRE[2]);
         matches[3] = line.match(resolutionRE[3]);
         matches[4] = line.match(resolutionRE[4]);
+        matches[5] = line.match(resolutionRE[5]);
 
 		if (result.resolutions == undefined) {
 			result.resolutions = [];

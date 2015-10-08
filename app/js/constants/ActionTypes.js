@@ -16,6 +16,13 @@ module.exports = keyMirror({
 
   PLC_CLICK: null,
   CLOSE_PLC_INFO: null,
+
+  CHAIR_CLICK: null,
+  CLOSE_CHAIR_INFO: null,  
+
+  SERVER_CLICK: null,
+  CLOSE_SERVER_INFO: null,
+
   REQUEST_NMAP_DATA_SUCCESS: null,
 
   CANCEL_ALL_PRESSED: null,

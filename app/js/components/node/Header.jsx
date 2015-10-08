@@ -24,7 +24,7 @@ var ModalHeader = React.createClass({
     );
   },
   _onCloseClick: function() {
-    AppActionCreators.navigateTo('vessel');
+    AppActionCreators.navigateTo('analysor');
   }
 });
 

@@ -17,6 +17,16 @@ var AnalysorStore = assign({}, EventEmitter.prototype, {
       return one.id === id
     });
   },
+  getServer: function(id) {
+    return _.find(_nmap, function(one) {
+      return one.id === id
+    });
+  },
+  getChair: function(id) {
+    return _.find(_nmap, function(one) {
+      return one.id === id
+    });
+  },
   emitChange: function() {
     this.emit(CHANGE_EVENT);
   },

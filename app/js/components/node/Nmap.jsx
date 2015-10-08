@@ -2,7 +2,7 @@
 
 var React = require('react'),
     NmapStore = require('../../stores/NmapStore'),
-    PLCActionCreators = require('../../actions/PLCActionCreators');
+    NmapActionCreators = require('../../actions/NmapActionCreators');
 
 var Status = React.createClass({
   displayName: "Status",
@@ -10,12 +10,12 @@ var Status = React.createClass({
     router: React.PropTypes.func
   },
   componentDidMount: function() {
-    var plcId = this.context.router.getCurrentParams().plcId;
-    PLCActionCreators.startNmapDataRequest(plcId);
+    var nodeId = this.context.router.getCurrentParams().nodeId;
+    NmapActionCreators.startNmapDataRequest(nodeId);
     NmapStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function() {
-    PLCActionCreators.stopNmapDataRequest();    
+    NmapActionCreators.stopNmapDataRequest();    
     NmapStore.removeChangeListener(this._onChange);
   },
   getInitialState: function() {

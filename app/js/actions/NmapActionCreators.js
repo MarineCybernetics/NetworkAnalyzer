@@ -6,10 +6,10 @@ var AppDispatcher = require('../dispatcher/AppDispatcher'),
 
 var _nmapInterval;
 
-var PLCActionCreators = {
-	startNmapDataRequest: function(plcId) {
+var NmapActionCreators = {
+	startNmapDataRequest: function(Id) {
 		_nmapInterval = setInterval(function() {
-			NmapAPI.requestNmap(plcId);
+			NmapAPI.requestNmap(Id);
 		}, 1000);
 	},
 	stopNmapDataRequest: function() {
@@ -17,4 +17,4 @@ var PLCActionCreators = {
 	}
 };
 
-module.exports = PLCActionCreators;
+module.exports = NmapActionCreators;

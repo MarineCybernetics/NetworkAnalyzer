@@ -1,6 +1,7 @@
 "use strict";
 
-var React = require('react');
+var React = require('react'),
+    AppActionCreators = require('../actions/AppActionCreators');
 
 var Server = React.createClass({
   displayName: 'Server',
@@ -480,7 +481,7 @@ var Server = React.createClass({
   </g>);
   },
   _onClick: function() {
-    alert('Vessel info');
+    AppActionCreators.navigateTo('server', {nodeId: this.props.id});
   }
 });
 

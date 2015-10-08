@@ -281,7 +281,7 @@ var PLC = React.createClass({
   </g>);
   },
   _onClick: function() {
-    AppActionCreators.navigateTo('plc', {plcId: this.props.id});
+    AppActionCreators.navigateTo('plc', {nodeId: this.props.id});
   }
 });
 

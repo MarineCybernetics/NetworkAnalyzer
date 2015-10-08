@@ -23,7 +23,7 @@ var PLCInfo = React.createClass({
     document.body.classList.add('hide-scrollbars');
   },
   componentDidMount: function() {
-    var plcId = this.context.router.getCurrentParams().plcId;
+    var nodeId = this.context.router.getCurrentParams().nodeId;
     AnalysorStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function() {
@@ -31,25 +31,23 @@ var PLCInfo = React.createClass({
     document.body.classList.remove('hide-scrollbars');
   },
   getInitialState: function() {
-    var plcId = this.context.router.getCurrentParams().plcId;
+    var nodeId = this.context.router.getCurrentParams().nodeId;
     return {
-      plc: AnalysorStore.getPLC(plcId)
+      plc: AnalysorStore.getPLC(nodeId)
     };
   },
   render: function() {
     var plc = this.state.plc;
-    var plcId = this.context.router.getCurrentParams().plcId;
+    var nodeId = this.context.router.getCurrentParams().nodeId;
     return (
       <div onClick={this._onClick}>
         <div className="modal fade in" style={{display: "block"}} tabIndex="-1" role="dialog">
           <div className="modal-dialog thruster-info"  onClick={this._onModalDialogClick}>
             <div className="modal-content">
-              <Header
-                title="PLC"
-                name={plcId} tabIndex="1"/>
+              <Header title="PLC" name={nodeId} tabIndex="1"/>
               <div className="modal-body">
                 <ul className="nav nav-tabs modal-nav">
-                  <Tab to="nmap" params={{"plcId": plcId}}>Nmap</Tab>
+                  <Tab to="plcnmap" params={{"nodeId": nodeId}}>Nmap</Tab>
                 </ul>
                 <Metadata />
                 <RouteHandler />
@@ -73,10 +71,10 @@ var PLCInfo = React.createClass({
     evt.stopPropagation();
   },
   _onChange: function() {
-    var plcId = this.context.router.getCurrentParams().plcId;
+    var nodeId = this.context.router.getCurrentParams().nodeId;
     if (this.isMounted()) {
       this.setState({
-        plc: AnalysorStore.getPLC(plcId)
+        plc: AnalysorStore.getPLC(nodeId)
       });
     }
   }

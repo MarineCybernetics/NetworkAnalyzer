@@ -11,8 +11,10 @@ var React = require('react'),
   Contacts = require('./components/thruster/Contacts'),
   Documents = require('./components/thruster/Documents'),
   Analysor = require('./components/Analysor'),
-  PLCInfo = require('./components/plc/PLCInfo'),
-  Nmap = require('./components/plc/Nmap');
+  PLCInfo = require('./components/node/PLCInfo'),
+  ServerInfo = require('./components/node/ServerInfo'),
+  ChairInfo = require('./components/node/ChairInfo'),
+  Nmap = require('./components/node/Nmap');
 
 var Route = Router.Route,
     Redirect = Router.Redirect,
@@ -33,8 +35,14 @@ var routes = (
     </Route>
     <Route name="charts" handler={Charts} />
     <Route name="analysor" handler={Analysor}>
-      <Route name="plc" path="/analysor/plc/:plcId" handler={PLCInfo}>
-        <Route name="nmap" path="nmap" handler={Nmap} />
+      <Route name="plc" path="/analysor/plc/:nodeId" handler={PLCInfo}>
+        <Route name="plcnmap" path="nmap" handler={Nmap} />
+      </Route>
+      <Route name="server" path="/analysor/server/:nodeId" handler={ServerInfo}>
+        <Route name="servernmap" path="nmap" handler={Nmap} />
+      </Route>
+      <Route name="chair" path="/analysor/chair/:nodeId" handler={ChairInfo}>
+        <Route name="chairnmap" path="nmap" handler={Nmap} />
       </Route>
     </Route>
     <Redirect from="/" to="vessel" />

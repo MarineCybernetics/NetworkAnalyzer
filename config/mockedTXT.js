@@ -5,8 +5,8 @@ var fs = require('fs'),
     txtData = "./dev/txtdata/";
 
 module.exports = {
-  getNmapData: function(node) {
-    var filePath = txtData + node + "_nmap.txt";
+  getNmapData: function(nodeId) {
+    var filePath = txtData + nodeId + "_nmap.txt";
     return nmapProvider(filePath).getLatest();
   }
 };
