@@ -45,9 +45,7 @@ var ThrusterInfo = React.createClass({
         <div className="modal fade in" style={{display: "block"}} tabIndex="-1" role="dialog">
           <div className="modal-dialog thruster-info"  onClick={this._onModalDialogClick}>
             <div className="modal-content">
-              <Header
-                title="Thruster"
-                name={thrusterId} tabIndex="1"/>
+              <Header title="Thruster" name={thrusterId} tabIndex="1"/>
               <div className="modal-body">
                 <ul className="nav nav-tabs modal-nav">
                   <Tab to="status" params={{"thrusterId": thrusterId}}>Status</Tab>

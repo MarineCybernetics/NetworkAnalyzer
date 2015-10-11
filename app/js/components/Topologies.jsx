@@ -5,14 +5,15 @@ var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Tab = require('./Tab');
 
-var Analysor = React.createClass({
-  displayName: 'Analysor',
+var Topologies = React.createClass({
+  displayName: 'Topologies',
   render: function() {
     return (
       <div>
         <ul className="nav nav-pills nav-stacked  sub-nav">
-          <Tab to="topology" params={{tapId: "Topology"}}><strong>Topology</strong></Tab>
-          <Tab to="statistics" params={{tapId: "Statistics"}}><strong>Statistics</strong></Tab>
+          <Tab to="topologyO" params={{tapId: "TopologyO"}}><strong>TopologyO</strong></Tab>
+          <Tab to="topologyL" params={{tapId: "TopologyL"}}><strong>TopologyL</strong></Tab>
+          <Tab to="topologyT" params={{tapId: "TopologyT"}}><strong>TopologyT</strong></Tab>
         </ul>
         <div className="panel-body">
           <div className="row">
@@ -26,4 +27,4 @@ var Analysor = React.createClass({
   }
 });
 
-module.exports = Analysor;
+module.exports = Topologies;

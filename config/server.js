@@ -8,6 +8,7 @@ var mockedJSON = require('./mockedJSON.js'),
     weatherDaily = mockedJSON.getWeatherDaily(),
     contacts = mockedJSON.getContacts(),
     evaStatus = mockedJSON.getEvaStatus(),
+    topologies = mockedJSON.getTopologies(),
     mockedTXT = require('./mockedTXT.js');
 
 module.exports = {
@@ -38,6 +39,14 @@ module.exports = {
 
     mockedJSON.watchEvaStatus(function(data) {
       evaStatus = data;
+    });
+
+    mockedJSON.watchTopologies(function(data) {
+      topologies = data;
+    });
+
+    app.get("/topology", function(req, res) {
+      res.json(topologies);
     });
 
     app.get('/executionstatus', function(req, res) {
@@ -78,7 +87,6 @@ module.exports = {
 
     app.get("/statistics/hierarchy", function(req, res) {
       console.log(mockedTXT.getHierarchy());
-      console.log("1111");
       res.json(mockedTXT.getHierarchy());
     });
 

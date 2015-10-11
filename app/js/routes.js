@@ -10,7 +10,7 @@ var React = require('react'),
   Status = require('./components/thruster/Status'),
   Contacts = require('./components/thruster/Contacts'),
   Documents = require('./components/thruster/Documents'),
-  Analysor = require('./components/Analysor'),
+  Topologies = require('./components/Topologies'),
   Topology = require('./components/Topology'),
   Statistics = require('./components/Statistics'),
   PLCInfo = require('./components/node/PLCInfo'),
@@ -53,6 +53,15 @@ var routes = (
     </Route>
     
     <Route name="statistics" path="/statistics" handler={Statistics} />
+
+    <Route name="topologies" path="/topologies" handler={Topologies} >
+      <Route name="topologyO" path="topologyO/:tapId" handler={Topology}>
+      </Route>
+      <Route name="topologyL" path="topologyL/:tapId" handler={Topology}>
+      </Route>
+      <Route name="topologyT" path="topologyT/:tapId" handler={Topology}>
+      </Route>
+    </Route>
 
     <Redirect from="/" to="vessel" />
 

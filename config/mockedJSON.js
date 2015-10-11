@@ -37,7 +37,12 @@ var fs = require('fs'),
     navigationWatchers = [],
     weatherDailyWatchers = [],
     contactsWatchers = [],
-    evaStatusWatchers = [];
+    evaStatusWatchers = [],
+
+    topologiesData = fs.readFileSync("./dev/data/toDrawing.json", "utf8"),
+    topologies = {},
+    topologyWatchers = [];
+
 
 try {
   manualTests = JSON.parse(manualTestsData);
@@ -53,6 +58,8 @@ try {
   thr1RPM = JSON.parse(thr1RPMData);
   thr1Thrust = JSON.parse(thr1ThrustData);
   evaStatus = JSON.parse(evaStatusData);
+
+  topologies = JSON.parse(topologiesData);
 } catch (e) {
   console.error(e);
 }
@@ -91,6 +98,9 @@ watchTheFile("./dev/data/navigation.json", notifyWatchers(navigationWatchers));
 watchTheFile("./dev/data/daily-weather.json", notifyWatchers(weatherDailyWatchers));
 watchTheFile("./dev/data/contacts.json", notifyWatchers(contactsWatchers));
 watchTheFile("./dev/data/evaStatus.json", notifyWatchers(evaStatusWatchers));
+
+watchTheFile("./dev/data/toDrawing.json", notifyWatchers(topologyWatchers));
+
 
 module.exports = {
   getCustomData: function() {
@@ -145,6 +155,15 @@ module.exports = {
   getEvaStatus: function() {
     return evaStatus;
   },
+
+  getTopologies: function() {
+    return topologies;
+  },
+  watchTopologies: function(callback) {
+    topologyWatchers.push(callback);
+  },
+
+
   watchCustomData: function(callback) {
     customDataWatchers.push(callback);
   },
