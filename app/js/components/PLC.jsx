@@ -6,7 +6,8 @@ var React = require('react'),
 var PLC = React.createClass({
   displayName: 'PLC',
   render: function() {
-    return (<g transform={this.props.transform} className={this.props.id} onClick={this._onClick} style={{"cursor":"pointer"}}>
+    return (<svg transform={this.props.transform} className={this.props.id} onClick={this._onClick} style={{"cursor":"pointer"}}>
+      <g transform={this.props.transform} className={this.props.id} onClick={this._onClick} style={{"cursor":"pointer"}}>
 
 <defs id="defs4">
     <linearGradient
@@ -276,7 +277,8 @@ var PLC = React.createClass({
      id="path22051-1"
      style={{"fill":"#4e9a06","fillOpacity":"1","fillRule":"nonzero","stroke":"#ffffff","strokeWidth":"0.40000001","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","display":"inline"}} />    
    
-  </g>);
+  </g>
+  </svg>);
   },
   _onClick: function() {
     var tapId = this.props.tapId;

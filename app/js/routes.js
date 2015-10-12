@@ -76,6 +76,7 @@ var routes = (
            <Route name="chairnmapT" path="nmap" handler={Nmap} />
           </Route>  
       </Route>
+      <Redirect from="/topologies" to="/TopologyO" />
     </Route>
 
     <Redirect from="/" to="vessel" />

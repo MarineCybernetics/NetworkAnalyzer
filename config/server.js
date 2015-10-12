@@ -86,7 +86,6 @@ module.exports = {
     });
 
     app.get("/statistics/hierarchy", function(req, res) {
-      console.log(mockedTXT.getHierarchy());
       res.json(mockedTXT.getHierarchy());
     });
 

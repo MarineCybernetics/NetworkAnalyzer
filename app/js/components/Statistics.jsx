@@ -14,7 +14,7 @@ var Hierarchy = React.createClass({
           <h3 className="panel-title"><strong>Hierarchy</strong></h3>
         </div>
         <div className="panel-body">
-          <pre className="text-info">{this.props.hierarchy}</pre>
+          {this.props.hierarchy}
         </div>
       </div>
     );
@@ -40,19 +40,32 @@ var Statistics = React.createClass({
   render: function() {
     var hierarchysList = <div />
     var hierarchys = this.state.resolutions;
+    var sumFrames,sumBytes,fnum,bytes;
 
     if (hierarchys !== undefined) {
       hierarchysList = hierarchys.map(function(one, index) {
+        if(index == 0){
+          sumFrames = one.fnum;
+          sumBytes = one.bytes;
+        };
+        fnum = one.fnum/sumFrames*100;
+        bytes = one.bytes/sumBytes*100;
         return(
-          <h6 key={index}><strong>{one}</strong></h6>
+          <p key={index}>
+            <strong>{one.line}</strong>
+            <strong>Frames:{one.fnum}</strong>
+            <strong>{fnum.toFixed(2)}%</strong>
+            <strong>Bytes:{one.bytes}</strong>
+            <strong>{bytes.toFixed(2)}%</strong>
+          </p>
         );  
       });     
     };
     return (
       <div className="col-md-8">
         <div className="row">
-          <div className="col-lg-9 visible-lg">
-            <Hierarchy hierarchy={hierarchysList} />
+          <div className="col-lg-8">
+            <Hierarchy hierarchy={hierarchysList}/>
           </div>
         </div>
       </div>
