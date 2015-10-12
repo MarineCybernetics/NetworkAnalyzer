@@ -40,7 +40,6 @@ var Statistics = React.createClass({
   render: function() {
     var hierarchysList = <div />
     var hierarchys = this.state.resolutions;
-    console.log(hierarchys);
 
     if (hierarchys !== undefined) {
       hierarchysList = hierarchys.map(function(one, index) {

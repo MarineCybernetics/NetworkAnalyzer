@@ -2,7 +2,7 @@
 
 var React = require('react'),
     KEYCODE_ESC = 27,
-    AnalysorStore = require('../../stores/AnalysorStore'),
+    TopologiesStore = require('../../stores/TopologiesStore'),
     hotkey = require('react-hotkey'),
     Header = require('./Header'),
     Footer = require('./Footer'),
@@ -24,30 +24,35 @@ var ServerInfo = React.createClass({
   },
   componentDidMount: function() {
     var nodeId = this.context.router.getCurrentParams().nodeId;
-    AnalysorStore.addChangeListener(this._onChange);
+    TopologiesStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function() {
-    AnalysorStore.removeChangeListener(this._onChange);
+    TopologiesStore.removeChangeListener(this._onChange);
     document.body.classList.remove('hide-scrollbars');
   },
   getInitialState: function() {
     var nodeId = this.context.router.getCurrentParams().nodeId;
     return {
-      server: AnalysorStore.getServer(nodeId)
+      server: TopologiesStore.getServer(nodeId)
     };
   },
   render: function() {
     var server = this.state.server;
     var nodeId = this.context.router.getCurrentParams().nodeId;
+    var tapId = this.context.router.getCurrentPathname();
+    var resolutionRE = /Topology(\w)/i;
+    var match = tapId.match(resolutionRE)[1];
+    var pathName = "servernmap" + match;
+    var backPath = "topology"+ match;
     return (
       <div onClick={this._onClick}>
         <div className="modal fade in" style={{display: "block"}} tabIndex="-1" role="dialog">
           <div className="modal-dialog thruster-info"  onClick={this._onModalDialogClick}>
             <div className="modal-content">
-              <Header title="Server" name={nodeId} tabIndex="1"/>
+              <Header title= "Server" name={nodeId} tabIndex="1" backPath={backPath}/>
               <div className="modal-body">
                 <ul className="nav nav-tabs modal-nav">
-                  <Tab to="servernmap" params={{"nodeId": nodeId}}>Nmap</Tab>
+                  <Tab to={pathName} params={{"nodeId": nodeId}}>Nmap</Tab>
                 </ul>
                 <Metadata />
                 <RouteHandler />
@@ -60,12 +65,20 @@ var ServerInfo = React.createClass({
     );
   },
   handleHotkey: function(evt) {
+    var tapId = this.context.router.getCurrentPathname();
+    var resolutionRE = /Topology(\w)/i;
+    var match = tapId.match(resolutionRE)[1];
+    var backPath = "topology" + match;
     if (evt.keyCode === KEYCODE_ESC) {
-      AppActionCreators.navigateTo('topology');
+      AppActionCreators.navigateTo(backPath);
     }
   },
   _onClick: function() {
-    AppActionCreators.navigateTo('topology');
+    var tapId = this.context.router.getCurrentPathname();
+    var resolutionRE = /Topology(\w)/i;
+    var match = tapId.match(resolutionRE)[1];
+    var backPath = "topology" + match;
+    AppActionCreators.navigateTo(backPath);
   },
   _onModalDialogClick: function(evt) {
     evt.stopPropagation();
@@ -74,7 +87,7 @@ var ServerInfo = React.createClass({
     var nodeId = this.context.router.getCurrentParams().nodeId;
     if (this.isMounted()) {
       this.setState({
-        server: AnalysorStore.getServer(nodeId)
+        server: TopologiesStore.getServer(nodeId)
       });
     }
   }

@@ -316,7 +316,11 @@ var Chair = React.createClass({
   </g>);
   },
   _onClick: function() {
-    AppActionCreators.navigateTo('chair', {nodeId: this.props.id});
+    var tapId = this.props.tapId;
+    var resolutionRE = /Topology(\w)/i;
+    var match = tapId.match(resolutionRE)[1];
+    var pathName = "chair" + match;
+    AppActionCreators.navigateTo(pathName, {nodeId: this.props.id});
   }
 });
 

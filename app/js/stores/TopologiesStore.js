@@ -8,7 +8,7 @@ var AppDispatcher = require('../dispatcher/AppDispatcher'),
 
 var _nmap = [];
 
-var AnalysorStore = assign({}, EventEmitter.prototype, {
+var TopologiesStore = assign({}, EventEmitter.prototype, {
   getnmap: function() {
     return _nmap;
   },
@@ -52,4 +52,4 @@ var AnalysorStore = assign({}, EventEmitter.prototype, {
   })
 });
 
-module.exports = AnalysorStore;
+module.exports = TopologiesStore;

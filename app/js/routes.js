@@ -39,27 +39,42 @@ var routes = (
     </Route>
 
     <Route name="charts" handler={Charts} />
-
-    <Route name="topology" path="/topology" handler={Topology}>
-      <Route name="plc" path="/topology/plc/:nodeId" handler={PLCInfo}>
-        <Route name="plcnmap" path="nmap" handler={Nmap} />
-      </Route>
-      <Route name="server" path="/topology/server/:nodeId" handler={ServerInfo}>
-        <Route name="servernmap" path="nmap" handler={Nmap} />
-      </Route>
-      <Route name="chair" path="/topology/chair/:nodeId" handler={ChairInfo}>
-        <Route name="chairnmap" path="nmap" handler={Nmap} />
-      </Route>
-    </Route>
     
     <Route name="statistics" path="/statistics" handler={Statistics} />
 
     <Route name="topologies" path="/topologies" handler={Topologies} >
-      <Route name="topologyO" path="topologyO/:tapId" handler={Topology}>
+      <Route name="topologyO" path="/TopologyO" handler={Topology}>      
+          <Route name="plcO" path="plcO/:nodeId" handler={PLCInfo}>
+           <Route name="plcnmapO" path="nmap" handler={Nmap} />
+          </Route>
+          <Route name="serverO" path="serverO/:nodeId" handler={ServerInfo}>
+           <Route name="servernmapO" path="nmap" handler={Nmap} />
+          </Route>
+          <Route name="chairO" path="chairO/:nodeId" handler={ChairInfo}>
+           <Route name="chairnmapO" path="nmap" handler={Nmap} />
+          </Route>
       </Route>
-      <Route name="topologyL" path="topologyL/:tapId" handler={Topology}>
+      <Route name="topologyL" path="/TopologyL" handler={Topology}>  
+          <Route name="plcL" path="plcL/:nodeId" handler={PLCInfo}>
+           <Route name="plcnmapL" path="nmap" handler={Nmap} />
+          </Route>
+          <Route name="serverL" path="serverL/:nodeId" handler={ServerInfo}>
+           <Route name="servernmapL" path="nmap" handler={Nmap} />
+          </Route>
+          <Route name="chairL" path="chairL/:nodeId" handler={ChairInfo}>
+           <Route name="chairnmapL" path="nmap" handler={Nmap} />
+          </Route>    
       </Route>
-      <Route name="topologyT" path="topologyT/:tapId" handler={Topology}>
+      <Route name="topologyT" path="/TopologyT" handler={Topology}>    
+          <Route name="plcT" path="plcT/:nodeId" handler={PLCInfo}>
+           <Route name="plcnmapT" path="nmap" handler={Nmap} />
+          </Route>
+          <Route name="serverT" path="serverT/:nodeId" handler={ServerInfo}>
+           <Route name="servernmapT" path="nmap" handler={Nmap} />
+          </Route>
+          <Route name="chairT" path="chairT/:nodeId" handler={ChairInfo}>
+           <Route name="chairnmapT" path="nmap" handler={Nmap} />
+          </Route>  
       </Route>
     </Route>
 

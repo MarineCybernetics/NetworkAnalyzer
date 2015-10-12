@@ -32,8 +32,6 @@ var Topology = React.createClass({
     TopologyStore.removeChangeListener(this._onChange);    
   },
   render: function() {
-    var tapId = this.context.router.getCurrentParams().tapId;
-
     var linesList = <g className="lines"/>;
     var lines = this.state.lines;
     if (lines !== undefined) {
@@ -43,6 +41,8 @@ var Topology = React.createClass({
         );  
       });     
     };
+
+     var tapId = this.context.router.getCurrentPathname();
 
     var nodesList = <g className="nodes"/>;
     var nodes = this.state.nodes;
@@ -63,18 +63,19 @@ var Topology = React.createClass({
             Tag = PLC; 
         }
         return(
-          <Tag key={index} id = {one.id} transform={translate}/>
+          <Tag key={index} id = {one.id} transform={translate} tapId={tapId}/>
         );  
       });     
     };
 
+    var resolutionRE = /TopologyL/i;
     var channelsList = <g className="channels"/>;
-    if (tapId == "TopologyL"){
+    if (resolutionRE.test(tapId)){
       var channels = this.state.channels;
       if (channels !== undefined) {
         channelsList = channels.map(function(one, index) {
           return(
-            <line key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,0,255)","strokeWidth":"2","cursor":"pointer"}} />
+            <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,0,255)","strokeWidth":"2","cursor":"pointer"}} />
           );  
         });     
       };

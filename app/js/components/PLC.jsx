@@ -279,7 +279,11 @@ var PLC = React.createClass({
   </g>);
   },
   _onClick: function() {
-    AppActionCreators.navigateTo('plc', {nodeId: this.props.id});
+    var tapId = this.props.tapId;
+    var resolutionRE = /Topology(\w)/i;
+    var match = tapId.match(resolutionRE)[1];
+    var pathName = "plc" + match;
+    AppActionCreators.navigateTo(pathName, {nodeId: this.props.id});
   }
 });
 
