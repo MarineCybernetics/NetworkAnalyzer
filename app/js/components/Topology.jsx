@@ -42,7 +42,7 @@ var Topology = React.createClass({
       });     
     };
 
-     var tapId = this.context.router.getCurrentPathname();
+    var tapId = this.context.router.getCurrentPathname();
 
     var nodesList = <g className="nodes"/>;
     var nodes = this.state.nodes;
@@ -63,7 +63,12 @@ var Topology = React.createClass({
             Tag = PLC; 
         }
         return(
-          <Tag key={index} id = {one.id} transform={translate} tapId={tapId}/>
+          <g>
+            <Tag key={index} id = {one.id} transform={translate} tapId={tapId}/>
+            <text x={one.x} y={one.y} font-family="Verdana" font-size="55" fill="red">
+              {one.IP}
+            </text>
+          </g>  
         );  
       });     
     };

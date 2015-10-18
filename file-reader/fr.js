@@ -1,5 +1,6 @@
 var fileSystem = require('fs');
 
+
 var allEmpty = function(lines) {
 	for (var i = 0; i < lines.length; i++) {
 		if (lines[i] != '' && lines[i] != null) {

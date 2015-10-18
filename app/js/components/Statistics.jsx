@@ -51,20 +51,18 @@ var Statistics = React.createClass({
         fnum = one.fnum/sumFrames*100;
         bytes = one.bytes/sumBytes*100;
         return(
-          <p key={index}>
-            <strong>{one.line}</strong>
-            <strong>Frames:{one.fnum}</strong>
-            <strong>{fnum.toFixed(2)}%</strong>
-            <strong>Bytes:{one.bytes}</strong>
-            <strong>{bytes.toFixed(2)}%</strong>
-          </p>
+          <pre key={index}>
+            {one.line}
+            &nbsp;Frames: {fnum.toFixed(2)}%
+            &nbsp;Bytes: {bytes.toFixed(2)}%
+          </pre>
         );  
       });     
     };
     return (
-      <div className="col-md-8">
+      <div className="col-md-10">
         <div className="row">
-          <div className="col-lg-8">
+          <div className="col-lg-10">
             <Hierarchy hierarchy={hierarchysList}/>
           </div>
         </div>

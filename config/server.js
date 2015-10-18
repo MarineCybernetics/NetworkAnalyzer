@@ -46,7 +46,7 @@ module.exports = {
     });
 
     app.get("/topology", function(req, res) {
-      res.json(topologies);
+      res.json(mockedTXT.getTopologyL());
     });
 
     app.get('/executionstatus', function(req, res) {

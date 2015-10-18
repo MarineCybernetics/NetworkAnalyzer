@@ -15,6 +15,11 @@ var Topologies = React.createClass({
           <Tab to="topologyL" params={{tapId: "TopologyL"}}><strong>TopologyL</strong></Tab>
           <Tab to="topologyT" params={{tapId: "TopologyT"}}><strong>TopologyT</strong></Tab>
         </ul>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button">Hierarchy</button>
         <div className="panel-body">
           <div className="row">
             <div className="col-md-2">
