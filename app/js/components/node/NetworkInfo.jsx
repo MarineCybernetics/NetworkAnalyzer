@@ -57,7 +57,6 @@ var NetworkInfo = React.createClass({
                 <ul className="nav nav-tabs modal-nav">
                   <Tab to= {pathName} params={{"networkId": networkId}}>Hierarchy</Tab>
                 </ul>
-                <Metadata />
                 <RouteHandler />
               </div>
             </div>

@@ -34,11 +34,9 @@ var Status = React.createClass({
         };
         fnum = one.fnum/sumFrames*100;
         bytes = one.bytes/sumBytes*100;
-        line = one.line;
-        line = line.replace(/\s/, "&nbsp;");
         return(
           <tr>
-              <td style = {{"width": "50%"}}><pre>{one.line}</pre></td> 
+              <td style = {{"width": "30%", "whiteSpace":"pre"}}>{one.line}</td> 
               <td>Frames: {one.fnum}</td> 
               <td>{fnum.toFixed(2)}%</td> 
               <td>Bytes: {one.bytes}</td> 

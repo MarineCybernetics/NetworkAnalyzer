@@ -63,7 +63,7 @@ var PLCInfo = React.createClass({
                   <Tab to= {tcppathName} params={{"nodeId": nodeId}}>TCP</Tab>
                   <Tab to= {udppathName} params={{"nodeId": nodeId}}>UDP</Tab>
                 </ul>
-                <Metadata />
+                <Metadata title="PLC"/>
                 <RouteHandler />
               </div>
             </div>

@@ -63,7 +63,7 @@ var ServerInfo = React.createClass({
                   <Tab to= {tcppathName} params={{"nodeId": nodeId}}>TCP</Tab>
                   <Tab to= {udppathName} params={{"nodeId": nodeId}}>UDP</Tab>
                 </ul>
-                <Metadata />
+                <Metadata title= "Server"/>
                 <RouteHandler />
               </div>
             </div>

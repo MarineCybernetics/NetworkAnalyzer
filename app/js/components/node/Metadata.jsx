@@ -12,10 +12,11 @@ var Metadata = React.createClass({
     };
   },
   render: function() {
+    var imgPath = "img/" + this.props.title + ".jpg";
     return (
       <div className="row metadata">
         <div className="col-md-2">
-          <img src="img/thruster_small.jpg" width="100%"/>
+          <img src={imgPath} width="100%"/>
         </div>
         <div className="col-md-10">
           <p><strong style={{color: "#368282"}}>Type:&nbsp;</strong>{this.state.type}</p>
