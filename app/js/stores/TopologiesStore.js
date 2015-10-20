@@ -6,24 +6,29 @@ var AppDispatcher = require('../dispatcher/AppDispatcher'),
     CHANGE_EVENT = 'change',
     _ = require('underscore');
 
-var _nmap = [];
+var _components = [];
 
 var TopologiesStore = assign({}, EventEmitter.prototype, {
-  getnmap: function() {
-    return _nmap;
+  getComponents: function() {
+    return _components;
   },
   getPLC: function(id) {
-    return _.find(_nmap, function(one) {
+    return _.find(_components, function(one) {
       return one.id === id
     });
   },
   getServer: function(id) {
-    return _.find(_nmap, function(one) {
+    return _.find(_components, function(one) {
       return one.id === id
     });
   },
   getChair: function(id) {
-    return _.find(_nmap, function(one) {
+    return _.find(_components, function(one) {
+      return one.id === id
+    });
+  },
+  getNetwork: function(id) {
+    return _.find(_components, function(one) {
       return one.id === id
     });
   },
@@ -41,9 +46,9 @@ var TopologiesStore = assign({}, EventEmitter.prototype, {
 
     switch (action.type) {
 
-      case ActionTypes.NMAP_RECEIVED:
-        _nmap = action.response;
-        AnalysorStore.emit(CHANGE_EVENT);
+      case ActionTypes.COMPONENTS_RECEIVED:
+        _components = action.response;
+        TopologiesStore.emit(CHANGE_EVENT);
         break;
 
       default:

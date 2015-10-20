@@ -85,6 +85,18 @@ module.exports = {
       res.json(mockedTXT.getNmapData(req.params.nodeId));
     });
 
+    app.get("/ip/:nodeId", function(req, res) {
+      res.json(mockedTXT.getNmapData(req.params.nodeId));
+    });
+
+    app.get("/tcp/:nodeId", function(req, res) {
+      res.json(mockedTXT.getNmapData(req.params.nodeId));
+    });
+
+    app.get("/udp/:nodeId", function(req, res) {
+      res.json(mockedTXT.getNmapData(req.params.nodeId));
+    });
+
     app.get("/statistics/hierarchy", function(req, res) {
       res.json(mockedTXT.getHierarchy());
     });

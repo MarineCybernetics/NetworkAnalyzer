@@ -1,7 +1,7 @@
 module.exports = function(fileName, observe) {
 
 	var fileReader = require('../file-reader/fr'), 
-	    resolutionRE = /^(.+)frames:(\d+)\sbytes:(\d+)/i;   
+	    resolutionRE = /^(.+[^\s])\s+frames:(\d+)\sbytes:(\d+)/i;   
 
 	var setTimestamp = function(stat) {
 		if (stat.timestamp == null) {
@@ -17,7 +17,7 @@ module.exports = function(fileName, observe) {
 			result.resolutions = [];
 		}
 		if(matches !== null){
-			var l = {"line": matches[0],"fnum": matches[2],"bytes": matches[3]};	
+			var l = {"line": matches[1],"fnum": matches[2],"bytes": matches[3]};	
 			result.resolutions.push(l);
 		}
 

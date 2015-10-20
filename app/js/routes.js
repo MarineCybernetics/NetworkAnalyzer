@@ -16,6 +16,11 @@ var React = require('react'),
   PLCInfo = require('./components/node/PLCInfo'),
   ServerInfo = require('./components/node/ServerInfo'),
   ChairInfo = require('./components/node/ChairInfo'),
+  NetworkInfo = require('./components/node/NetworkInfo'),
+  Hierarchy = require('./components/node/Hierarchy'),
+  IP = require('./components/node/IP'),
+  TCP = require('./components/node/TCP'),
+  UDP = require('./components/node/UDP'),
   Nmap = require('./components/node/Nmap');
 
 var Route = Router.Route,
@@ -43,40 +48,99 @@ var routes = (
     <Route name="statistics" path="/statistics" handler={Statistics} />
 
     <Route name="topologies" path="/topologies" handler={Topologies} >
-      <Route name="topologyO" path="/TopologyO" handler={Topology}>      
-          <Route name="plcO" path="plcO/:nodeId" handler={PLCInfo}>
-           <Route name="plcnmapO" path="nmap" handler={Nmap} />
+      <Route name="topo" path="/TOPO" handler={Topology}>      
+          <Route name="plc" path="plc/:nodeId" handler={PLCInfo}>
+           <Route name="plcnmap" path="nmap" handler={Nmap} />
+           <Route name="plcip" path="ip" handler={IP} />
+           <Route name="plctcp" path="tcp" handler={TCP} />
+           <Route name="plcudp" path="udp" handler={UDP} />
           </Route>
-          <Route name="serverO" path="serverO/:nodeId" handler={ServerInfo}>
-           <Route name="servernmapO" path="nmap" handler={Nmap} />
+          <Route name="server" path="server/:nodeId" handler={ServerInfo}>
+           <Route name="servernmap" path="nmap" handler={Nmap} />
+           <Route name="serverip" path="ip" handler={IP} />
+           <Route name="servertcp" path="tcp" handler={TCP} />
+           <Route name="serverudp" path="udp" handler={UDP} />
           </Route>
-          <Route name="chairO" path="chairO/:nodeId" handler={ChairInfo}>
-           <Route name="chairnmapO" path="nmap" handler={Nmap} />
+          <Route name="chair" path="chair/:nodeId" handler={ChairInfo}>
+           <Route name="chairnmap" path="nmap" handler={Nmap} />
+           <Route name="chairip" path="ip" handler={IP} />
+           <Route name="chairtcp" path="tcp" handler={TCP} />
+           <Route name="chairudp" path="udp" handler={UDP} />
+          </Route>
+          <Route name="network" path="network/:networkId" handler={NetworkInfo}>
+           <Route name="networkhierarchy" path="hierarchy" handler={Hierarchy} />
           </Route>
       </Route>
-      <Route name="topologyL" path="/TopologyL" handler={Topology}>  
-          <Route name="plcL" path="plcL/:nodeId" handler={PLCInfo}>
-           <Route name="plcnmapL" path="nmap" handler={Nmap} />
+      <Route name="topoIP" path="/TOPO-IP" handler={Topology}>  
+          <Route name="plcIP" path="plc/:nodeId" handler={PLCInfo}>
+           <Route name="plcnmapIP" path="nmap" handler={Nmap} />
+           <Route name="plcipIP" path="ip" handler={IP} />
+           <Route name="plctcpIP" path="tcp" handler={TCP} />
+           <Route name="plcudpIP" path="udp" handler={UDP} />
           </Route>
-          <Route name="serverL" path="serverL/:nodeId" handler={ServerInfo}>
-           <Route name="servernmapL" path="nmap" handler={Nmap} />
+          <Route name="serverIP" path="server/:nodeId" handler={ServerInfo}>
+           <Route name="servernmapIP" path="nmap" handler={Nmap} />
+           <Route name="serveripIP" path="ip" handler={IP} />
+           <Route name="servertcpIP" path="tcp" handler={TCP} />
+           <Route name="serverudpIP" path="udp" handler={UDP} />
           </Route>
-          <Route name="chairL" path="chairL/:nodeId" handler={ChairInfo}>
-           <Route name="chairnmapL" path="nmap" handler={Nmap} />
-          </Route>    
-      </Route>
-      <Route name="topologyT" path="/TopologyT" handler={Topology}>    
-          <Route name="plcT" path="plcT/:nodeId" handler={PLCInfo}>
-           <Route name="plcnmapT" path="nmap" handler={Nmap} />
-          </Route>
-          <Route name="serverT" path="serverT/:nodeId" handler={ServerInfo}>
-           <Route name="servernmapT" path="nmap" handler={Nmap} />
-          </Route>
-          <Route name="chairT" path="chairT/:nodeId" handler={ChairInfo}>
-           <Route name="chairnmapT" path="nmap" handler={Nmap} />
+          <Route name="chairIP" path="chair/:nodeId" handler={ChairInfo}>
+           <Route name="chairnmapIP" path="nmap" handler={Nmap} />
+           <Route name="chairipIP" path="ip" handler={IP} />
+           <Route name="chairtcpIP" path="tcp" handler={TCP} />
+           <Route name="chairudpIP" path="udp" handler={UDP} />
           </Route>  
+          <Route name="networkIP" path="network/:networkId" handler={NetworkInfo}>
+           <Route name="networkhierarchyIP" path="hierarchy" handler={Hierarchy} />
+          </Route> 
       </Route>
-      <Redirect from="/topologies" to="/TopologyO" />
+      <Route name="topoTCP" path="/TOPO-TCP" handler={Topology}>    
+          <Route name="plcTCP" path="plc/:nodeId" handler={PLCInfo}>
+           <Route name="plcnmapTCP" path="nmap" handler={Nmap} />
+           <Route name="plcipTCP" path="ip" handler={IP} />
+           <Route name="plctcpTCP" path="tcp" handler={TCP} />
+           <Route name="plcudpTCP" path="udp" handler={UDP} />
+          </Route>
+          <Route name="serverTCP" path="server/:nodeId" handler={ServerInfo}>
+           <Route name="servernmapTCP" path="nmap" handler={Nmap} />
+           <Route name="serveripTCP" path="ip" handler={IP} />
+           <Route name="servertcpTCP" path="tcp" handler={TCP} />
+           <Route name="serverudpTCP" path="udp" handler={UDP} />
+          </Route>
+          <Route name="chairTCP" path="chairTCP/:nodeId" handler={ChairInfo}>
+           <Route name="chairnmapTCP" path="nmap" handler={Nmap} />
+           <Route name="chairipTCP" path="ip" handler={IP} />
+           <Route name="chairtcpTCP" path="tcp" handler={TCP} />
+           <Route name="chairudpTCP" path="udp" handler={UDP} />
+          </Route>  
+          <Route name="networkTCP" path="network/:networkId" handler={NetworkInfo}>
+           <Route name="networkhierarchyTCP" path="hierarchy" handler={Hierarchy} />
+          </Route>
+      </Route>
+      <Route name="topoUDP" path="/TOPO-UDP" handler={Topology}>    
+          <Route name="plcUDP" path="plc/:nodeId" handler={PLCInfo}>
+           <Route name="plcnmapUDP" path="nmap" handler={Nmap} />
+           <Route name="plcipUDP" path="ip" handler={IP} />
+           <Route name="plctcpUDP" path="tcp" handler={TCP} />
+           <Route name="plcudpUDP" path="udp" handler={UDP} />
+          </Route>
+          <Route name="serverUDP" path="server/:nodeId" handler={ServerInfo}>
+           <Route name="servernmapUDP" path="nmap" handler={Nmap} />
+           <Route name="serveripUDP" path="ip" handler={IP} />
+           <Route name="servertcpUDP" path="tcp" handler={TCP} />
+           <Route name="serverudpUDP" path="udp" handler={UDP} />
+          </Route>
+          <Route name="chairUDP" path="chair/:nodeId" handler={ChairInfo}>
+           <Route name="chairnmapUDP" path="nmap" handler={Nmap} />
+           <Route name="chairipUDP" path="ip" handler={IP} />
+           <Route name="chairtcpUDP" path="tcp" handler={TCP} />
+           <Route name="chairudpUDP" path="udp" handler={UDP} />
+          </Route> 
+          <Route name="networkUDP" path="network/:networkId" handler={NetworkInfo}>
+           <Route name="networkhierarchyUDP" path="hierarchy" handler={Hierarchy} />
+          </Route>
+      </Route>
+      <Redirect from="/topologies" to="/TOPO" />
     </Route>
 
     <Redirect from="/" to="vessel" />

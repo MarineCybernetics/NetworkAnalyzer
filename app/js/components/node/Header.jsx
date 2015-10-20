@@ -24,7 +24,6 @@ var ModalHeader = React.createClass({
     );
   },
   _onCloseClick: function() {
-
     AppActionCreators.navigateTo(this.props.backPath);
   }
 });

@@ -22,9 +22,6 @@ module.exports = {
     var ipv4Cov = nodesCovProvider(filePath).getLatest().resolutions;
     var nodes = topologies.nodes;
     var links = [];
-    // console.log(ipv4Cov);
-    // console.log("________________");
-    // console.log(nodes);
 
     for (var i = 0; i < ipv4Cov.length; i++) {
         for (var j = 0; j < nodes.length; j++) {
@@ -52,8 +49,7 @@ module.exports = {
         links.push(c);
       }
     };  
-    topologies.channels = links;
-    console.log(topologies);     
+    topologies.channels = links;    
 
     return topologies;
   }

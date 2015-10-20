@@ -40,10 +40,16 @@ var ServerInfo = React.createClass({
     var server = this.state.server;
     var nodeId = this.context.router.getCurrentParams().nodeId;
     var tapId = this.context.router.getCurrentPathname();
-    var resolutionRE = /Topology(\w)/i;
-    var match = tapId.match(resolutionRE)[1];
-    var pathName = "servernmap" + match;
-    var backPath = "topology"+ match;
+    var resolutionRE = /TOPO-(\w+)/i;
+    var match = "";
+    if(tapId.match(resolutionRE) != null){
+      match = tapId.match(resolutionRE)[1];
+    }  
+    var nmappathName = "servernmap" + match;
+    var ippathName = "plcip" + match;
+    var tcppathName = "plctcp" + match;
+    var udppathName = "plcudp" + match;
+    var backPath = "topo"+ match;
     return (
       <div onClick={this._onClick}>
         <div className="modal fade in" style={{display: "block"}} tabIndex="-1" role="dialog">
@@ -52,7 +58,10 @@ var ServerInfo = React.createClass({
               <Header title= "Server" name={nodeId} tabIndex="1" backPath={backPath}/>
               <div className="modal-body">
                 <ul className="nav nav-tabs modal-nav">
-                  <Tab to={pathName} params={{"nodeId": nodeId}}>Nmap</Tab>
+                  <Tab to= {nmappathName} params={{"nodeId": nodeId}}>Nmap</Tab>
+                  <Tab to= {ippathName} params={{"nodeId": nodeId}}>IP</Tab>
+                  <Tab to= {tcppathName} params={{"nodeId": nodeId}}>TCP</Tab>
+                  <Tab to= {udppathName} params={{"nodeId": nodeId}}>UDP</Tab>
                 </ul>
                 <Metadata />
                 <RouteHandler />
@@ -66,18 +75,24 @@ var ServerInfo = React.createClass({
   },
   handleHotkey: function(evt) {
     var tapId = this.context.router.getCurrentPathname();
-    var resolutionRE = /Topology(\w)/i;
-    var match = tapId.match(resolutionRE)[1];
-    var backPath = "topology" + match;
+    var resolutionRE = /TOPO-(\w+)/i;
+    var match = "";
+    if(tapId.match(resolutionRE) != null){
+      match = tapId.match(resolutionRE)[1];
+    }  
+    var backPath = "topo" + match;
     if (evt.keyCode === KEYCODE_ESC) {
       AppActionCreators.navigateTo(backPath);
     }
   },
   _onClick: function() {
     var tapId = this.context.router.getCurrentPathname();
-    var resolutionRE = /Topology(\w)/i;
-    var match = tapId.match(resolutionRE)[1];
-    var backPath = "topology" + match;
+    var resolutionRE = /TOPO-(\w+)/i;
+    var match = "";
+    if(tapId.match(resolutionRE) != null){
+      match = tapId.match(resolutionRE)[1];
+    } 
+    var backPath = "topo" + match;
     AppActionCreators.navigateTo(backPath);
   },
   _onModalDialogClick: function(evt) {

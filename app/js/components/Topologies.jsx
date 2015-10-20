@@ -11,15 +11,11 @@ var Topologies = React.createClass({
     return (
       <div>
         <ul className="nav nav-pills nav-stacked  sub-nav">
-          <Tab to="topologyO" params={{tapId: "TopologyO"}}><strong>TopologyO</strong></Tab>
-          <Tab to="topologyL" params={{tapId: "TopologyL"}}><strong>TopologyL</strong></Tab>
-          <Tab to="topologyT" params={{tapId: "TopologyT"}}><strong>TopologyT</strong></Tab>
+          <Tab to="topo" params={{tapId: "TOPO"}}><strong>TOPO</strong></Tab>
+          <Tab to="topoIP" params={{tapId: "TOPO-IP"}}><strong>TOPO-IP</strong></Tab>
+          <Tab to="topoTCP" params={{tapId: "TOPO-TCP"}}><strong>TOPO-TCP</strong></Tab>
+          <Tab to="topoUDP" params={{tapId: "TOPO-UDP"}}><strong>TOPO-UDP</strong></Tab>
         </ul>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="button">Hierarchy</button>
         <div className="panel-body">
           <div className="row">
             <div className="col-md-2">

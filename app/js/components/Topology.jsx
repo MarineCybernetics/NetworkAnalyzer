@@ -14,6 +14,29 @@ var React = require('react'),
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 
+var Network = React.createClass({
+  displayName: 'Network',
+  contextTypes: {
+    router: React.PropTypes.func
+  },
+  render: function() {
+    return (
+      <line tapId={this.props.tapId} key={this.props.key} id={this.props.id} x1={this.props.x1} y1={this.props.y1} x2={this.props.x2} y2={this.props.y2} onClick={this._onClick} style={{"stroke":"rgb(255,0,0)","strokeWidth":"2","cursor":"pointer"}} />
+    );
+  },
+  _onClick: function() {
+    var tapId = this.props.tapId;
+
+    var resolutionRE = /TOPO-(\w+)/i;
+    var match = "";
+    if(tapId.match(resolutionRE) != null){
+      match = tapId.match(resolutionRE)[1];
+    }  
+    var pathName = "network" + match;
+    AppActionCreators.navigateTo(pathName, {networkId: this.props.id});
+  }
+});
+
 
 var Topology = React.createClass({
   displayName: 'Topology',
@@ -32,17 +55,24 @@ var Topology = React.createClass({
     TopologyStore.removeChangeListener(this._onChange);    
   },
   render: function() {
+    var tapId = this.context.router.getCurrentPathname();
+
     var linesList = <g className="lines"/>;
     var lines = this.state.lines;
     if (lines !== undefined) {
       linesList = lines.map(function(one, index) {
-        return(
-          <line key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(255,0,0)","strokeWidth":"2","cursor":"pointer"}} />
-        );  
+          var l;
+            if (one.id == "capture"){
+              l = <Network tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2}/>
+            }else{
+              l = <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,0,0)","strokeWidth":"2","cursor":"pointer"}} />
+            }
+
+          return(
+            l
+          );   
       });     
     };
-
-    var tapId = this.context.router.getCurrentPathname();
 
     var nodesList = <g className="nodes"/>;
     var nodes = this.state.nodes;
@@ -65,7 +95,7 @@ var Topology = React.createClass({
         return(
           <g>
             <Tag key={index} id = {one.id} transform={translate} tapId={tapId}/>
-            <text x={one.x} y={one.y} font-family="Verdana" font-size="55" fill="red">
+            <text x={one.x} y={one.y} fontFamily="Verdana" fontZize="55" fill="red">
               {one.IP}
             </text>
           </g>  
@@ -73,7 +103,7 @@ var Topology = React.createClass({
       });     
     };
 
-    var resolutionRE = /TopologyL/i;
+    var resolutionRE = /TOPO-IP/i;
     var channelsList = <g className="channels"/>;
     if (resolutionRE.test(tapId)){
       var channels = this.state.channels;
@@ -106,9 +136,6 @@ var Topology = React.createClass({
         </div>  
       </div>
     );      
-  },
-  _onClick: function() {
-    alert('Topology info');
   },
   _onChange: function() {
     if (this.isMounted()) {

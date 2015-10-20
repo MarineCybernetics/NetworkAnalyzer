@@ -482,8 +482,11 @@ var Server = React.createClass({
   },
   _onClick: function() {
     var tapId = this.props.tapId;
-    var resolutionRE = /Topology(\w)/i;
-    var match = tapId.match(resolutionRE)[1];
+    var resolutionRE = /TOPO-(\w+)/i;
+    var match = "";
+    if(tapId.match(resolutionRE) != null){
+      match = tapId.match(resolutionRE)[1];
+    } 
     var pathName = "server" + match;
     AppActionCreators.navigateTo(pathName, {nodeId: this.props.id});
   }
