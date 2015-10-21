@@ -45,6 +45,10 @@ module.exports = {
       topologies = data;
     });
 
+    app.get("/topo/hierarchy", function(req, res) {
+      res.json(mockedTXT.getHierarchy());
+    });
+
     app.get("/topology", function(req, res) {
       res.json(mockedTXT.getTopologyL());
     });

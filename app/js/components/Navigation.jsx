@@ -42,16 +42,13 @@ var Navbar = React.createClass({
       <div>
         <div className="container collapse navbar-collapse" style={{"height": "1px"}}>
           <ul className="nav navbar-nav">
-            <Tab to="vessel"><strong>Vessel</strong></Tab>
-            <Tab to="kafka"><strong>Kafka</strong></Tab>
-            <Tab to="charts"><strong>Charts</strong></Tab>
             <Tab to="topologies"><strong>Topologies</strong></Tab>
           </ul>
           <p className="navbar-text pull-right brand-container">
             <a href="#" className="signature-brand">
               <span data-toggle="popover" data-placement="bottom" 
-                    data-trigger="hover focus" data-content="Extraintellegent Verification Assistant" data-animation="true">
-                E.V.A.&nbsp;
+                    data-trigger="hover focus" data-content="Verification Assistant" data-animation="true">
+                NetworkAnalysor&nbsp;
               </span>
             </a>
           </p>

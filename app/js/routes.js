@@ -140,7 +140,7 @@ var routes = (
       <Redirect from="/topologies" to="/TOPO" />
     </Route>
 
-    <Redirect from="/" to="vessel" />
+    <Redirect from="/" to="topologies" />
 
   </Route>
 );

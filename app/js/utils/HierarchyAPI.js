@@ -4,7 +4,7 @@ var HierarchyServerActionCreators = require('../actions/HierarchyServerActionCre
 
 var HierarchyAPI = {
 	requestHierarchy: function() {
-		$.get('/statistics/hierarchy', function(response) {
+		$.get('/topo/hierarchy', function(response) {
 			HierarchyServerActionCreators.handleHierarchySuccess(response);                             
 		});
 	}
