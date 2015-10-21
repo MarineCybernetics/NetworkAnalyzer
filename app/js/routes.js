@@ -12,7 +12,6 @@ var React = require('react'),
   Documents = require('./components/thruster/Documents'),
   Topologies = require('./components/Topologies'),
   Topology = require('./components/Topology'),
-  Statistics = require('./components/Statistics'),
   PLCInfo = require('./components/node/PLCInfo'),
   ServerInfo = require('./components/node/ServerInfo'),
   ChairInfo = require('./components/node/ChairInfo'),
@@ -44,8 +43,6 @@ var routes = (
     </Route>
 
     <Route name="charts" handler={Charts} />
-    
-    <Route name="statistics" path="/statistics" handler={Statistics} />
 
     <Route name="topologies" path="/topologies" handler={Topologies} >
       <Route name="topo" path="/TOPO" handler={Topology}>      

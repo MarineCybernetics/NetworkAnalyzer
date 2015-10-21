@@ -46,9 +46,9 @@ var ServerInfo = React.createClass({
       match = tapId.match(resolutionRE)[1];
     }  
     var nmappathName = "servernmap" + match;
-    var ippathName = "plcip" + match;
-    var tcppathName = "plctcp" + match;
-    var udppathName = "plcudp" + match;
+    var ippathName = "serverip" + match;
+    var tcppathName = "servertcp" + match;
+    var udppathName = "serverudp" + match;
     var backPath = "topo"+ match;
     return (
       <div onClick={this._onClick}>

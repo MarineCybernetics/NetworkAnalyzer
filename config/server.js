@@ -97,10 +97,6 @@ module.exports = {
       res.json(mockedTXT.getNmapData(req.params.nodeId));
     });
 
-    app.get("/statistics/hierarchy", function(req, res) {
-      res.json(mockedTXT.getHierarchy());
-    });
-
     app.get("/ajax/vessel_data*", function(req, res) {
       var signalId = req.query.signal_id;
       switch (signalId) {

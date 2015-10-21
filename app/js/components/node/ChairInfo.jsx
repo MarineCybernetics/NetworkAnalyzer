@@ -45,10 +45,10 @@ var ChairInfo = React.createClass({
     if(tapId.match(resolutionRE) != null){
       match = tapId.match(resolutionRE)[1];
     } 
-    var nmappathName = "plcnmap" + match;
-    var ippathName = "plcip" + match;
-    var tcppathName = "plctcp" + match;
-    var udppathName = "plcudp" + match;
+    var nmappathName = "chairnmap" + match;
+    var ippathName = "chairip" + match;
+    var tcppathName = "chairtcp" + match;
+    var udppathName = "chairudp" + match;
     var backPath = "topo"+ match;
     return (
       <div onClick={this._onClick}>

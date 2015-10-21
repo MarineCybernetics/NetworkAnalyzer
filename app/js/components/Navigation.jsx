@@ -45,7 +45,6 @@ var Navbar = React.createClass({
             <Tab to="vessel"><strong>Vessel</strong></Tab>
             <Tab to="kafka"><strong>Kafka</strong></Tab>
             <Tab to="charts"><strong>Charts</strong></Tab>
-            <Tab to="statistics"><strong>Statistics</strong></Tab>
             <Tab to="topologies"><strong>Topologies</strong></Tab>
           </ul>
           <p className="navbar-text pull-right brand-container">
