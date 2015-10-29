@@ -11,7 +11,10 @@ var React = require('react'),
   Contacts = require('./components/thruster/Contacts'),
   Documents = require('./components/thruster/Documents'),
   Topologies = require('./components/Topologies'),
-  Topology = require('./components/Topology'),
+  Topo = require('./components/Topo'),
+  TopoIP = require('./components/TopoIP'),
+  TopoTCP = require('./components/TopoTCP'),
+  TopoUDP = require('./components/TopoUDP'),
   PLCInfo = require('./components/node/PLCInfo'),
   ServerInfo = require('./components/node/ServerInfo'),
   ChairInfo = require('./components/node/ChairInfo'),
@@ -45,7 +48,7 @@ var routes = (
     <Route name="charts" handler={Charts} />
 
     <Route name="topologies" path="/topologies" handler={Topologies} >
-      <Route name="topo" path="/TOPO" handler={Topology}>      
+      <Route name="topo" path="/TOPO" handler={Topo}>      
           <Route name="plc" path="plc/:nodeId" handler={PLCInfo}>
            <Route name="plcnmap" path="nmap" handler={Nmap} />
            <Route name="plcip" path="ip" handler={IP} />
@@ -68,7 +71,7 @@ var routes = (
            <Route name="networkhierarchy" path="hierarchy" handler={Hierarchy} />
           </Route>
       </Route>
-      <Route name="topoIP" path="/TOPO-IP" handler={Topology}>  
+      <Route name="topoIP" path="/TOPO-IP" handler={TopoIP}>  
           <Route name="plcIP" path="plc/:nodeId" handler={PLCInfo}>
            <Route name="plcnmapIP" path="nmap" handler={Nmap} />
            <Route name="plcipIP" path="ip" handler={IP} />
@@ -91,7 +94,7 @@ var routes = (
            <Route name="networkhierarchyIP" path="hierarchy" handler={Hierarchy} />
           </Route> 
       </Route>
-      <Route name="topoTCP" path="/TOPO-TCP" handler={Topology}>    
+      <Route name="topoTCP" path="/TOPO-TCP" handler={TopoTCP}>    
           <Route name="plcTCP" path="plc/:nodeId" handler={PLCInfo}>
            <Route name="plcnmapTCP" path="nmap" handler={Nmap} />
            <Route name="plcipTCP" path="ip" handler={IP} />
@@ -114,7 +117,7 @@ var routes = (
            <Route name="networkhierarchyTCP" path="hierarchy" handler={Hierarchy} />
           </Route>
       </Route>
-      <Route name="topoUDP" path="/TOPO-UDP" handler={Topology}>    
+      <Route name="topoUDP" path="/TOPO-UDP" handler={TopoUDP}>    
           <Route name="plcUDP" path="plc/:nodeId" handler={PLCInfo}>
            <Route name="plcnmapUDP" path="nmap" handler={Nmap} />
            <Route name="plcipUDP" path="ip" handler={IP} />

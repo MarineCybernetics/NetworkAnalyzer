@@ -22,7 +22,7 @@ eth                                      frames:95454 bytes:32983177
       tcp                                frames:615 bytes:50620
         tpkt                             frames:442 bytes:39548
           cotp                           frames:442 bytes:39548
-            s7comm                       frames:442 bytes:39548
+            data                         frames:442 bytes:39548
     arp                                  frames:15506 bytes:992384
     pn_mrp                               frames:10760 bytes:753200
     pn_rt                                frames:516 bytes:31240
@@ -48,7 +48,7 @@ eth                                      frames:95454 bytes:32983177
     tcp                                  frames:884 bytes:134399
       tpkt                               frames:442 bytes:107879
         cotp                             frames:442 bytes:107879
-          s7comm                         frames:442 bytes:107879
+          data                           frames:442 bytes:107879
   arp                                    frames:56 bytes:3144
   pn_rt                                  frames:187 bytes:11468
     pn_ptcp                              frames:179 bytes:10740

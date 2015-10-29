@@ -9,7 +9,7 @@ var mockedJSON = require('./mockedJSON.js'),
     contacts = mockedJSON.getContacts(),
     evaStatus = mockedJSON.getEvaStatus(),
     topologies = mockedJSON.getTopologies(),
-    mockedTXT = require('./mockedTXT.js');
+    mockedTXT = require('./mockedTXT.js');   
 
 module.exports = {
   drawRoutes: function(app, dataProviders) {
@@ -49,8 +49,24 @@ module.exports = {
       res.json(mockedTXT.getHierarchy());
     });
 
-    app.get("/topology", function(req, res) {
-      res.json(mockedTXT.getTopologyL());
+    app.get("/topo", function(req, res) {
+      console.log("ttttttttttttttt");
+      res.json(topologies);
+    });
+
+    app.get("/topoIP", function(req, res) {
+      console.log("iiiiiiiiiiiiiiii");
+      res.json(mockedTXT.getTopoIP(topologies));
+    });
+
+    app.get("/topoTCP", function(req, res) {
+      console.log("cccccccccccccccc");
+      res.json(mockedTXT.getTopoTCP(topologies));
+    });
+
+    app.get("/topoUDP", function(req, res) {
+      console.log("uuuuuuuuuuuuuuuuu");
+      res.json(mockedTXT.getTopoUDP(topologies));
     });
 
     app.get('/executionstatus', function(req, res) {
