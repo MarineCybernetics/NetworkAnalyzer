@@ -5,9 +5,12 @@ var React = require('react'),
     AppActionCreators = require('../actions/AppActionCreators'),
     Network = require('./Network'),
     Switches = require('./Switches'),
+    mServer = require('./mServer'),
+    mPLC = require('./mPLC'),
+    mChair = require('./mChair'),
     Server = require('./Server'),
     PLC = require('./PLC'),
-    Chair = require('./Chair'),
+    Chair = require('./Chair'),    
     TopologyStore = require('../stores/TopologyStore'),
     TopologyActionCreators = require('../actions/TopologyActionCreators');
 
@@ -37,11 +40,13 @@ var TopoUDP = React.createClass({
     router: React.PropTypes.func
   },
   getInitialState: function() {
+    $('[data-toggle="tooltip"]').tooltip();
     return TopologyStore.getTopology();
   },
   componentDidMount: function() {
     TopologyActionCreators.startTopoUDPRequest();
-    TopologyStore.addChangeListener(this._onChange);    
+    TopologyStore.addChangeListener(this._onChange);   
+    $('[data-toggle="tooltip"]').tooltip();  
   },
   componentWillUnmount: function() {
     TopologyActionCreators.stopTopoRequest();    
@@ -72,26 +77,49 @@ var TopoUDP = React.createClass({
     var nodes = this.state.nodes;
     if (nodes !== undefined) {
       nodesList = nodes.map(function(one, index) {
-        var translate = "translate(" + one.x + "," + one.y +")";
+        var translate;
         var Tag;
         switch(one.type) {
           case "PLC":
-            Tag = PLC; break;
+            if(one.UDPMuti != undefined && one.UDPMuti.length > 0){
+              Tag = mPLC; 
+              translate = "translate(" + one.mx + "," + one.my +")";
+              break;
+            }else{
+              Tag = PLC; 
+              translate = "translate(" + one.x + "," + one.y +")";
+              break; 
+            }
           case "Server":
-            Tag = Server; break;
+            if(one.UDPMuti != undefined && one.UDPMuti.length > 0){
+              Tag = mServer; 
+              translate = "translate(" + one.mx + "," + one.my +")";
+              break;
+            }else{
+              Tag = Server; 
+              translate = "translate(" + one.x + "," + one.y +")";
+              break; 
+            }
           case "Chair":
-            Tag = Chair; break;
+            if(one.UDPMuti != undefined && one.UDPMuti.length > 0){
+              Tag = mChair; 
+              translate = "translate(" + one.mx + "," + one.my +")";
+              break;
+            }else{
+              Tag = Chair; 
+              translate = "translate(" + one.x + "," + one.y +")";
+              break; 
+            }
           case "Switches":
-            Tag = Switches; break;
+            Tag = Switches; 
+            translate = "translate(" + one.x + "," + one.y +")";
+            break;
           default:
             Tag = PLC; 
         }
         return(
           <g>
-            <Tag key={index} id = {one.id} transform={translate} tapId={tapId}/>
-            <text x={one.x} y={one.y} fontFamily="Verdana" fontSize="10" fill="red">
-              {one.IP}
-            </text>
+            <Tag key={index} id = {one.id} transform={translate} tapId={tapId} IP={one.IP}/>
           </g>  
         );  
       });  
@@ -105,20 +133,31 @@ var TopoUDP = React.createClass({
             var translate = "translate(" + one.x + "," + one.y +")";
             return(
               <g>
-                <text x={one.x} y={one.y} fontFamily="Verdana" fontSize="10" fill="green">
-                  {one.MUDP }
-                </text>
+                <circle cx={one.x} cy={one.y} r="5" fill="white" stroke="green" stroke-width="10" title ={one.MUDP} data-container="#topo" data-toggle="tooltip" data-placement="right">
+                </circle>
               </g>
             );
           });
         };
         return udpmList;
       });
+      
+      var mlinesList = <g className="mlines"/>;
+      var mlines = this.state.mlines;
+      if (mlines !== undefined) {
+        mlinesList = mlines.map(function(one, index) {
+            var l;
+            l = <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,255,128)","strokeWidth":"2"}} />
+            return(
+              l
+            );   
+        });     
+      };
 
     };
 
     return (
-      <div>
+      <div id="topo">
         <RouteHandler />
         <div className="row">
           <div className="1" style={{"textAlign": "center"}}>
@@ -127,13 +166,16 @@ var TopoUDP = React.createClass({
                 {linesList}
               </g>   
               <g className="channels">
-              </g>         
+              </g>    
+              <g className="mlines">
+                {mlinesList}
+              </g>      
               <g className="nodes">
                 {nodesList}
               </g>
               <g className="udpms">
                 {udpmsList}
-              </g>             
+              </g>              
             </svg>
           </div>
         </div>  

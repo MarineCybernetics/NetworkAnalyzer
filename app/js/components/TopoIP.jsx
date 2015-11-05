@@ -41,7 +41,8 @@ var TopoIP = React.createClass({
   },
   componentDidMount: function() {
     TopologyActionCreators.startTopoIPRequest();
-    TopologyStore.addChangeListener(this._onChange);    
+    TopologyStore.addChangeListener(this._onChange);  
+    $('[data-toggle="tooltip"]').tooltip();  
   },
   componentWillUnmount: function() {
     TopologyActionCreators.stopTopoRequest();    
@@ -87,10 +88,7 @@ var TopoIP = React.createClass({
         }
         return(
           <g>
-            <Tag key={index} id = {one.id} transform={translate} tapId={tapId}/>
-            <text x={one.x} y={one.y} fontFamily="Verdana" fontZize="55" fill="red">
-              {one.IP}
-            </text>
+            <Tag key={index} id = {one.id} transform={translate} tapId={tapId} IP={one.IP}/>
           </g>  
         );  
       });     
@@ -107,7 +105,7 @@ var TopoIP = React.createClass({
     };
 
     return (
-      <div>
+      <div id = "topo">
         <RouteHandler />
         <div className="row">
           <div className="1" style={{"textAlign": "center"}}>

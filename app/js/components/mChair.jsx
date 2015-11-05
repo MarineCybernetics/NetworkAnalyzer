@@ -3,8 +3,8 @@
 var React = require('react'),
     AppActionCreators = require('../actions/AppActionCreators');
 
-var Chair = React.createClass({
-  displayName: 'Chair',
+var mChair = React.createClass({
+  displayName: 'mChair',
   render: function() {
     return (<svg
    id="svg2"  title ={this.props.IP} data-container="#topo" data-toggle="tooltip" data-placement="right">
@@ -13,10 +13,10 @@ var Chair = React.createClass({
      id="defs66" />
   <g
      id="layer1"
-     transform="translate(-277.96,-475.50001)">
+     transform="translate(-277.96,-539.50001)">
     <g
        id="g8247"
-       transform="matrix(0.65593933,0,0,0.65593933,94.920824,191.92635)">
+       transform="matrix(0.32284514,0,0,0.32284514,188.5791,400.80581)">
       <rect
          id="rect3001"
          style={{"fill":"#c9c9c9"}}
@@ -57,7 +57,8 @@ var Chair = React.createClass({
                  id="text3010"
                  style={{"font-size":"5.03060007px","line-height":"125%","font-family":"'Agency FB'","text-align":"center","letter-spacing":"0px","word-spacing":"0px","text-anchor":"middle","fill":"#cccccc"}}
                  y="568.30212"
-                 x="329.48785"><tspan
+                 x="329.48785">
+                 <tspan
                    id="tspan3012"
                    y="568.30212"
                    x="329.48785">MENU</tspan></text>
@@ -229,4 +230,4 @@ var Chair = React.createClass({
   }
 });
 
-module.exports = Chair;
+module.exports = mChair;

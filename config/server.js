@@ -11,6 +11,8 @@ var mockedJSON = require('./mockedJSON.js'),
     topologies = mockedJSON.getTopologies(),
     mockedTXT = require('./mockedTXT.js');   
 
+var pcapReader = require('./file-reader/pcapr');    
+
 module.exports = {
   drawRoutes: function(app, dataProviders) {
     mockedJSON.watchCustomData(function(data) {
@@ -114,7 +116,15 @@ module.exports = {
     });
 
     app.get("/udp/:nodeId", function(req, res) {
-      res.json(mockedTXT.getNmapData(req.params.nodeId));
+      var nodeIP;
+      var nodes = topologies.nodes;
+      for (var i = 0; i < nodes.length; i++) {
+        if (req.params.nodeId == nodes[i].id){
+          nodeIP = nodes[i].IP;
+        }
+      };
+      console.log("aaaaa");
+      res.json(mockedTXT.getUDPData(nodeIP));
     });
 
     app.get("/ajax/vessel_data*", function(req, res) {

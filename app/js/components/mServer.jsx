@@ -3,13 +3,12 @@
 var React = require('react'),
     AppActionCreators = require('../actions/AppActionCreators');
 
-var Server = React.createClass({
-  displayName: 'Server',
+var mServer = React.createClass({
+  displayName: 'mServer',
   render: function() {
     return (
       <svg title ={this.props.IP} data-container="#topo" data-toggle="tooltip" data-placement="right">
       <g transform={this.props.transform} className={this.props.id} onClick={this._onClick} style={{"cursor":"pointer"}}>
-
 <defs id="defs4">
     <linearGradient
        x1="302.85715"
@@ -326,156 +325,156 @@ var Server = React.createClass({
   </defs>
   <g
      id="layer1"
-     style={{"display":"inline"}} />
+     style={{"display":"inline"}}
+     transform="translate(0,-64)" />
   <g
      id="layer2"
-     style={{"display":"inline"}}>
+     style={{"display":"inline"}}
+     transform="matrix(0.54783591,0,0,0.54783591,9.7257156,-6.5103516)">
     <path
-       d="m 30.069752,22.03729 0,95.17786 62.405743,0 0,-95.75122 -11.481446,-12.040572 -40.016921,0 -10.907376,12.613932 z"
+       d="m 11.816112,29.338746 0,95.177864 62.405743,0 0,-95.751224 -11.481446,-12.040572 -40.016921,0 -10.907376,12.613932 z"
        id="path3626"
        style={{"fill":"url(#linearGradient25335)","fillOpacity":"1","fillRule":"evenodd","stroke":"#5e5e5e","strokeWidth":"2.83662605px","strokeLinecap":"round","strokeLinejoin":"round","strokeOpacity":"1"}} />
     <path
-       d="m 41.556086,10.841671 -10.068019,14.183131 59.56912,0 -10.90702,-13.76598 -38.594081,-0.417151 z"
+       d="m 23.302446,18.143127 -10.068019,14.183131 59.56912,0 -10.90702,-13.76598 -38.594081,-0.417151 z"
        id="path5791"
        style={{"fill":"#ffffff","fillOpacity":"0.65536726","fillRule":"evenodd","stroke":"none"}} />
     <rect
        width="45.386024"
        height="11.346502"
-       x="39.997936"
-       y="30.698046"
+       x="21.744299"
+       y="37.9995"
        id="rect4553"
        style={{"opacity":"0.34857142","fill":"#ffffff","fillOpacity":"1","fillRule":"evenodd","stroke":"#ffffff","strokeWidth":"2.83662605","strokeLinecap":"butt","strokeLinejoin":"miter","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","strokeDashoffset":"0","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <path
-       d="m 32.906375,23.771924 0,90.606576 56.732536,0 0,-91.129846 -10.506025,-10.988653 -36.245787,0 -9.980724,11.511923 z"
+       d="m 14.652735,31.07338 0,90.60658 56.732536,0 0,-91.12985 -10.506025,-10.988653 -36.245787,0 -9.980724,11.511923 z"
        id="path4394"
        style={{"fill":"none","stroke":"#ffffff","strokeWidth":"2.83662724","strokeLinecap":"butt","strokeLinejoin":"miter","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none"}} />
     <rect
        width="31.202894"
        height="11.346499"
-       x="54.181065"
-       y="67.574181"
+       x="35.927433"
+       y="74.875633"
        id="rect4408"
        style={{"opacity":"0.52571429","fill":"url(#linearGradient25327)","fillOpacity":"1","fillRule":"evenodd","stroke":"url(#linearGradient25329)","strokeWidth":"2.83662701","strokeLinecap":"butt","strokeLinejoin":"miter","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","strokeDashoffset":"0","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="31.202871"
        height="11.346502"
-       x="52.762733"
-       y="66.155869"
+       x="34.509102"
+       y="73.457321"
        id="rect4398"
        style={{"fill":"#c8c8c8","fillOpacity":"1","fillRule":"evenodd","stroke":"#acacac","strokeWidth":"2.83662534","strokeLinecap":"butt","strokeLinejoin":"miter","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","strokeDashoffset":"0","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="45.386024"
        height="11.346502"
-       x="39.997952"
-       y="47.7178"
+       x="21.744314"
+       y="55.019253"
        id="rect4551"
        style={{"opacity":"0.34857142","fill":"#ffffff","fillOpacity":"1","fillRule":"evenodd","stroke":"#ffffff","strokeWidth":"2.83662558","strokeLinecap":"butt","strokeLinejoin":"miter","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","strokeDashoffset":"0","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="45.386032"
        height="11.346502"
-       x="38.579624"
-       y="46.299488"
+       x="20.325985"
+       y="53.600941"
        id="rect4430"
        style={{"fill":"#c8c8c8","fillOpacity":"1","fillRule":"evenodd","stroke":"#acacac","strokeWidth":"2.83662653","strokeLinecap":"butt","strokeLinejoin":"miter","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","strokeDashoffset":"0","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="45.386032"
        height="11.346502"
-       x="38.579647"
-       y="29.279736"
+       x="20.326008"
+       y="36.581188"
        id="rect4436"
-       style={{"fill":"#c8c8c8","fillOpacity":"1","fillRule":"evenodd","stroke":"#acacac","strokeWidth":"2.83662605","strokeLinecap":"butt","strokeLinejoin":"miter","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","strokeDashoffset":"0","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
+       style={{"fill":"#c8c8c8","fillOpacity":"1","fillRule":"evenodd","stroke":"#acacac","strokeWidth":"2.83662605","strokeLinecap":"butt","strokeLinejoin":"miter","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","strokeDashoffset":"0","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}}  />
     <path
-       d="m 68.185294,26.231213 a 2.171828,2.171828 0 1 1 -4.343656,0 2.171828,2.171828 0 1 1 4.343656,0 z"
-       transform="matrix(1.9593699,0,0,1.9593562,-86.509754,21.850696)"
+       d="m 28.836818,80.548442 a 4.2554144,4.2553847 0 0 1 -8.510828,0 4.2554144,4.2553847 0 1 1 8.510828,0 z"
        id="path4396"
        style={{"fill":"#d40000","fillOpacity":"1","fillRule":"evenodd","stroke":"#979797","strokeWidth":"1.44772947","strokeLinecap":"butt","strokeLinejoin":"miter","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","strokeDashoffset":"0","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <path
-       d="m 16.667518,25.574614 a 0.5050765,0.5050765 0 1 1 -1.010153,0 0.5050765,0.5050765 0 1 1 1.010153,0 z"
-       transform="matrix(2.5342538,0,0,2.5342343,0.4673221,7.5389146)"
+       d="m 24.453403,79.652435 a 1.279992,1.2799822 0 0 1 -2.559984,0 1.279992,1.2799822 0 1 1 2.559984,0 z"
        id="path4445"
        style={{"fill":"#f44800","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="48.507816"
-       y="84.593979"
+       x="30.254183"
+       y="91.895432"
        id="rect4457"
        style={{"fill":"url(#linearGradient25317)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="54.181038"
-       y="84.593979"
+       x="35.927406"
+       y="91.895432"
        id="rect4461"
        style={{"fill":"url(#linearGradient25314)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="59.854286"
-       y="84.593979"
+       x="41.600655"
+       y="91.895432"
        id="rect4465"
        style={{"fill":"url(#linearGradient25311)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="65.527534"
-       y="84.593979"
+       x="47.273903"
+       y="91.895432"
        id="rect4469"
        style={{"fill":"url(#linearGradient25308)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="71.200821"
-       y="84.593979"
+       x="52.947189"
+       y="91.895432"
        id="rect4473"
        style={{"fill":"url(#linearGradient25305)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="76.874069"
-       y="84.593979"
+       x="58.620438"
+       y="91.895432"
        id="rect4477"
        style={{"opacity":"0.54285709","fill":"url(#linearGradient25302)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="45.671154"
-       y="84.593979"
+       x="27.417519"
+       y="91.895432"
        id="rect4481"
        style={{"opacity":"0.16000001","fill":"url(#linearGradient25299)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="51.34444"
-       y="84.593979"
+       x="33.090809"
+       y="91.895432"
        id="rect4483"
        style={{"opacity":"0.29142851","fill":"url(#linearGradient25296)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="57.017693"
-       y="84.593979"
+       x="38.764061"
+       y="91.895432"
        id="rect4485"
        style={{"opacity":"0.29142851","fill":"url(#linearGradient25293)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="62.690945"
-       y="84.593979"
+       x="44.437313"
+       y="91.895432"
        id="rect4487"
        style={{"opacity":"0.29142851","fill":"url(#linearGradient25290)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="68.364159"
-       y="84.593979"
+       x="50.110527"
+       y="91.895432"
        id="rect4489"
        style={{"opacity":"0.29142851","fill":"url(#linearGradient25287)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow:":"visible"}} />
     <rect
        width="2.8366244"
        height="28.36627"
-       x="74.037407"
-       y="84.593979"
+       x="55.783775"
+       y="91.895432"
        id="rect4491"
        style={{"opacity":"0.22857145","fill":"url(#linearGradient25284)","fillOpacity":"1","fillRule":"evenodd","stroke":"none","strokeWidth":"1","marker":"none","visibility":"visible","display":"inline","overflow":"visible"}} />
   </g>
@@ -495,4 +494,4 @@ var Server = React.createClass({
   }
 });
 
-module.exports = Server;
+module.exports = mServer;

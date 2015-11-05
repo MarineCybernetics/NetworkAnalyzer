@@ -48,6 +48,19 @@ module.exports = {
 	        });
 	      });
 		return true;		
+	},
+    extrUDP : function(nodeIP) {
+    	var filePath = "./dev/txtdata/" + nodeIP + "_udp.txt";
+    	var command = 'tshark -2 -r ./dev/1.pcapng -R "ip.src==' + nodeIP +' and not icmp and udp" -c 100 -Tfields -e frame.time_relative -e ip.src -e udp.srcport -e ip.dst -e udp.dstport -e frame.cap_len';
+	    child_process.exec(command, function(error, stdout, stderr){
+	      fs.writeFile(filePath, stdout, function(err) {
+	        if(err) {
+	         return console.log(err);
+	        }
+	         console.log("UDP file was saved!");
+	        });
+	      });
+		return true;		
 	}	
 
 };

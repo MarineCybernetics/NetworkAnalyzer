@@ -5,6 +5,7 @@ var fs = require('fs'),
     hierarchyProvider = require('./provider/hierarchyProvider'),
     ipCovProvider = require('./provider/ipCovProvider'),
     udpCovProvider = require('./provider/udpCovProvider'),
+    udpProvider = require('./provider/udpProvider'),
     txtData = "./dev/txtdata/";    
 
 module.exports = {
@@ -16,6 +17,10 @@ module.exports = {
     var filePath = txtData + "hierarchy.txt";
     return hierarchyProvider(filePath).getLatest();
   },
+  getUDPData: function(nodeIP) {
+    var filePath = txtData + nodeIP + "_udp.txt";
+    return udpProvider(filePath, nodeIP).getLatest();
+  },  
   getTopoIP: function(topologies) {
     var topo = JSON.parse(JSON.stringify(topologies));
     var nodes = topo.nodes;
@@ -90,14 +95,47 @@ module.exports = {
           topo.nodes[i].UDPMuti = [];
       }; 
 
+      topo.mlines = [];
+
       for (var i = 0; i < udpCov.length; i++) {
         if(udpCov[i].s != -1){  
           var s = udpCov[i].s;
           var l = topo.nodes[s].UDPMuti.length;
-          var c = {"MUDP":udpCov[i].destIP, "x": nodes[s].x - 100, "y": nodes[s].y + l*64}; 
+          var c = {};
+
+          switch (l) {
+            case 0:
+              c = {"MUDP":udpCov[i].destIP, "x": nodes[s].x+7.5, "y": nodes[s].y+61.5}; 
+              break;
+            case 1:
+              c = {"MUDP":udpCov[i].destIP, "x": nodes[s].x+20.46, "y": nodes[s].y+20.46}; 
+              break;
+            case 2:
+              c = {"MUDP":udpCov[i].destIP, "x": nodes[s].x+61.5, "y": nodes[s].y+7.5}; 
+              break;              
+            default:
+              c = {"MUDP":udpCov[i].destIP, "x": nodes[s].x+61.5, "y": nodes[s].y+61.5}; 
+              break;
+          }
+              
           topo.nodes[s].UDPMuti.push(c);
-        }
+          
+          var ml = {};
+          ml = {"id": "ml", "x1": nodes[s].x+64, "y1": nodes[s].y+64, "x2": c.x, "y2": c.y};
+
+          topo.mlines.push(ml);
+
+        };
+
       };  
+
+      for (var i = 0; i < nodes.length; i++) {
+        if(topo.nodes[i].UDPMuti.length > 0){
+          topo.nodes[i].mx = topo.nodes[i].x + 32;
+          topo.nodes[i].my = topo.nodes[i].y + 32;
+        }
+      }; 
+
 
       fs.writeFile("./dev/data/toDrawing.json", JSON.stringify(topo), function(err) {
         if(err) {
