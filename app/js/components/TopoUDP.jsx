@@ -133,7 +133,7 @@ var TopoUDP = React.createClass({
             var translate = "translate(" + one.x + "," + one.y +")";
             return(
               <g>
-                <circle cx={one.x} cy={one.y} r="5" fill="white" stroke="green" stroke-width="10" title ={one.MUDP} data-container="#topo" data-toggle="tooltip" data-placement="right">
+                <circle cx={one.x} cy={one.y} r="5" fill="white" stroke="rgb(0,255,127)" stroke-width="10" title ={one.MUDP} data-container="#topo" data-toggle="tooltip" data-placement="right">
                 </circle>
               </g>
             );
@@ -147,7 +147,7 @@ var TopoUDP = React.createClass({
       if (mlines !== undefined) {
         mlinesList = mlines.map(function(one, index) {
             var l;
-            l = <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,255,128)","strokeWidth":"2"}} />
+            l = <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,255,127)","strokeWidth":"2"}} />
             return(
               l
             );   

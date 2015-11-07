@@ -14,8 +14,8 @@ module.exports = function(fileName, observe) {
         var matches; 
         matches=line.match(resolutionRE);
 
-		if (result.resolutions === undefined) {
-			result.resolutions = [];
+		if (result.resolutions.length ==0) {
+			result.resolutions.push({"line": 0,"fnum": 0,"bytes": 0});
 		}
 		if(matches !== null){
 			var l = {"line": matches[1],"fnum": matches[2],"bytes": matches[3]};	
@@ -43,6 +43,7 @@ module.exports = function(fileName, observe) {
 	var hierarchyProvider = {};
 
 	hierarchyProvider.getLatest = function() {
+		console.log(localResolutions);
 		return localResolutions;
 	};
 

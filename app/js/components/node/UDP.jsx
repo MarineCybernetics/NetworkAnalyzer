@@ -42,7 +42,7 @@ var Status = React.createClass({
     return UDPStore.getUDPData();
   },
   render: function() {
-    var udpsList = <div />
+    var udpsList = <tr />
     var udps = this.state.resolutions;
     var data = {label: 'udp', values: []};
     if(udps == undefined){
@@ -50,6 +50,18 @@ var Status = React.createClass({
     };
     if (udps !== undefined) {
       udpsList = udps.map(function(one, index) {
+        if(index == 0){
+          return(
+            <tr>
+              <td>Reftime</td> 
+              <td>SrcIP</td> 
+              <td>SrcPort</td> 
+              <td>DstIP</td> 
+              <td>DstPort</td>
+              <td>Psize</td>
+            </tr>
+          );
+        };
 
         var x = parseFloat(one.reftime),
             y = parseFloat(one.pSize);   
@@ -71,12 +83,19 @@ var Status = React.createClass({
         data.values.push(l2);
 
         return(
-          <h6 key={index}><strong>{one}</strong></h6>
+          <tr>
+            <td>{one.reftime}</td> 
+            <td>{one.srcIP}</td> 
+            <td>{one.srcPort}</td> 
+            <td>{one.dstIP}</td> 
+            <td>{one.dstPort}</td>
+            <td>{one.pSize}</td>
+          </tr>
         );  
       });     
     };
 
-    var xScale = d3.scale.linear().domain([0.000, 3.000]).range([0, 2000-60]);
+    var xScale = d3.scale.linear().domain([0.000, 10.000]).range([0, 15000-60]);
     var tooltipLine = function(label, data) {
         var tip;
         if(data.y != 0){
@@ -89,31 +108,33 @@ var Status = React.createClass({
     }
 
     return (
-      <div>
-
+       <div>
         <div className="row">
-          <div style = {{overflowX: "auto", width:"600px", float: 'none'}}>
+          <div className="col-lg-10 col-md-10 col-sm-12" style = {{"overflowX": "auto", "float": 'none'}} >
                 <LineChart
                    data={data}
-                   width={2000}
+                   width={15000}
                    height={200}
                    margin={{top: MARGINS.top, bottom: MARGINS.bottom, left: MARGINS.left, right: MARGINS.right}}
                    xScale={xScale}
-                   xAxis={{label: "Time:s", tickValues: xScale.ticks(30), tickFormat: function(d) { return d + "00"; }}}
+                   xAxis={{label: "Time:s", tickValues: xScale.ticks(100), tickFormat: function(d) { return d + "00"; }}}
                    yAxis={{label: "Packets:bytes"}}
                    tooltipHtml={tooltipLine}
                    tooltipContained
-                   shapeColor={"red"}/>
+                   shapeColor={"red"}
+                   stroke={{strokeWidth: 0.5}} />
           </div>
         </div>    
         <div className="row">
           <div className="col-lg-10 col-md-10 col-sm-12">
-            <div className="well" style = {{overflowY: "auto", height: "400px"}}>
-              {udpsList}
+            <div className="well" style = {{"overflowY": "auto", "height": "400px"}}>
+              <table className="table table-striped" >
+                {udpsList}
+              </table>
             </div>
           </div> 
-        </div>                 
-      </div>  
+        </div>  
+      </div>                  
     );  
 
   },

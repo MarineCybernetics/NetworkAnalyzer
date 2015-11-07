@@ -6,6 +6,7 @@ var fs = require('fs'),
     ipCovProvider = require('./provider/ipCovProvider'),
     udpCovProvider = require('./provider/udpCovProvider'),
     udpProvider = require('./provider/udpProvider'),
+    tcpProvider = require('./provider/tcpProvider'),
     txtData = "./dev/txtdata/";    
 
 module.exports = {
@@ -17,6 +18,10 @@ module.exports = {
     var filePath = txtData + "hierarchy.txt";
     return hierarchyProvider(filePath).getLatest();
   },
+  getTCPData: function(nodeIP) {
+    var filePath = txtData + nodeIP + "_tcp.txt";
+    return tcpProvider(filePath, nodeIP).getLatest();
+  }, 
   getUDPData: function(nodeIP) {
     var filePath = txtData + nodeIP + "_udp.txt";
     return udpProvider(filePath, nodeIP).getLatest();
@@ -72,7 +77,53 @@ module.exports = {
     return topo;
   },
   getTopoTCP: function(topologies) {
-    var topo = JSON.parse(JSON.stringify(topologies));  
+    var topo = JSON.parse(JSON.stringify(topologies));
+    var nodes = topo.nodes;
+
+    if(topo.tcpchannels == undefined){
+      var filePath = txtData + "IPcov.txt";
+      var tcpCov = ipCovProvider(filePath).getLatest().resolutions;
+      var links = [];
+
+      for (var i = 0; i < tcpCov.length; i++) {
+          for (var j = 0; j < nodes.length; j++) {
+            if (tcpCov[i].firstIP == nodes[j].IP){
+              tcpCov[i].f = j;
+            }
+          };
+      };
+      
+      for (var i = 0; i < tcpCov.length; i++) {
+        if(tcpCov[i].f != -1 && tcpCov[i].firstIP != tcpCov[i].secondIP){
+          for (var j = 0; j < nodes.length; j++) {
+            if (tcpCov[i].secondIP == nodes[j].IP){
+              tcpCov[i].s = j;
+            }
+          };
+        }  
+      };  
+
+      for (var i = 0; i < tcpCov.length; i++) {
+        if(tcpCov[i].f != -1 && tcpCov[i].s != -1){
+          var s = tcpCov[i].f;
+          var e = tcpCov[i].s;
+          var c = {"id": nodes[s].id + "-" + nodes[e].id, "x1": nodes[s].x + 64, "y1": nodes[s].y + 64, "x2": nodes[e].x + 64, "y2": nodes[e].y + 64};
+          links.push(c);
+        }
+      }; 
+      topo.tcpchannels = [];
+      topo.tcpchannels = links;
+
+      fs.writeFile("./dev/data/toDrawing.json", JSON.stringify(topo), function(err) {
+        if(err) {
+         return console.log(err);
+        }
+        console.log("TCPto file was saved!");
+      });
+
+      return topo;
+    }   
+    
     return topo;
   },  
   getTopoUDP: function(topologies) { 

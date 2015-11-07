@@ -1,14 +1,12 @@
-module.exports = function(filename, observe) {
+module.exports = function(filename, nodeIP, observe) {
 
-	var pcapReader = require('../file-reader/pcapr'),
+	var fs = require('fs'),
+	    pcapReader = require('../file-reader/pcapr'),
 	    fileReader = require('../file-reader/fr'),
-	    resolutionRE = [];  
+	    resolutionRE = [];     
 
-	var start = 0;    
+	resolutionRE[0] = /^.+/i;
 
-	resolutionRE[0] = /^TCP Conversations/i;
-	resolutionRE[1] = /^(\d+\.\d+\.\d+\.\d+)\s+<->\s+(\d+\.\d+\.\d+\.\d+)/i;
-                       
 	var setTimestamp = function(resolutions) {
 		if (resolutions.timestamp == null) {
 			resolutions.timestamp = new Date().toLocaleString();
@@ -18,19 +16,13 @@ module.exports = function(filename, observe) {
 	var lineParser = function(line, result) {
 		var matches = []; 
 		matches[0] = line.match(resolutionRE[0]);
-        matches[1] = line.match(resolutionRE[1]);
 
 		if (result.resolutions == undefined) {
 			result.resolutions = [];
 		}
 
-		if (matches[0] != null) {
-			start = 1;
-		}
-
-		if (start == 1 && matches[1] != null) {
-		    var l = {"firstIP": matches[1][1], "secondIP": matches[1][2], "f": -1, "s": -1};	
-			result.resolutions.push(l);
+		if (matches[0] != null) {	
+			result.resolutions.push(matches[0][0]);
 		}
 	};
 
@@ -44,17 +36,17 @@ module.exports = function(filename, observe) {
 		}
 	};
 
-	pcapReader.extrTCPconv();
+	pcapReader.extrTCP(nodeIP);
 
 	var localResolutions = {};
 	localResolutions = fileReader.readOnce(filename, readHandler, lineParser);
 	fileReader.startWatching(filename, readHandler, lineParser);
 
-	var nodesCovProvider = {};
+	var tcpProvider = {};
 
-	nodesCovProvider.getLatest = function() {
+	tcpProvider.getLatest = function() {
 		return localResolutions;
 	};
 
-	return nodesCovProvider;
+	return tcpProvider;
 }

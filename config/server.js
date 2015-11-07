@@ -112,7 +112,14 @@ module.exports = {
     });
 
     app.get("/tcp/:nodeId", function(req, res) {
-      res.json(mockedTXT.getNmapData(req.params.nodeId));
+      var nodeIP;
+      var nodes = topologies.nodes;
+      for (var i = 0; i < nodes.length; i++) {
+        if (req.params.nodeId == nodes[i].id){
+          nodeIP = nodes[i].IP;
+        }
+      };
+      res.json(mockedTXT.getTCPData(nodeIP));
     });
 
     app.get("/udp/:nodeId", function(req, res) {

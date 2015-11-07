@@ -68,6 +68,16 @@ var TopoTCP = React.createClass({
       });     
     };
 
+    var channelsList = <g className="channels"/>;
+    var channels = this.state.tcpchannels;
+    if (channels !== undefined) {
+        channelsList = channels.map(function(one, index) {
+          return(
+            <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,0,255)","strokeWidth":"2","cursor":"pointer"}} />
+          );  
+        });     
+    };
+
     var nodesList = <g className="nodes"/>;
     var nodes = this.state.nodes;
     if (nodes !== undefined) {
@@ -103,7 +113,8 @@ var TopoTCP = React.createClass({
               <g className="lines">
                 {linesList}
               </g>   
-              <g className="channels">
+              <g className="tcpchannels">
+                {channelsList}
               </g>         
               <g className="nodes">
                 {nodesList}

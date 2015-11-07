@@ -21,6 +21,10 @@ module.exports = function(filename, nodeIP, observe) {
 			result.resolutions = [];
 		}
 
+		if (result.resolutions.length ==0) {
+			result.resolutions.push({"reftime": 0,"srcIP": 0,"srcPort": 0,"dstIP": 0,"dstPort": 0,"pSize": 0});
+		}
+
 		if (matches[0] != null) {
 		    var l = {"reftime": matches[0][1], "srcIP": matches[0][2], "srcPort": matches[0][3], "dstIP": matches[0][4], "dstPort": matches[0][5], "pSize": matches[0][6]};	
 			result.resolutions.push(l);

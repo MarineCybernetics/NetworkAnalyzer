@@ -22,18 +22,30 @@ var Status = React.createClass({
     return HierarchyStore.getHierarchy();
   },
   render: function() {
-    var hierarchysList = <tr />;
+    var hierarchysList = <tr/>;        
     var hierarchys = this.state.resolutions;
     var sumFrames,sumBytes,fnum,bytes,line;
 
     if (hierarchys !== undefined) {
-      hierarchysList = hierarchys.map(function(one, index) {
+      hierarchysList =hierarchys.map(function(one, index) {
         if(index == 0){
+          return(
+            <tr>
+                <td style = {{"width": "30%", "whiteSpace":"pre"}}>Protocol</td> 
+                <td>Frames</td> 
+                <td>Percent</td> 
+                <td>Bytes</td> 
+                <td>Percent</td>
+            </tr> 
+          );
+        };
+
+        if(index == 1){
           sumFrames = one.fnum;
           sumBytes = one.bytes;
         };
         fnum = one.fnum/sumFrames*100;
-        bytes = one.bytes/sumBytes*100;
+        bytes = one.bytes/sumBytes*100; 
         return(
           <tr>
               <td style = {{"width": "30%", "whiteSpace":"pre"}}>{one.line}</td> 
@@ -42,14 +54,15 @@ var Status = React.createClass({
               <td>Bytes: {one.bytes}</td> 
               <td>{bytes.toFixed(2)}%</td>
           </tr>
-        );  
+        );    
       });     
     };
-
+ 
+    console.log(hierarchysList);
     return (
       <div className="row">
         <div className="col-lg-10 col-md-10 col-sm-12">
-          <div className="well">
+          <div className="well" style = {{"overflowY": "auto", "height": "400px"}}>
           <table className="table table-striped" >
             {hierarchysList}
           </table>  

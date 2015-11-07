@@ -28,14 +28,14 @@ var Status = React.createClass({
     if (tcps !== undefined) {
       tcpsList = tcps.map(function(one, index) {
         return(
-          <h6 key={index}><strong>{one}</strong></h6>
+          <h6 key={index}><pre>{one}</pre></h6>
         );  
       });     
     };
 
     return (
       <div className="row">
-        <div className="col-lg-10 col-md-10 col-sm-12">
+        <div className="col-lg-12 col-md-10 col-sm-12" style={{"width":"900"}}>
           <div className="well">
             {tcpsList}
           </div>
