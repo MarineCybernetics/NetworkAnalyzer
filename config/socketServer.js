@@ -9,7 +9,7 @@ var automaticTests = mockedJSON.getAutomaticTests();
 var manualTests = mockedJSON.getManualTests();
 
 module.exports = {
-	setSocketsUp: function(server, dataProviders) {
+	setSocketsUp: function(server) {
 		var socketserver = new WebSocketServer({
       server: server
     });
@@ -34,38 +34,6 @@ module.exports = {
 	      sendMessage(ws);
 	    });
 	  });
-
-	  dataProviders.thr1.rpm.addListener(function(newValue) {
-      var signalId = dataProviders.thr1.rpm.getSignalId();
-      var clients = socketclients["/signal/" + signalId];
-      if (clients !== undefined && clients.length > 0) {
-      	for (var i = 0; i < clients.length; i++) {
-      		var ws = clients[i];
-		      ws.send(JSON.stringify({
-		        "header": {
-		          "event": "signal::" + signalId
-		        },
-		        "data": newValue
-		      }));
-      	}
-      }
-    });
-
-    dataProviders.thr1.thrust.addListener(function(newValue) {
-      var signalId = dataProviders.thr1.thrust.getSignalId();
-      var clients = socketclients["/signal/" + signalId];
-      if (clients !== undefined && clients.length > 0) {
-      	for (var i = 0; i < clients.length; i++) {
-      		var ws = clients[i];
-		      ws.send(JSON.stringify({
-		        "header": {
-		          "event": "signal::" + signalId
-		        },
-		        "data": newValue
-		      }));
-      	}
-      }
-    });
 
 	  var sendMessage = function(ws) {
 	    var url = ws.upgradeReq.url;

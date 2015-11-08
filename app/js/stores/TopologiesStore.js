@@ -46,7 +46,7 @@ var TopologiesStore = assign({}, EventEmitter.prototype, {
 
     switch (action.type) {
 
-      case ActionTypes.COMPONENTS_RECEIVED:
+      case ActionTypes.COMPONEN_RECEIVED:
         _components = action.response;
         TopologiesStore.emit(CHANGE_EVENT);
         break;

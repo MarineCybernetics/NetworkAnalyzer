@@ -3,7 +3,6 @@
 var React = require('react'),
     InlineSVG = require('react-inlinesvg'),
     AppActionCreators = require('../actions/AppActionCreators'),
-    Network = require('./Network'),
     Switches = require('./Switches'),
     Server = require('./Server'),
     PLC = require('./PLC'),

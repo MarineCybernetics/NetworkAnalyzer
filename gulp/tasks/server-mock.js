@@ -10,12 +10,6 @@ var express = require('express'),
 var mockedJSON = require('../../config/mockedJSON');
 
 var seriesProvider = require('../../config/seriesProvider');
-var dataProviders = {
-  thr1: {
-    rpm: seriesProvider(mockedJSON.getThr1RPM(), 500, 1),
-    thrust: seriesProvider(mockedJSON.getThr1Thrust(), 500, 2)
-  }
-}
 
 var app = express(),
     server = http.Server(app);
@@ -33,9 +27,9 @@ module.exports = function() {
 
   app.use(express.static('./dist/public/signature'));
 
-  socketServer.setSocketsUp(server, dataProviders);
+  socketServer.setSocketsUp(server);
 
-  config.drawRoutes(app, dataProviders);
+  config.drawRoutes(app);
 
   server.listen(serverport, function() {
     console.log('listening on *:' + serverport);
