@@ -12,6 +12,9 @@ var IPStore = assign({}, EventEmitter.prototype, {
 	getIPData: function() {
 		return _ipData;
 	},
+	cleanIPData: function(){
+		_ipData = {};
+	},
 	emitChange: function() {
 		this.emit(CHANGE_EVENT);
 	},

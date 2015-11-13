@@ -9,20 +9,6 @@ var LineChart = ReactD3.LineChart;
 
 var MARGINS = {top: 10, bottom: 50, left: 50, right: 10};    
 
-var getMinMax = function(data) {
-  var minX1 = [], maxX1 = [], minY1 = [], maxY1 = [];
-
-  for (var i = 0; i < data.length; i++) {
-    var currArray =  data[i].values;
-    minX1.push(d3.min(currArray, function(d) { return d["x"]; }));
-    maxX1.push(d3.max(currArray, function(d) { return d["x"]; }));
-    minY1.push(d3.min(currArray, function(d) { return d["y"]; }));
-    maxY1.push(d3.max(currArray, function(d) { return d["y"]; }));
-   };
-
-  return {minX: d3.min(minX1), maxX: d3.max(maxX1), minY: d3.min(minY1), maxY: d3.max(maxY1)};  
-};
-
 var Status = React.createClass({
   displayName: "Status",
   contextTypes: {
@@ -37,19 +23,20 @@ var Status = React.createClass({
   componentWillUnmount: function() {
     UDPActionCreators.stopUDPDataRequest();    
     UDPStore.removeChangeListener(this._onChange);
+    UDPStore.cleanUDPData();
   },
   getInitialState: function() {
     return UDPStore.getUDPData();
   },
   render: function() {
-    var udpsList = <tr />
-    var udps = this.state.resolutions;
+    var udpConvsList = <tr />
+    var udpConvs = this.state.resolutions1;
     var data = {label: 'udp', values: []};
-    if(udps == undefined){
-        data = {label: 'udp', values: [{x:0, y:9}]};
+    if(udpConvs == undefined ||  udpConvs.length == 1){
+        data = {label: 'udp', values: [{x:0, y:0}]};
     };
-    if (udps !== undefined) {
-      udpsList = udps.map(function(one, index) {
+    if (udpConvs !== undefined) {
+      udpConvsList = udpConvs.map(function(one, index) {
         if(index == 0){
           return(
             <tr>
@@ -95,7 +82,54 @@ var Status = React.createClass({
       });     
     };
 
-    var xScale = d3.scale.linear().domain([0.000, 10.000]).range([0, 15000-60]);
+    var udpsList = <tr/>;        
+    var udps = this.state.resolutions2;
+    var sum = this.state.sum;
+    var sumFrames, sumBytes, ff, fb, sf, sb, tf, tb;
+
+    if (sum !== undefined) {
+      sumFrames = sum[0].frames;
+      sumBytes = sum[0].bytes;       
+    }; 
+
+    if (udps !== undefined) {
+      udpsList =udps.map(function(one, index) {
+
+        if(index == 0){
+          return(
+            <tr key = {index}>
+                <td></td> 
+                <td>Frames(&larr;)</td> 
+                <td>Bytes(&larr;)</td> 
+                <td>Frames(&rarr;)</td> 
+                <td>Bytes(&rarr;)</td>
+                <td>TotalFrames</td> 
+                <td>TotalBytes</td>
+            </tr> 
+          );
+        };
+        ff = (one.ff/sumFrames*100).toFixed(2);
+        fb = (one.fb/sumBytes*100).toFixed(2); 
+        sf = (one.sf/sumFrames*100).toFixed(2);
+        sb = (one.sb/sumBytes*100).toFixed(2); 
+        tf = parseFloat(ff)+parseFloat(sf);
+        tb = parseFloat(sf)+parseFloat(sb);    
+
+        return(
+          <tr key = {index}>
+              <td>{one.firstIP}&harr;{one.secondIP}</td> 
+              <td>{one.ff}/{ff}%</td> 
+              <td>{one.fb}/{fb}%</td> 
+              <td>{one.sf}/{sf}%</td> 
+              <td>{one.sb}/{sb}%</td>
+              <td>{tf}%</td> 
+              <td>{tb}%</td>
+          </tr>
+        );    
+      });     
+    };
+
+    var xScale = d3.scale.linear().domain([0.000, 10.000]).range([0, 10000-60]);
     var tooltipLine = function(label, data) {
         var tip;
         if(data.y != 0){
@@ -109,11 +143,21 @@ var Status = React.createClass({
 
     return (
        <div>
+       <div className="row">
+        <div className="col-lg-12 col-md-10 col-sm-12" style = {{"overflowX": "auto"}}>
+          <div className="well">
+            <table className="table table-striped" >
+            <caption>UDP Statistics</caption>
+              {udpsList}
+            </table>
+          </div>
+        </div> 
+      </div>
         <div className="row">
-          <div className="col-lg-10 col-md-10 col-sm-12" style = {{"overflowX": "auto", "float": 'none'}} >
+          <div className="col-lg-12 col-md-10 col-sm-12" style = {{"overflowX": "auto", "float": 'none'}} >
                 <LineChart
                    data={data}
-                   width={15000}
+                   width={10000}
                    height={200}
                    margin={{top: MARGINS.top, bottom: MARGINS.bottom, left: MARGINS.left, right: MARGINS.right}}
                    xScale={xScale}
@@ -126,10 +170,11 @@ var Status = React.createClass({
           </div>
         </div>    
         <div className="row">
-          <div className="col-lg-10 col-md-10 col-sm-12">
+          <div className="col-lg-12 col-md-10 col-sm-12">
             <div className="well" style = {{"overflowY": "auto", "height": "400px"}}>
               <table className="table table-striped" >
-                {udpsList}
+              <caption>UDP Packets</caption>
+                {udpConvsList}
               </table>
             </div>
           </div> 

@@ -3,34 +3,43 @@
     {
       "id": "plc1", 
       "type": "PLC",
+      "stype":"S7-300",
+      "Vendor":"Siemens",
+      "Desc":"Controller for Iron Roughneck",
       "x": 222, 
       "y": 40, 
-      "IP": "192.168.10.107",
-      "UDPMuti": []
+      "IP": "192.168.10.107"
      },
     {
       "id": "server1", 
       "type": "Server", 
+      "stype":"iFix",
+      "Vendor":"GE",
+      "Desc":"HMI server for driller's chair",
       "x": 550, 
       "y": 140, 
-      "IP": "192.168.10.120",
-      "UDPMuti": []
+      "IP": "192.168.10.120"
     },
     {
       "id": "chair1", 
-      "type": "Chair", 
+      "type": "Chair",
+      "stype":"Cyberbase",
+      "Vendor":"NOV",
+      "Desc":"Driller's chair",
       "x": 550, 
       "y": 336, 
-      "IP": "192.168.10.126",
-      "UDPMuti": []
+      "IP": "192.168.10.126"
     },
     {
       "id": "switch1", 
       "type": "Switches", 
+      "type":"Switches",
+      "stype":"Scalance X200",
+      "Vendor":"Siemens",
+      "Desc":"N/A",
       "x": 386, 
       "y": 436, 
-      "IP": "",
-      "UDPMuti": []
+      "IP": ""
     }
   ],
   "lines": [
@@ -38,7 +47,5 @@
     {"id": "l1", "x1": 450, "y1": 104, "x2": 286, "y2": 104},
     {"id": "l2", "x1": 450, "y1": 204, "x2": 614, "y2": 204},
     {"id": "l3", "x1": 450, "y1": 400, "x2": 614, "y2": 400}
-  ],
-  "channels": [
   ]
 }

@@ -1,11 +1,13 @@
 "use strict";
 
-var React = require('react');
+var React = require('react'),
+    AppActionCreators = require('../actions/AppActionCreators');
 
 var Switches = React.createClass({
   displayName: 'Switches',
   render: function() {
-    return (<g transform={this.props.transform} className={this.props.id} onClick={this._onClick} style={{"cursor":"pointer"}}>
+    return (<svg title ={this.props.IP} data-container="#topo" data-toggle="tooltip" data-placement="right">
+      <g transform={this.props.transform} className={this.props.id} onClick={this._onClick} style={{"cursor":"pointer"}}>
 <defs id="defs3">
 
     <linearGradient
@@ -375,10 +377,18 @@ var Switches = React.createClass({
        style={{"fill":"#4e9a06","fillOpacity":"1","fillRule":"nonzero","stroke":"#ffffff","strokeWidth":"0.40000001","strokeMiterlimit":"4","strokeOpacity":"1","strokeDasharray":"none","display":"inline" }}/>
   </g>
 
-  </g>);
+  </g>
+  </svg>);
   },
   _onClick: function() {
-    alert('Vessel info');
+    var tapId = this.props.tapId;
+    var resolutionRE = /TOPO-(\w+)/i;
+    var match = "";
+    if(tapId.match(resolutionRE) != null){
+      match = tapId.match(resolutionRE)[1];
+    }  
+    var pathName = "switches" + match;
+    AppActionCreators.navigateTo(pathName, {nodeId: this.props.id});
   }
 });
 

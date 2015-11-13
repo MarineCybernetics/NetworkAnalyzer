@@ -2,7 +2,6 @@
 
 var React = require('react'),
     KEYCODE_ESC = 27,
-    TopologiesStore = require('../../stores/TopologiesStore'),
     hotkey = require('react-hotkey'),
     Header = require('./Header'),
     Footer = require('./Footer'),
@@ -23,21 +22,14 @@ var NetworkInfo = React.createClass({
     document.body.classList.add('hide-scrollbars');
   },
   componentDidMount: function() {
-    var netwrokId = this.context.router.getCurrentParams().networkId;
-    TopologiesStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function() {
-    TopologiesStore.removeChangeListener(this._onChange);
     document.body.classList.remove('hide-scrollbars');
   },
   getInitialState: function() {
-    var networkId = this.context.router.getCurrentParams().networkId;
-    return {
-      network: TopologiesStore.getNetwork(networkId)
-    };
+    return {};
   },
   render: function() {
-    var network = this.state.network;
     var networkId = this.context.router.getCurrentParams().networkId;
     var tapId = this.context.router.getCurrentPathname();
     var resolutionRE = /TOPO-(\w+)/i;
@@ -45,7 +37,8 @@ var NetworkInfo = React.createClass({
     if(tapId.match(resolutionRE) != null){
       match = tapId.match(resolutionRE)[1];
     } 
-    var pathName = "networkhierarchy" + match;
+    var pathName_h = "networkhierarchy" + match;
+    var pathName_s = "networksummary" + match;
     var backPath = "topo"+ match;
     return (
       <div onClick={this._onClick}>
@@ -55,7 +48,8 @@ var NetworkInfo = React.createClass({
               <Header title="Network" name={networkId} tabIndex="1" backPath={backPath}/>
               <div className="modal-body">
                 <ul className="nav nav-tabs modal-nav">
-                  <Tab to= {pathName} params={{"networkId": networkId}}>Hierarchy</Tab>
+                  <Tab to= {pathName_h} params={{"networkId": networkId}}>Hierarchy</Tab>
+                  <Tab to= {pathName_s} params={{"networkId": networkId}}>Summary</Tab>
                 </ul>
                 <RouteHandler />
               </div>
@@ -90,14 +84,6 @@ var NetworkInfo = React.createClass({
   },
   _onModalDialogClick: function(evt) {
     evt.stopPropagation();
-  },
-  _onChange: function() {
-    var nodeId = this.context.router.getCurrentParams().nodeId;
-    if (this.isMounted()) {
-      this.setState({
-        plc: TopologiesStore.getPLC(nodeId)
-      });
-    }
   }
 });
 

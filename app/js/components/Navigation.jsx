@@ -47,8 +47,8 @@ var Navbar = React.createClass({
           <p className="navbar-text pull-right brand-container">
             <a href="#" className="signature-brand">
               <span data-toggle="popover" data-placement="bottom" 
-                    data-trigger="hover focus" data-content="Verification Assistant" data-animation="true">
-                NetworkAnalysor&nbsp;
+                    data-trigger="hover focus" data-content="Simulation Assistant" data-animation="true">
+                NetworkAnalyser&nbsp;
               </span>
             </a>
           </p>

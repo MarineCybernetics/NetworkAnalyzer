@@ -19,9 +19,9 @@ var Metadata = React.createClass({
           <img src={imgPath} width="100%"/>
         </div>
         <div className="col-md-10">
-          <p><strong style={{color: "#368282"}}>Type:&nbsp;</strong>{this.state.type}</p>
-          <p><strong style={{color: "#368282"}}>Vendor:&nbsp;</strong>{this.state.vendor}</p>
-          <p><strong style={{color: "#368282"}}>Description:&nbsp;</strong>{this.state.description}</p>
+          <p><strong style={{color: "#368282"}}>Type:&nbsp;</strong>{this.props.stype}</p>
+          <p><strong style={{color: "#368282"}}>Vendor:&nbsp;</strong>{this.props.Vendor}</p>
+          <p><strong style={{color: "#368282"}}>Description:&nbsp;</strong>{this.props.Desc}</p>
         </div>
       </div>
     );

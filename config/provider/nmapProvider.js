@@ -1,5 +1,6 @@
 module.exports = function(filename, observe) {
-	var fileReader = require('../file-reader/fr'),
+	var fs = require('fs'),
+	    fileReader = require('../file-reader/fr'),
 	    resolutionRE = [];
 	    
 	resolutionRE[0] = /^Nmap\sscan\sreport\sfor\s(\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3})/i;
@@ -46,8 +47,15 @@ module.exports = function(filename, observe) {
 	};
 
 	var localResolutions = {};
-	localResolutions = fileReader.readOnce(filename, readHandler, lineParser);
-	fileReader.startWatching(filename, readHandler, lineParser);
+
+	try {
+      var stats = fs.statSync(filename);
+      localResolutions = fileReader.readOnce(filename, readHandler, lineParser);
+	  fileReader.startWatching(filename, readHandler, lineParser);
+    }
+    catch (e) {
+      console.log("File does not exist.");
+    }
 
 	var nmapProvider = {};
 

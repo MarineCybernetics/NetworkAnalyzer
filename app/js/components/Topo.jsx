@@ -20,7 +20,7 @@ var Network = React.createClass({
   },
   render: function() {
     return (
-      <line tapId={this.props.tapId} key={this.props.key} id={this.props.id} x1={this.props.x1} y1={this.props.y1} x2={this.props.x2} y2={this.props.y2} onClick={this._onClick} style={{"stroke":"rgb(255,0,0)","strokeWidth":"2.5","cursor":"pointer"}} />
+      <line tapId={this.props.tapId} key={this.props.key} id={this.props.id} x1={this.props.x1} y1={this.props.y1} x2={this.props.x2} y2={this.props.y2} onClick={this._onClick} style={{"stroke":"rgb(255,0,0)","strokeWidth":"3","cursor":"pointer"}} />
     );
   },
   _onClick: function() { 
@@ -35,7 +35,11 @@ var Topo = React.createClass({
   contextTypes: {
     router: React.PropTypes.func
   },
+  componentWillMount: function() {
+    $('[data-toggle="tooltip"]').tooltip();     
+  },
   getInitialState: function() {
+    $('[data-toggle="tooltip"]').tooltip(); 
     return TopologyStore.getTopology();
   },
   componentDidMount: function() {

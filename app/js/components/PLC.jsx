@@ -5,6 +5,16 @@ var React = require('react'),
 
 var PLC = React.createClass({
   displayName: 'PLC',
+  componentWillMount: function() {
+    $('[data-toggle="tooltip"]').tooltip();     
+  },
+  getInitialState: function() {
+    $('[data-toggle="tooltip"]').tooltip(); 
+    return {};
+  },
+  componentDidMount: function() {
+    $('[data-toggle="tooltip"]').tooltip();   
+  },
   render: function() {
     return (<svg title ={this.props.IP} data-container="#topo" data-toggle="tooltip" data-placement="right">
       <g transform={this.props.transform} className={this.props.id} onClick={this._onClick} style={{"cursor":"pointer"}}>

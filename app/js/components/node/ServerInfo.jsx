@@ -2,13 +2,14 @@
 
 var React = require('react'),
     KEYCODE_ESC = 27,
-    TopologiesStore = require('../../stores/TopologiesStore'),
+    MetaStore = require('../../stores/MetaStore'),
     hotkey = require('react-hotkey'),
     Header = require('./Header'),
     Footer = require('./Footer'),
     Metadata = require('./Metadata'),
     AppActionCreators = require('../../actions/AppActionCreators'),
-    Tab = require('../Tab');
+    Tab = require('../Tab'),
+    MetaActionCreators = require('../../actions/MetaActionCreators');
 
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
@@ -24,20 +25,18 @@ var ServerInfo = React.createClass({
   },
   componentDidMount: function() {
     var nodeId = this.context.router.getCurrentParams().nodeId;
-    TopologiesStore.addChangeListener(this._onChange);
+    MetaActionCreators.startMetaDataRequest(nodeId);
+    MetaStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function() {
-    TopologiesStore.removeChangeListener(this._onChange);
+    MetaActionCreators.stopMetaDataRequest();
+    MetaStore.removeChangeListener(this._onChange);
     document.body.classList.remove('hide-scrollbars');
   },
   getInitialState: function() {
-    var nodeId = this.context.router.getCurrentParams().nodeId;
-    return {
-      server: TopologiesStore.getServer(nodeId)
-    };
+    return {};
   },
   render: function() {
-    var server = this.state.server;
     var nodeId = this.context.router.getCurrentParams().nodeId;
     var tapId = this.context.router.getCurrentPathname();
     var resolutionRE = /TOPO-(\w+)/i;
@@ -49,6 +48,7 @@ var ServerInfo = React.createClass({
     var ippathName = "serverip" + match;
     var tcppathName = "servertcp" + match;
     var udppathName = "serverudp" + match;
+    var linkmeaspathName = "serverlinkmeas" + match;
     var backPath = "topo"+ match;
     return (
       <div onClick={this._onClick}>
@@ -62,8 +62,9 @@ var ServerInfo = React.createClass({
                   <Tab to= {ippathName} params={{"nodeId": nodeId}}>IP</Tab>
                   <Tab to= {tcppathName} params={{"nodeId": nodeId}}>TCP</Tab>
                   <Tab to= {udppathName} params={{"nodeId": nodeId}}>UDP</Tab>
+                  <Tab to= {linkmeaspathName} params={{"nodeId": nodeId}}>Linkmeas</Tab>
                 </ul>
-                <Metadata title= "Server"/>
+                <Metadata title= "Server" stype={this.state.stype} Vendor={this.state.Vendor} Desc={this.state.Desc} />
                 <RouteHandler />
               </div>
             </div>
@@ -101,9 +102,7 @@ var ServerInfo = React.createClass({
   _onChange: function() {
     var nodeId = this.context.router.getCurrentParams().nodeId;
     if (this.isMounted()) {
-      this.setState({
-        server: TopologiesStore.getServer(nodeId)
-      });
+      this.setState(MetaStore.getMetaData());
     }
   }
 });

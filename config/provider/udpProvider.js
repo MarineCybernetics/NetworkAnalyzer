@@ -5,8 +5,8 @@ module.exports = function(filename, nodeIP, observe) {
 	    fileReader = require('../file-reader/fr'),
 	    resolutionRE = [];     
 
-	resolutionRE[0] = /^([\d\.]+)\s+([\d\.]+)\s+(\d+)\s+([\d\.]+)\s+(\d+)\s+(\d+)/i;
-                       
+	resolutionRE[0] = /^(\d+\.\d+\.\d+\.\d+\:\d+)\s+<->\s+(\d+\.\d+\.\d+\.\d+\:\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+\d+\s+\d+\s+/i;
+
 	var setTimestamp = function(resolutions) {
 		if (resolutions.timestamp == null) {
 			resolutions.timestamp = new Date().toLocaleString();
@@ -20,13 +20,12 @@ module.exports = function(filename, nodeIP, observe) {
 		if (result.resolutions == undefined) {
 			result.resolutions = [];
 		}
-
 		if (result.resolutions.length ==0) {
-			result.resolutions.push({"reftime": 0,"srcIP": 0,"srcPort": 0,"dstIP": 0,"dstPort": 0,"pSize": 0});
+			result.resolutions.push({"firstIP": 0, "secondIP": 0, "ff": 0, "fb": 0, "sf": 0, "sb": 0});
 		}
 
-		if (matches[0] != null) {
-		    var l = {"reftime": matches[0][1], "srcIP": matches[0][2], "srcPort": matches[0][3], "dstIP": matches[0][4], "dstPort": matches[0][5], "pSize": matches[0][6]};	
+		if (matches[0] != null) {	
+		    var l = {"firstIP": matches[0][1], "secondIP": matches[0][2], "ff": matches[0][3], "fb": matches[0][4], "sf": matches[0][5], "sb": matches[0][6]};	
 			result.resolutions.push(l);
 		}
 	};
@@ -41,7 +40,12 @@ module.exports = function(filename, nodeIP, observe) {
 		}
 	};
 
-	pcapReader.extrUDP(nodeIP);
+	try {
+      var stats = fs.statSync(filename);
+    }
+    catch (e) {
+      pcapReader.extrUDP(nodeIP);
+    }
 
 	var localResolutions = {};
 	localResolutions = fileReader.readOnce(filename, readHandler, lineParser);

@@ -1,6 +1,7 @@
 module.exports = function(fileName, observe) {
 
-	var pcapReader = require('../file-reader/pcapr'),
+	var fs = require('fs'),
+	    pcapReader = require('../file-reader/pcapr'),
 	    fileReader = require('../file-reader/fr'), 
 	    resolutionRE = /^(.+[^\s])\s+frames:(\d+)\sbytes:(\d+)/i;   
 
@@ -34,7 +35,12 @@ module.exports = function(fileName, observe) {
 		}
 	};
 
-    pcapReader.extrHierarchy();
+	try {
+      var stats = fs.statSync(fileName);
+    }
+    catch (e) {
+      pcapReader.extrHierarchy();
+    }
 
     var localResolutions = {};
 	localResolutions = fileReader.readOnce(fileName, readHandler, lineParser);

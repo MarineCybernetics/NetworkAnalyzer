@@ -2,13 +2,14 @@
 
 var React = require('react'),
     KEYCODE_ESC = 27,
-    TopologiesStore = require('../../stores/TopologiesStore'),
+    MetaStore = require('../../stores/MetaStore'),
     hotkey = require('react-hotkey'),
     Header = require('./Header'),
     Footer = require('./Footer'),
     Metadata = require('./Metadata'),
     AppActionCreators = require('../../actions/AppActionCreators'),
-    Tab = require('../Tab');
+    Tab = require('../Tab'),
+    MetaActionCreators = require('../../actions/MetaActionCreators');
 
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
@@ -24,20 +25,18 @@ var ChairInfo = React.createClass({
   },
   componentDidMount: function() {
     var nodeId = this.context.router.getCurrentParams().nodeId;
-    TopologiesStore.addChangeListener(this._onChange);
+    MetaActionCreators.startMetaDataRequest(nodeId);
+    MetaStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function() {
-    TopologiesStore.removeChangeListener(this._onChange);
+    MetaActionCreators.stopMetaDataRequest();
+    MetaStore.removeChangeListener(this._onChange);
     document.body.classList.remove('hide-scrollbars');
   },
   getInitialState: function() {
-    var nodeId = this.context.router.getCurrentParams().nodeId;
-    return {
-      chair: TopologiesStore.getChair(nodeId)
-    };
+    return {};
   },
   render: function() {
-    var chair = this.state.chair;
     var nodeId = this.context.router.getCurrentParams().nodeId;
     var tapId = this.context.router.getCurrentPathname();
     var resolutionRE = /TOPO-(\w+)/i;
@@ -49,6 +48,7 @@ var ChairInfo = React.createClass({
     var ippathName = "chairip" + match;
     var tcppathName = "chairtcp" + match;
     var udppathName = "chairudp" + match;
+    var linkmeaspathName = "chairlinkmeas" + match;
     var backPath = "topo"+ match;
     return (
       <div onClick={this._onClick}>
@@ -62,8 +62,9 @@ var ChairInfo = React.createClass({
                   <Tab to= {ippathName} params={{"nodeId": nodeId}}>IP</Tab>
                   <Tab to= {tcppathName} params={{"nodeId": nodeId}}>TCP</Tab>
                   <Tab to= {udppathName} params={{"nodeId": nodeId}}>UDP</Tab>
+                  <Tab to= {linkmeaspathName} params={{"nodeId": nodeId}}>LinkMeas</Tab>
                 </ul>
-                <Metadata title="Chair"/>
+                <Metadata title="Chair" stype={this.state.stype} Vendor={this.state.Vendor} Desc={this.state.Desc} />
                 <RouteHandler />
               </div>
             </div>
@@ -101,9 +102,7 @@ var ChairInfo = React.createClass({
   _onChange: function() {
     var nodeId = this.context.router.getCurrentParams().nodeId;
     if (this.isMounted()) {
-      this.setState({
-        chair: TopologiesStore.getChair(nodeId)
-      });
+      this.setState(MetaStore.getMetaData());
     }
   }
 });

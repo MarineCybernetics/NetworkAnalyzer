@@ -20,7 +20,7 @@ var Network = React.createClass({
   },
   render: function() {
     return (
-      <line tapId={this.props.tapId} key={this.props.key} id={this.props.id} x1={this.props.x1} y1={this.props.y1} x2={this.props.x2} y2={this.props.y2} onClick={this._onClick} style={{"stroke":"rgb(255,0,0)","strokeWidth":"2","cursor":"pointer"}} />
+      <line tapId={this.props.tapId} key={this.props.key} id={this.props.id} x1={this.props.x1} y1={this.props.y1} x2={this.props.x2} y2={this.props.y2} onClick={this._onClick} style={{"stroke":"rgb(255,0,0)","strokeWidth":"3","cursor":"pointer"}} />
     );
   },
   _onClick: function() { 
@@ -41,6 +41,7 @@ var TopoTCP = React.createClass({
   componentDidMount: function() {
     TopologyActionCreators.startTopoTCPRequest();
     TopologyStore.addChangeListener(this._onChange);  
+    $('[data-toggle="popover"]').popover();
     $('[data-toggle="tooltip"]').tooltip();  
   },
   componentWillUnmount: function() {
@@ -58,7 +59,7 @@ var TopoTCP = React.createClass({
             if (one.id == "capture"){
               l = <Network tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2}/>
             }else{
-              l = <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(255,0,0)","strokeWidth":"2"}} />
+              l = <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(255,0,0)","strokeWidth":"1"}} />
             }
 
           return(
@@ -71,10 +72,12 @@ var TopoTCP = React.createClass({
     var channels = this.state.tcpchannels;
     if (channels !== undefined) {
         channelsList = channels.map(function(one, index) {
+          $('[data-toggle="popover"]').popover();
           return(
-            <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,0,255)","strokeWidth":"2","cursor":"pointer"}} />
+            <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,0,255)","strokeWidth":"2","cursor":"pointer", "fontSize":"100"}} data-trigger="hover focus" data-template='<div class="popover">
+<div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" style= "font-size:9.5pt"></div></div>' data-html = "true" data-placement="right" data-container="#topo" data-toggle="popover" title="TCP_COV Info" data-content={one.info} data-animation="true"/>
           );  
-        });     
+        });                                                                                                  
     };
 
     var nodesList = <g className="nodes"/>;
@@ -108,11 +111,12 @@ var TopoTCP = React.createClass({
         <RouteHandler />
         <div className="row">
           <div className="1" style={{"textAlign": "center"}}>
-            <svg version="1.1" id="to_1" x="0px" y="0px" width="80%" height="600" preserveAspectRatio="xMidYMid meet" style={{"textAlign": "center", "borderStyle":"solid","borderWidth":"2px","borderColor":"black","backgroundColor":"white"}} viewBox="0 0 900 600">
+            <svg version="1.1" id="to_1" x="0px" y="0px" width="80%" height="600" preserveAspectRatio="xMidYMid meet" style={{"textAlign": "center", "borderStyle":"solid","borderWidth":"2px","borderColor":"black","backgroundColor":"white"}} viewBox="0 0 900 600" >
               <g className="lines">
                 {linesList}
               </g>   
-              <g className="tcpchannels">
+              <g className="tcpchannels" >
+
                 {channelsList}
               </g>         
               <g className="nodes">

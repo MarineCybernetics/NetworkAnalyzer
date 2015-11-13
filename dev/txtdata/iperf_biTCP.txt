@@ -1,0 +1,13 @@
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 64.0 KByte (default)
+------------------------------------------------------------
+------------------------------------------------------------
+Client connecting to 192.168.10.107, TCP port 5001
+TCP window size: 64.0 KByte (default)
+------------------------------------------------------------
+[176] local 192.168.10.126 port 48000 connected with 192.168.10.107 port 5001
+[192] local 192.168.10.126 port 5001 connected with 192.168.10.107 port 61482
+[ ID] Interval       Transfer     Bandwidth
+[176]  0.0-10.0 sec   865 MBytes   725 Mbits/sec
+[192]  0.0-10.0 sec  2.03 Gbits   203 Mbits/sec

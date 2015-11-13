@@ -12,6 +12,9 @@ var UDPStore = assign({}, EventEmitter.prototype, {
 	getUDPData: function() {
 		return _udpData;
 	},
+	cleanUDPData: function() {
+		_udpData = {};
+	},
 	emitChange: function() {
 		this.emit(CHANGE_EVENT);
 	},
