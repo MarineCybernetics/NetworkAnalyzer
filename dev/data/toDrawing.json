@@ -1,1 +1,51 @@
-{"nodes":[{"id":"plc1","type":"PLC","stype":"S7-300","Vendor":"Siemens","Desc":"Controller for Iron Roughneck","x":222,"y":40,"IP":"192.168.10.107","UDPMuti":[{"MUDP":"224.10.10.107:20711","x":242.46,"y":60.46},{"MUDP":"224.10.10.107:20721","x":283.5,"y":47.5}],"mx":254,"my":72},{"id":"server1","type":"Server","stype":"iFix","Vendor":"GE","Desc":"HMI server for driller's chair","x":550,"y":140,"IP":"192.168.10.120","UDPMuti":[{"MUDP":"224.10.10.120:22011","x":570.46,"y":160.46}],"mx":582,"my":172},{"id":"chair1","type":"Chair","stype":"Cyberbase","Vendor":"NOV","Desc":"Driller's chair","x":550,"y":336,"IP":"192.168.10.126","UDPMuti":[{"MUDP":"224.10.10.90:29901","x":570.46,"y":356.46},{"MUDP":"224.10.10.93:29913","x":611.5,"y":343.5},{"MUDP":"224.10.10.91:39911","x":652.54,"y":356.46}],"mx":582,"my":368},{"id":"switch1","type":"Switches","stype":"Scalance X200","Vendor":"Siemens","Desc":"N/A","x":386,"y":436,"IP":"N_A","UDPMuti":[]}],"lines":[{"id":"capture","x1":450,"y1":500,"x2":450,"y2":10},{"id":"l1","x1":450,"y1":104,"x2":286,"y2":104},{"id":"l2","x1":450,"y1":204,"x2":614,"y2":204},{"id":"l3","x1":450,"y1":400,"x2":614,"y2":400}],"channels":[{"id":"server1-plc1","x1":614,"y1":204,"x2":286,"y2":104}],"mlines":[{"id":"ml","x1":286,"y1":104,"x2":242.46,"y2":60.46},{"id":"ml","x1":614,"y1":204,"x2":570.46,"y2":160.46},{"id":"ml","x1":614,"y1":400,"x2":570.46,"y2":356.46},{"id":"ml","x1":614,"y1":400,"x2":611.5,"y2":343.5},{"id":"ml","x1":286,"y1":104,"x2":283.5,"y2":47.5},{"id":"ml","x1":614,"y1":400,"x2":652.54,"y2":356.46}],"tcpchannels":[{"id":"plc1-server1","x1":614,"y1":204,"x2":286,"y2":104,"info":"192.168.10.120:54284&harr;192.168.10.107:102<br />192.168.10.120:50757&harr;192.168.10.107:102"}],"udpchannels":[],"linkmeas":[{"id":"192.168.10.107_192.168.10.120","x1":286,"y1":104,"x2":614,"y2":204,"tcpinfo":"","udpinfo":""},{"id":"192.168.10.107_192.168.10.126","x1":286,"y1":104,"x2":614,"y2":400,"tcpinfo":"<tr><td colspan='3'>192.168.10.107:5001&harr;192.168.10.126:48000</td></tr><tr><td>725 Mbits/sec</td><td/><td/></tr><tr><td colspan='3'>192.168.10.107:61482&harr;192.168.10.126:5001</td></tr><tr><td>203 Mbits/sec</td><td/><td/></tr>","udpinfo":"<tr><td colspan='3'>192.168.10.107:5001&harr;192.168.10.126:50332</td></tr><tr><td>87.7 Mbits/sec</td><td>0.272 ms</td><td>13%</td></tr><tr><td colspan='3'>192.168.10.107:58283&harr;192.168.10.126:5001</td></tr><tr><td>86.1 Mbits/sec</td><td>0.778 ms</td><td>0%</td></tr>"},{"id":"192.168.10.120_192.168.10.126","x1":614,"y1":204,"x2":614,"y2":400,"tcpinfo":"","udpinfo":""}]}
+{
+  "nodes": [
+    {
+      "id": "plc1", 
+      "type": "PLC",
+      "stype":"S7-300",
+      "Vendor":"Siemens",
+      "Desc":"Controller for Iron Roughneck",
+      "x": 222, 
+      "y": 40, 
+      "IP": "192.168.10.107"
+     },
+    {
+      "id": "server1", 
+      "type": "Server", 
+      "stype":"iFix",
+      "Vendor":"GE",
+      "Desc":"HMI server for driller's chair",
+      "x": 550, 
+      "y": 140, 
+      "IP": "192.168.10.120"
+    },
+    {
+      "id": "chair1", 
+      "type": "Chair",
+      "stype":"Cyberbase",
+      "Vendor":"NOV",
+      "Desc":"Driller's chair",
+      "x": 550, 
+      "y": 336, 
+      "IP": "192.168.10.126"
+    },
+    {
+      "id": "switch1", 
+      "type": "Switches", 
+      "type":"Switches",
+      "stype":"Scalance X200",
+      "Vendor":"Siemens",
+      "Desc":"N_A",
+      "x": 386, 
+      "y": 436, 
+      "IP": "N_A"
+    }
+  ],
+  "lines": [
+    {"id": "capture", "x1": 450, "y1": 500, "x2": 450, "y2": 10},
+    {"id": "l1", "x1": 450, "y1": 104, "x2": 286, "y2": 104},
+    {"id": "l2", "x1": 450, "y1": 204, "x2": 614, "y2": 204},
+    {"id": "l3", "x1": 450, "y1": 400, "x2": 614, "y2": 400}
+  ]
+}

@@ -39,6 +39,7 @@ module.exports = function(fileName, observe) {
       var stats = fs.statSync(fileName);
     }
     catch (e) {
+      fs.openSync(filename, "w");     	
       pcapReader.extrHierarchy();
     }
 

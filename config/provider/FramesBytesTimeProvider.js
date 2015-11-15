@@ -40,7 +40,8 @@ module.exports = function(filename, observe) {
     try {
       var stats = fs.statSync(filename);
     }
-    catch (e) {
+    catch (err) {
+      fs.openSync(filename, "w"); 	
       pcapReader.extrSummary();
     }
 

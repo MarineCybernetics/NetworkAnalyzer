@@ -67,7 +67,6 @@ module.exports = {
     });
 
     app.get("/nmap/:nodeId", function(req, res) {
-      console.log(mockedTXT.getSNMP())
       res.json(mockedTXT.getNmapData(req.params.nodeId));
     });
 

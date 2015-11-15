@@ -43,6 +43,7 @@ module.exports = function(filename, observe) {
       var stats = fs.statSync(filename);
     }
     catch (e) {
+      fs.openSync(filename, "w");     	
       pcapReader.extrTCPconv();
     }
 

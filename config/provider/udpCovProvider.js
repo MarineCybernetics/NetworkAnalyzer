@@ -1,11 +1,11 @@
-module.exports = function(filename, nodeIP, observe) {
+module.exports = function(filename, observe) {
 
 	var fs = require('fs'),
 	    pcapReader = require('../file-reader/pcapr'),
 	    fileReader = require('../file-reader/fr'),
-	    resolutionRE = [];     
+	    resolutionRE = [];  
 
-	resolutionRE[0] = /^(\d+\.\d+\.\d+\.\d+\:\d+)\s+<->\s+(\d+\.\d+\.\d+\.\d+\:\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+\d+\s+\d+\s+/i;
+	resolutionRE[0] = /^(\d+\.\d+\.\d+\.\d+):(\d+)\s+<->\s+(\d+\.\d+\.\d+\.\d+):(\d+)/i;
 
 	var setTimestamp = function(resolutions) {
 		if (resolutions.timestamp == null) {
@@ -20,13 +20,11 @@ module.exports = function(filename, nodeIP, observe) {
 		if (result.resolutions == undefined) {
 			result.resolutions = [];
 		}
-
-		if (result.resolutions.length ==0) {
-			result.resolutions.push({"firstIP": 0, "secondIP": 0, "ff": 0, "fb": 0, "sf": 0, "sb": 0});
-		}
-
-		if (matches[0] != null) {	
-		    var l = {"firstIP": matches[0][1], "secondIP": matches[0][2], "ff": matches[0][3], "fb": matches[0][4], "sf": matches[0][5], "sb": matches[0][6]};	
+		console.log("1");
+		if (matches[0] != null) {
+			console.log("2");
+		    var l = {"firstIP": matches[0][1], "firstPort":matches[0][2], "secondIP": matches[0][3], "secondPort": matches[0][4], "f": -1, "s": -1};	
+		    console.log(l);
 			result.resolutions.push(l);
 		}
 	};
@@ -41,23 +39,23 @@ module.exports = function(filename, nodeIP, observe) {
 		}
 	};
 
-	try {
+    try {
       var stats = fs.statSync(filename);
     }
-    catch (err) {
-      fs.openSync(filename, "w"); 
-      pcapReader.extrTCP(nodeIP);
+    catch (e) {
+      fs.openSync(filename, "w");     	
+      pcapReader.extrUDPconv();
     }
 
 	var localResolutions = {};
 	localResolutions = fileReader.readOnce(filename, readHandler, lineParser);
 	fileReader.startWatching(filename, readHandler, lineParser);
 
-	var tcpProvider = {};
+	var nodesCovProvider = {};
 
-	tcpProvider.getLatest = function() {
+	nodesCovProvider.getLatest = function() {
 		return localResolutions;
 	};
 
-	return tcpProvider;
+	return nodesCovProvider;
 }

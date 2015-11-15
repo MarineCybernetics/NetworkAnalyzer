@@ -4,7 +4,8 @@ var fs = require('fs'),
     nmapProvider = require('./provider/nmapProvider'),
     hierarchyProvider = require('./provider/hierarchyProvider'),
     summaryProvider = require('./provider/FramesBytesTimeProvider'),
-    tcpudpCovProvider = require('./provider/tcpudpCovProvider'),
+    tcpCovProvider = require('./provider/tcpCovProvider'),
+    udpCovProvider = require('./provider/udpCovProvider'),
     linkmeasTCPProvider = require('./provider/linkmeasTCPProvider'),
     linkmeasUDPProvider = require('./provider/linkmeasUDPProvider'),
     udpMCovProvider = require('./provider/udpMCovProvider'),
@@ -13,6 +14,7 @@ var fs = require('fs'),
     tcpProvider = require('./provider/tcpProvider'),
     snmpProvider = require('./provider/snmpProvider'),
     txtData = "./dev/txtdata/",
+    generatedData = "./dev/generated/",
     _ = require('underscore');    
 
 module.exports = {
@@ -26,27 +28,29 @@ module.exports = {
     return nmapProvider(filePath).getLatest();
   },
   getHierarchy: function() {
-    var filePath = txtData + "hierarchy.txt";
+    var filePath = generatedData + "hierarchy.txt";
     return hierarchyProvider(filePath).getLatest();
   },
   getSummary: function() {
-    var filePath = txtData + "summary.txt";
+    var filePath = generatedData + "summary.txt";
     var s = summaryProvider(filePath).getLatest();
-    var summary = s.resolutions[0];
     
-    var avgpps = (parseFloat(summary.frames)/parseFloat(summary.end)).toFixed(1);
-    var avgps =  (parseFloat(summary.bytes)/parseFloat(summary.frames)).toFixed(1);
-    var avgbps = (parseFloat(summary.bytes)/parseFloat(summary.end)).toFixed(1);
-    summary.avgpps = avgpps;
-    summary.avgps = avgps;
-    summary.avgbps = avgbps;
-    s.resolutions[0] = summary;
+    if(s.resolutions.length>0){
+      var summary = s.resolutions[0];
+      var avgpps = (parseFloat(summary.frames)/parseFloat(summary.end)).toFixed(1);
+      var avgps =  (parseFloat(summary.bytes)/parseFloat(summary.frames)).toFixed(1);
+      var avgbps = (parseFloat(summary.bytes)/parseFloat(summary.end)).toFixed(1);
+      summary.avgpps = avgpps;
+      summary.avgps = avgps;
+      summary.avgbps = avgbps;
+      s.resolutions[0] = summary;
+    }
 
     return s;
   },
   getTCPData: function(nodeIP) {
-    var filePath1 = txtData + nodeIP + "_tcp.txt";
-    var filePath2 = txtData + "summary.txt";
+    var filePath1 = generatedData + nodeIP + "_tcp.txt";
+    var filePath2 = generatedData + "summary.txt";
     var result = {};
     console.log(filePath1);
     result.resolutions = tcpProvider(filePath1, nodeIP).getLatest().resolutions;
@@ -54,9 +58,9 @@ module.exports = {
     return result;
   },
   getUDPData: function(nodeIP) {
-    var filePath1 = txtData + nodeIP + "_node_udp.txt";
-    var filePath2 = txtData + nodeIP + "_udp.txt";
-    var filePath3 = txtData + "summary.txt";
+    var filePath1 = generatedData + nodeIP + "_node_udp.txt";
+    var filePath2 = generatedData + nodeIP + "_udp.txt";
+    var filePath3 = generatedData + "summary.txt";
     var result = {};
     result.resolutions1 = udpNodeCovProvider(filePath1, nodeIP).getLatest().resolutions;
     result.resolutions2 = udpProvider(filePath2, nodeIP).getLatest().resolutions;
@@ -170,7 +174,7 @@ module.exports = {
 
       topo.linkmeas = linkmeas;
 
-      fs.writeFile("./dev/data/toDrawing.json", JSON.stringify(topo), function(err) {
+      fs.writeFile("./dev/generated/toDrawing.json", JSON.stringify(topo), function(err) {
         if(err) {
          return console.log(err);
         }
@@ -189,8 +193,8 @@ module.exports = {
     var id;
 
     if(topo.tcpchannels == undefined){
-      var filePath = txtData + "TCPcov.txt";
-      var tcpCov = tcpudpCovProvider(filePath).getLatest().resolutions;
+      var filePath = generatedData + "TCPcov.txt";
+      var tcpCov = tcpCovProvider(filePath).getLatest().resolutions;
       var links = [];
 
       for (var i = 0; i < tcpCov.length; i++) {
@@ -253,7 +257,7 @@ module.exports = {
       topo.tcpchannels = [];
       topo.tcpchannels = links;
 
-      fs.writeFile("./dev/data/toDrawing.json", JSON.stringify(topo), function(err) {
+      fs.writeFile("./dev/generated/toDrawing.json", JSON.stringify(topo), function(err) {
         if(err) {
          return console.log(err);
         }
@@ -274,8 +278,8 @@ module.exports = {
     var id;
 
     if(topo.udpchannels == undefined){
-      var filePath = txtData + "UDPcov.txt";
-      var udpCov = tcpudpCovProvider(filePath).getLatest().resolutions;
+      var filePath = generatedData + "UDPcov.txt";
+      var udpCov = udpCovProvider(filePath).getLatest().resolutions;
       var links = [];
 
       for (var i = 0; i < udpCov.length; i++) {
@@ -336,7 +340,7 @@ module.exports = {
       topo.udpchannels = [];
       topo.udpchannels = links;
 
-        fs.writeFile("./dev/data/toDrawing.json", JSON.stringify(topo), function(err) {
+        fs.writeFile("./dev/generated/toDrawing.json", JSON.stringify(topo), function(err) {
         if(err) {
          return console.log(err);
         }
@@ -347,7 +351,7 @@ module.exports = {
 
     //multicast
     if(nodes[0].UDPMuti == undefined){
-      var filePath = txtData + "UDPMcov.txt";
+      var filePath = generatedData + "UDPMcov.txt";
       var udpCov = udpMCovProvider(filePath).getLatest().resolutions;
       for (var i = 0; i < udpCov.length; i++) {
         for (var j = 0; j < nodes.length; j++) {
@@ -403,7 +407,7 @@ module.exports = {
         }
       }; 
 
-      fs.writeFile("./dev/data/toDrawing.json", JSON.stringify(topo), function(err) {
+      fs.writeFile("./dev/generated/toDrawing.json", JSON.stringify(topo), function(err) {
         if(err) {
          return console.log(err);
         }
