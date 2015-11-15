@@ -12,7 +12,7 @@ var Topologies = React.createClass({
       <div>
         <ul className="nav nav-pills nav-stacked  sub-nav">
           <Tab to="topo" params={{tapId: "TOPO"}}><strong>TOPO</strong></Tab>
-          <Tab to="topoIP" params={{tapId: "TOPO-IP"}}><strong>TOPO-IP</strong></Tab>
+          <Tab to="topoLinkMeas" params={{tapId: "TOPO-LinkMwas"}}><strong>TOPO-LinkMeas</strong></Tab>
           <Tab to="topoTCP" params={{tapId: "TOPO-TCP"}}><strong>TOPO-TCP</strong></Tab>
           <Tab to="topoUDP" params={{tapId: "TOPO-UDP"}}><strong>TOPO-UDP</strong></Tab>
         </ul>

@@ -71,8 +71,8 @@ var Status = React.createClass({
     };
     return (
       <div className="row">
-        <div className="col-lg-12 col-md-10 col-sm-12">
-          <div className="well">
+        <div className="col-lg-12 col-md-12 col-sm-12">
+          <div className="well" style = {{"overflowX": "auto"}}>
             <table className="table table-striped" >
             <caption>TCP Statistics</caption>
               {tcpsList}

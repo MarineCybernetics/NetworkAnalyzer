@@ -132,7 +132,7 @@ var TopoUDP = React.createClass({
             var translate = "translate(" + one.x + "," + one.y +")";
             return(
               <g>
-                <circle cx={one.x} cy={one.y} r="5" fill="white" stroke="rgb(0,255,127)" stroke-width="10" title ={one.MUDP} data-container="#topo" data-toggle="tooltip" data-placement="right">
+                <circle cx={one.x} cy={one.y} r="6" fill="white" stroke="gray" stroke-width="10" fill="rgb(0,255,127)" title ={one.MUDP} data-container="#topo" data-toggle="tooltip" data-placement="right">
                 </circle>
               </g>
             );

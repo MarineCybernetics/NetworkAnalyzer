@@ -34,9 +34,9 @@ module.exports = {
       res.json(topologies);
     });
 
-    app.get("/topoIP", function(req, res) {
-      console.log("iiiiiiiiiiiiiiii");
-      res.json(mockedTXT.getTopoIP(topologies));
+    app.get("/topoLinkMeas", function(req, res) {
+      console.log("llllllllllllllll");
+      res.json(mockedTXT.getTopoLinkMeas(topologies));
     });
 
     app.get("/topoTCP", function(req, res) {
@@ -66,82 +66,13 @@ module.exports = {
       res.json(meta);
     });
 
-    app.get("/linkmeas/:nodeId", function(req, res) {
-      res.json({
-        "UDP":[
-          {
-            "ip1":"",
-            "ip2":"",
-            "Interval":"",
-            "Transfer":"",
-            "Bandwidth":"",
-            "Jitter":"",
-            "Lost":""
-          },
-          {
-            "ip1":"192.168.10.126:50332",
-            "ip2":"192.168.10.107:5001",
-            "Interval":"0.0-10.0 sec",
-            "Transfer":"105 MBytes",
-            "Bandwidth":"87.7 Mbits/sec",
-            "Jitter":"0.272 ms",
-            "Lost":"10877/85465 (13%)"
-          },
-          {
-            "ip1":"192.168.10.126:5001",
-            "ip2":"192.168.10.107:58283",
-            "Interval":"0.0-10.0 sec",
-            "Transfer":"103 MBytes",
-            "Bandwidth":"86.1 Mbits/sec",  
-            "Jitter":"0.778 ms",
-            "Lost":"0/73294 (0%)"
-          }
-        ],
-        "TCP":[
-          {
-            "ip1":"",
-            "ip2":"",
-            "Interval":"", 
-            "Transfer":"", 
-            "Bandwidth":""
-          },
-          {
-            "ip1":"192.168.10.126:48000",
-            "ip2":"192.168.10.107:5001",
-            "Interval":"0.0-10.0 sec", 
-            "Transfer":"865 MBytes", 
-            "Bandwidth":"725 Mbits/sec"
-          },
-          {
-            "ip1":"192.168.10.126:5001",
-            "ip2":"192.168.10.107:61482",
-            "Interval":"0.0-10.0 sec", 
-            "Transfer":"2.03 Gbits", 
-            "Bandwidth":"203 Mbits/sec"            
-          }
-        ]
-      });
-    });
-
     app.get("/nmap/:nodeId", function(req, res) {
+      console.log(mockedTXT.getSNMP())
       res.json(mockedTXT.getNmapData(req.params.nodeId));
     });
 
     app.get("/snmp/:nodeId", function(req, res) {
-      res.json({
-        
-      });
-    });
-
-    app.get("/ip/:nodeId", function(req, res) {
-      var nodeIP;
-      var nodes = topologies.nodes;
-      for (var i = 0; i < nodes.length; i++) {
-        if (req.params.nodeId == nodes[i].id){
-          nodeIP = nodes[i].IP;
-        }
-      };
-      res.json(mockedTXT.getIPData(nodeIP));
+      res.json(mockedTXT.getSNMP());
     });
 
     app.get("/tcp/:nodeId", function(req, res) {

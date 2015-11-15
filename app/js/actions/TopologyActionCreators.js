@@ -10,9 +10,9 @@ var TopologyActionCreators = {
 			TopologyAPI.requestTopo();
 		}, 1000);
 	},
-	startTopoIPRequest: function() {
+	startTopoLinkMeasRequest: function() {
 		_topologyInterval = setInterval(function() {
-			TopologyAPI.requestTopoIP();
+			TopologyAPI.requestTopoLinkMeas();
 		}, 1000);
 	},
     startTopoTCPRequest: function() {

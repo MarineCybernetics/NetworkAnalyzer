@@ -8,8 +8,8 @@ module.exports = {
 			TopologyServerActionCreators.handleTopologySuccess(response);                             
 		});
 	},
-	requestTopoIP: function() {
-		$.get('/topoIP', function(response) {
+	requestTopoLinkMeas: function() {
+		$.get('/topoLinkMeas', function(response) {
 			TopologyServerActionCreators.handleTopologySuccess(response);                             
 		});
 	},

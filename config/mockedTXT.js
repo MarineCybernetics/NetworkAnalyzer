@@ -5,15 +5,22 @@ var fs = require('fs'),
     hierarchyProvider = require('./provider/hierarchyProvider'),
     summaryProvider = require('./provider/FramesBytesTimeProvider'),
     tcpudpCovProvider = require('./provider/tcpudpCovProvider'),
-    ipCovProvider = require('./provider/ipCovProvider'),
+    linkmeasTCPProvider = require('./provider/linkmeasTCPProvider'),
+    linkmeasUDPProvider = require('./provider/linkmeasUDPProvider'),
     udpMCovProvider = require('./provider/udpMCovProvider'),
     udpNodeCovProvider = require('./provider/udpNodeCovProvider'),
     udpProvider = require('./provider/udpProvider'),
     tcpProvider = require('./provider/tcpProvider'),
-    ipProvider = require('./provider/ipProvider'),
-    txtData = "./dev/txtdata/";    
+    snmpProvider = require('./provider/snmpProvider'),
+    txtData = "./dev/txtdata/",
+    _ = require('underscore');    
 
 module.exports = {
+  getSNMP: function() {
+    var filePath = txtData + "snmp.txt";
+    console.log(snmpProvider(filePath).getLatest());
+    return snmpProvider(filePath).getLatest();
+  },  
   getNmapData: function(nodeId) {
     var filePath = txtData + nodeId + "_nmap.txt";
     return nmapProvider(filePath).getLatest();
@@ -37,18 +44,6 @@ module.exports = {
 
     return s;
   },
-  getLinkMeas: function(nodeIP) {
-    var filePath1 = txtData + "iperf_bi.txt";
-    return tcpProvider(filePath, nodeIP).getLatest();
-  }, 
-  getIPData: function(nodeIP) {
-    var filePath1 = txtData + nodeIP + "_ip.txt";
-    var filePath2 = txtData + "summary.txt";
-    var result = {};
-    result.resolutions = ipProvider(filePath1, nodeIP).getLatest().resolutions;
-    result.sum = summaryProvider(filePath2).getLatest().resolutions;
-    return result;
-  },
   getTCPData: function(nodeIP) {
     var filePath1 = txtData + nodeIP + "_tcp.txt";
     var filePath2 = txtData + "summary.txt";
@@ -68,49 +63,118 @@ module.exports = {
     result.sum = summaryProvider(filePath3).getLatest().resolutions;
     return result;
   },  
-  getTopoIP: function(topologies) {
+  getTopoLinkMeas: function(topologies) {
     var topo = JSON.parse(JSON.stringify(topologies));
     var nodes = topo.nodes;
+    var linkmeas = [];
 
-    if(topo.channels == undefined){
-      var filePath = txtData + "IPcov.txt";
-      var ipv4Cov = ipCovProvider(filePath).getLatest().resolutions;
-      var links = [];
+    if(topo.linkmeas == undefined){
+      topo.linkmeas = [];
 
-      for (var i = 0; i < ipv4Cov.length; i++) {
-          for (var j = 0; j < nodes.length; j++) {
-            if (ipv4Cov[i].firstIP == nodes[j].IP){
-              ipv4Cov[i].f = j;
-            }
-          };
-      };
-      
-      for (var i = 0; i < ipv4Cov.length; i++) {
-        if(ipv4Cov[i].f != -1 && ipv4Cov[i].firstIP != ipv4Cov[i].secondIP){
-          for (var j = 0; j < nodes.length; j++) {
-            if (ipv4Cov[i].secondIP == nodes[j].IP){
-              ipv4Cov[i].s = j;
-            }
-          };
-        }  
-      };  
-
-      for (var i = 0; i < ipv4Cov.length; i++) {
-        if(ipv4Cov[i].f != -1 && ipv4Cov[i].s != -1){
-          var s = ipv4Cov[i].f;
-          var e = ipv4Cov[i].s;
-          var c = {"id": nodes[s].id + "-" + nodes[e].id, "x1": nodes[s].x + 64, "y1": nodes[s].y + 64, "x2": nodes[e].x + 64, "y2": nodes[e].y + 64};
-          links.push(c);
+      _.map(nodes, function(node, index){ 
+        if(node.IP != "N_A"){
+          var rest = _.rest(nodes, index);
+          if(rest.length>0){
+            _.map(rest, function(restnode, restindex){ 
+              var pair = {};
+              if(restnode.IP != "N_A" && node.IP<restnode.IP){
+                pair = {"id":node.IP + "_" + restnode.IP, "x1":node.x+64, "y1":node.y+64, "x2":restnode.x+64, "y2":restnode.y+64, "tcpinfo":"", "udpinfo":""};
+                linkmeas.push(pair);
+              }else if(restnode.IP != "N_A" && node.IP>restnode.IP){
+                pair = {"id":restnode.IP + "_" + node.IP, "x1":restnode.x+64, "y1":restndoe.y+64, "x2":node.x+64, "y2":node.y+64, "tcpinfo":"", "udpinfo":""};
+                linkmeas.push(pair);
+              }
+            });
+          }
         }
-      }; 
-      topo.channels = [];
-      topo.channels = links;
+      });
+
+      var filePathTCP = txtData + "iperf_TCP.txt";
+      var LinkmeasTCP = linkmeasTCPProvider(filePathTCP).getLatest().resolutions;
+
+      var IPs = _.filter(LinkmeasTCP, function(o){ return o.type == "IP"; });
+      var MeasData = _.filter(LinkmeasTCP, function(o){ return o.type == "Meas"; });
+
+      var TCPmeas = _.map(IPs, function(oo){ 
+        var meas = _.find(MeasData, function(oi){ return oi.mark == oo.mark; });
+
+        if(oo.firstIP < oo.secondIP){
+          return {"firstIP": oo.firstIP, "firstPort": oo.firstPort, "secondIP": oo.secondIP, "secondPort": oo.secondPort, "Bandwidth": meas.Bandwidth};
+        }else{
+          return {"firstIP": oo.secondIP, "firstPort": oo.secondPort, "secondIP": oo.firstIP, "secondPort": oo.firstPort, "Bandwidth": meas.Bandwidth};
+        }
+
+      });
+     
+      for (var i = 0; i < TCPmeas.length; i++) {
+          var id = TCPmeas[i].firstIP+"_"+TCPmeas[i].secondIP;
+
+          for(var j = 0; j < linkmeas.length; j++){
+            if(linkmeas[j].id == id){
+              console.log("5");
+              linkmeas[j].tcpinfo = linkmeas[j].tcpinfo + "<tr><td colspan='3'>" 
+                                      + TCPmeas[i].firstIP + ":" + TCPmeas[i].firstPort 
+                                      + "&harr;" 
+                                      + TCPmeas[i].secondIP + ":" + TCPmeas[i].secondPort
+                                      + "</td></tr><tr><td>"
+                                      + TCPmeas[i].Bandwidth
+                                      + "</td><td/><td/></tr>";
+              break;
+            }
+          }
+
+      }
+
+      topo.linkmeas = linkmeas;
+
+      var filePathUDP = txtData + "iperf_UDP.txt";
+      var LinkmeasUDP = linkmeasUDPProvider(filePathUDP).getLatest().resolutions;
+      console.log(JSON.stringify(LinkmeasUDP));
+
+      var IPs = _.filter(LinkmeasUDP, function(o){ return o.type == "IP"; });
+      var MeasData = _.filter(LinkmeasUDP, function(o){ return o.type == "Meas"; });
+
+      var UDPmeas = _.map(IPs, function(oo){ 
+        var meas = _.find(MeasData, function(oi){ return oi.mark == oo.mark; });
+
+        if(oo.firstIP < oo.secondIP){
+          return {"firstIP": oo.firstIP, "firstPort": oo.firstPort, "secondIP": oo.secondIP, "secondPort": oo.secondPort, "Bandwidth": meas.Bandwidth, "Jitter": meas.Jitter, "LostTotal": meas.LostTotal};
+        }else{
+          return {"firstIP": oo.secondIP, "firstPort": oo.secondPort, "secondIP": oo.firstIP, "secondPort": oo.firstPort, "Bandwidth": meas.Bandwidth, "Jitter": meas.Jitter, "LostTotal": meas.LostTotal};
+        }
+
+      });
+     
+      for (var i = 0; i < UDPmeas.length; i++) {
+          var id = UDPmeas[i].firstIP+"_"+UDPmeas[i].secondIP;
+
+          for(var j = 0; j < linkmeas.length; j++){
+            if(linkmeas[j].id == id){
+              console.log("5");
+              linkmeas[j].udpinfo = linkmeas[j].udpinfo + "<tr><td colspan='3'>"  
+                                      + UDPmeas[i].firstIP + ":" + UDPmeas[i].firstPort 
+                                      + "&harr;" 
+                                      + UDPmeas[i].secondIP + ":" + UDPmeas[i].secondPort
+                                      + "</td></tr><tr><td>"
+                                      + UDPmeas[i].Bandwidth
+                                      + "</td><td>"
+                                      + UDPmeas[i].Jitter
+                                      + "</td><td>"
+                                      + UDPmeas[i].LostTotal
+                                      + "</td></tr>";
+              break;
+            }
+          }
+
+      }
+
+      topo.linkmeas = linkmeas;
 
       fs.writeFile("./dev/data/toDrawing.json", JSON.stringify(topo), function(err) {
         if(err) {
          return console.log(err);
         }
-        console.log("IPto file was saved!");
+        console.log("LinkMeasto file was saved!");
       });
 
       return topo;
@@ -147,6 +211,7 @@ module.exports = {
         }  
       };  
 
+      //*
       for (var i = 0; i < tcpCov.length; i++) {
         if(tcpCov[i].f != -1 && tcpCov[i].s != -1){
           var s = tcpCov[i].f;

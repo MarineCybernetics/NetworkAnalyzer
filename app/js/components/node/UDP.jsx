@@ -144,8 +144,8 @@ var Status = React.createClass({
     return (
        <div>
        <div className="row">
-        <div className="col-lg-12 col-md-10 col-sm-12" style = {{"overflowX": "auto"}}>
-          <div className="well">
+        <div className="col-lg-12 col-md-12 col-sm-12" style = {{"overflowX": "auto"}}>
+          <div className="well" style = {{"overflowX": "auto"}}>
             <table className="table table-striped" >
             <caption>UDP Statistics</caption>
               {udpsList}
@@ -154,7 +154,7 @@ var Status = React.createClass({
         </div> 
       </div>
         <div className="row">
-          <div className="col-lg-12 col-md-10 col-sm-12" style = {{"overflowX": "auto", "float": 'none'}} >
+          <div className="col-lg-12 col-md-12 col-sm-12" style = {{"overflowX": "auto", "float": 'none'}} >
                 <LineChart
                    data={data}
                    width={10000}
@@ -170,8 +170,8 @@ var Status = React.createClass({
           </div>
         </div>    
         <div className="row">
-          <div className="col-lg-12 col-md-10 col-sm-12">
-            <div className="well" style = {{"overflowY": "auto", "height": "400px"}}>
+          <div className="col-lg-12 col-md-12 col-sm-12">
+            <div className="well" style = {{"overflowX": "auto", "overflowY": "auto", "maxHeight": "400px"}}>
               <table className="table table-striped" >
               <caption>UDP Packets</caption>
                 {udpConvsList}

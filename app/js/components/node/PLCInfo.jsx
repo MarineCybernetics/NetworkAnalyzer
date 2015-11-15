@@ -45,10 +45,8 @@ var PLCInfo = React.createClass({
       match = tapId.match(resolutionRE)[1];
     } 
     var nmappathName = "plcnmap" + match;
-    var ippathName = "plcip" + match;
     var tcppathName = "plctcp" + match;
     var udppathName = "plcudp" + match;
-    var linkmeaspathName = "plclinkmeas" + match;
     var backPath = "topo"+ match;
     return (
       <div onClick={this._onClick}>
@@ -59,10 +57,8 @@ var PLCInfo = React.createClass({
               <div className="modal-body">
                 <ul className="nav nav-tabs modal-nav">
                   <Tab to= {nmappathName} params={{"nodeId": nodeId}}>Nmap</Tab>
-                  <Tab to= {ippathName} params={{"nodeId": nodeId}}>IP</Tab>
                   <Tab to= {tcppathName} params={{"nodeId": nodeId}}>TCP</Tab>
                   <Tab to= {udppathName} params={{"nodeId": nodeId}}>UDP</Tab>
-                  <Tab to= {linkmeaspathName} params={{"nodeId": nodeId}}>LinkMeas</Tab>
                 </ul>
                 <Metadata title="PLC" stype={this.state.stype} Vendor={this.state.Vendor} Desc={this.state.Desc} />
                 <RouteHandler />

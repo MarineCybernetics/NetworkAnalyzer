@@ -24,14 +24,14 @@ var Network = React.createClass({
     );
   },
   _onClick: function() { 
-    var pathName = "networkIP";
+    var pathName = "networkLinkMeas";
     AppActionCreators.navigateTo(pathName, {networkId: this.props.id});
   }
 });
 
 
-var TopoIP = React.createClass({
-  displayName: 'TopoIP',
+var TopoLinkMeas = React.createClass({
+  displayName: 'TopoLinkMeas',
   contextTypes: {
     router: React.PropTypes.func
   },
@@ -39,9 +39,10 @@ var TopoIP = React.createClass({
     return TopologyStore.getTopology();
   },
   componentDidMount: function() {
-    TopologyActionCreators.startTopoIPRequest();
+    TopologyActionCreators.startTopoLinkMeasRequest();
     TopologyStore.addChangeListener(this._onChange);  
     $('[data-toggle="tooltip"]').tooltip();  
+    $('[data-toggle="popover"]').popover();
   },
   componentWillUnmount: function() {
     TopologyActionCreators.stopTopoRequest();    
@@ -93,12 +94,15 @@ var TopoIP = React.createClass({
       });     
     };
 
-    var channelsList = <g className="channels"/>;
-    var channels = this.state.channels;
-    if (channels !== undefined) {
-        channelsList = channels.map(function(one, index) {
+    var linkmeasList = <g className="linkmeas"/>;
+    var linkmeas = this.state.linkmeas;
+    if (linkmeas !== undefined) {
+        linkmeasList = linkmeas.map(function(one, index) {
+          $('[data-toggle="popover"]').popover();
+          var content = '<table style ="border: 1px solid pink; width: 90%">' + "<tr><td colspan='3' style='background:pink'>TCPmeas: BandWidth</td></tr>" + one.tcpinfo + "<tr><td colspan='3' style='background:pink'>UDPmeas: BandWidth/Jitter/Loss</td></tr>" + one.udpinfo + "</table>";
           return(
-            <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,255,255)","strokeWidth":"2","cursor":"pointer"}} />
+            <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,255,255)","strokeWidth":"2","cursor":"pointer"}} data-trigger="click focus" data-template='<div class="popover" style= "font-size:9.5pt; width: 400px; max-width:400px">
+<div class="arrow"></div><div class="popover-content" style= "font-size:9.5pt; width:400px; max-width:400px"></div></div>' data-html = "true" data-placement="left" data-container="#topo" data-toggle="popover" title="TCP_COV Info" data-content={content} data-animation="true"/>
           );  
         });     
     };
@@ -111,13 +115,15 @@ var TopoIP = React.createClass({
             <svg version="1.1" id="to_1" x="0px" y="0px" width="80%" height="600" preserveAspectRatio="xMidYMid meet" style={{"textAlign": "center", "borderStyle":"solid","borderWidth":"2px","borderColor":"black","backgroundColor":"white"}} viewBox="0 0 900 600">
               <g className="lines">
                 {linesList}
-              </g>   
+              </g>
+              <g className="linkmeas">
+                {linkmeasList}
+              </g>     
               <g className="channels">
-                {channelsList}
               </g>         
               <g className="nodes">
                 {nodesList}
-              </g>
+              </g>            
             </svg>
           </div>
         </div>  
@@ -131,4 +137,4 @@ var TopoIP = React.createClass({
   }
 });
 
-module.exports = TopoIP;
+module.exports = TopoLinkMeas;

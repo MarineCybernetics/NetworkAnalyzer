@@ -46,10 +46,8 @@ var SwitchesInfo = React.createClass({
     } 
     var snmppathName = "switchessnmp" + match;
     var nmappathName = "switchesnmap" + match;
-    var ippathName = "switchesip" + match;
     var tcppathName = "switchestcp" + match;
     var udppathName = "switchesudp" + match;
-    var linkmeaspathName = "switcheslinkmeas" + match;
     var backPath = "topo"+ match;
     return (
       <div onClick={this._onClick}>
@@ -61,10 +59,8 @@ var SwitchesInfo = React.createClass({
                 <ul className="nav nav-tabs modal-nav">
                   <Tab to= {snmppathName} params={{"nodeId": nodeId}}>SNMP</Tab>
                   <Tab to= {nmappathName} params={{"nodeId": nodeId}}>Nmap</Tab>         
-                  <Tab to= {ippathName} params={{"nodeId": nodeId}}>IP</Tab>
                   <Tab to= {tcppathName} params={{"nodeId": nodeId}}>TCP</Tab>
                   <Tab to= {udppathName} params={{"nodeId": nodeId}}>UDP</Tab>
-                  <Tab to= {linkmeaspathName} params={{"nodeId": nodeId}}>Linkmeas</Tab>
                 </ul>
                 <Metadata title="Switch" stype={this.state.stype} Vendor={this.state.Vendor} Desc={this.state.Desc} />
                 <RouteHandler />

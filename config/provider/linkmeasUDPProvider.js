@@ -1,15 +1,13 @@
-module.exports = function(filename, nodeIP, observe) {
+module.exports = function(filename, observe) {
 
 	var fs = require('fs'),
 	    pcapReader = require('../file-reader/pcapr'),
 	    fileReader = require('../file-reader/fr'),
-	    resolutionRE = [];  
-
-	var start = 0;    
-
-	resolutionRE[0] = /^TCP Conversations/i;
-	resolutionRE[1] = /^(\d+\.\d+\.\d+\.\d+)\s+<->\s+(\d+\.\d+\.\d+\.\d+)/i;
+	    resolutionRE = [];     
                        
+	resolutionRE[0] = /^(\[\d+\])\s+local\s+(\d+\.\d+\.\d+\.\d+)\s+port\s+(\d+)\s+connected\s+with\s+(\d+\.\d+\.\d+\.\d+)\s+port\s+(\d+)/i;  
+    resolutionRE[1] = /^(\[\d+\])\s+[\d\.]+\-[\d\.]+\s+\w+\s+[\d\.]+\s+\w+\s+([\d\.]+\s+\w+\/\w+)\s+([\d\.]+\s+\w+)\s+\d+\/\d+\s+\(([\d\.]+\%)\)/i; 
+
 	var setTimestamp = function(resolutions) {
 		if (resolutions.timestamp == null) {
 			resolutions.timestamp = new Date().toLocaleString();
@@ -26,13 +24,14 @@ module.exports = function(filename, nodeIP, observe) {
 		}
 
 		if (matches[0] != null) {
-			start = 1;
-		}
-
-		if (start == 1 && matches[1] != null) {
-		    var l = {"firstIP": matches[1][1], "secondIP": matches[1][2], "f": -1, "s": -1};	
+		    var l = {"mark":matches[0][1], "firstIP": matches[0][2], "firstPort": matches[0][3], "secondIP": matches[0][4], "secondPort": matches[0][5], "type": "IP"};	
 			result.resolutions.push(l);
 		}
+
+		if (matches[1] != null) {
+		    var l = {"mark": matches[1][1], "Bandwidth": matches[1][2], "Jitter": matches[1][3], "LostTotal": matches[1][4], "type": "Meas"};	
+			result.resolutions.push(l);
+		}				
 	};
 
 	var readHandler = function(data) {
@@ -45,22 +44,15 @@ module.exports = function(filename, nodeIP, observe) {
 		}
 	};
 
-	try {
-      var stats = fs.statSync(filename);
-    }
-    catch (e) {
-      pcapReader.extrTCPconv();
-    }
-
 	var localResolutions = {};
 	localResolutions = fileReader.readOnce(filename, readHandler, lineParser);
 	fileReader.startWatching(filename, readHandler, lineParser);
 
-	var nodesCovProvider = {};
+	var linkmeasUDPProvider = {};
 
-	nodesCovProvider.getLatest = function() {
+	linkmeasUDPProvider.getLatest = function() {
 		return localResolutions;
 	};
 
-	return nodesCovProvider;
+	return linkmeasUDPProvider;
 }
