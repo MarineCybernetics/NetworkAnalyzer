@@ -28,12 +28,10 @@ var Status = React.createClass({
     var sum = this.state.sum;
     var sumFrames, sumBytes, ff, fb, sf, sb, tf, tb;
 
-    if (sum !== undefined) {
+    if (sum !== undefined && sum[0].frames != undefined && tcps !== undefined && tcps.length > 0) {
       sumFrames = sum[0].frames;
-      sumBytes = sum[0].bytes;       
-    }; 
+      sumBytes = sum[0].bytes;        
 
-    if (tcps !== undefined) {
       tcpsList =tcps.map(function(one, index) {
 
         if(index == 0){

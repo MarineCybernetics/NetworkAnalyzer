@@ -129,6 +129,7 @@ var TopoUDP = React.createClass({
         var udpms = one.UDPMuti;
         if ( udpms!== undefined) {
           udpmList = udpms.map(function(one, index){
+            $('[data-toggle="tooltip"]').tooltip();
             var translate = "translate(" + one.x + "," + one.y +")";
             return(
               <g>

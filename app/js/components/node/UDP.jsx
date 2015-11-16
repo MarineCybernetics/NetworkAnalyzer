@@ -87,12 +87,10 @@ var Status = React.createClass({
     var sum = this.state.sum;
     var sumFrames, sumBytes, ff, fb, sf, sb, tf, tb;
 
-    if (sum !== undefined) {
+    if (sum !== undefined && sum[0].frames !=undefined && udps != undefined && udps.length >0) {
       sumFrames = sum[0].frames;
       sumBytes = sum[0].bytes;       
-    }; 
 
-    if (udps !== undefined) {
       udpsList =udps.map(function(one, index) {
 
         if(index == 0){
@@ -143,18 +141,18 @@ var Status = React.createClass({
 
     return (
        <div>
-       <div className="row">
-        <div className="col-lg-12 col-md-12 col-sm-12" style = {{"overflowX": "auto"}}>
-          <div className="well" style = {{"overflowX": "auto"}}>
-            <table className="table table-striped" >
-            <caption>UDP Statistics</caption>
-              {udpsList}
-            </table>
-          </div>
-        </div> 
-      </div>
+         <div className="row">
+          <div className="col-lg-12 col-md-12 col-sm-12" style = {{"overflowX": "auto"}}>
+            <div className="well" style = {{"overflowX": "auto"}}>
+              <table className="table table-striped" >
+              <caption>UDP Statistics</caption>
+                {udpsList}
+              </table>
+            </div>
+          </div> 
+        </div>
         <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12" style = {{"overflowX": "auto", "float": 'none'}} >
+          <div className="col-lg-12 col-md-12 col-sm-12" style = {{"overflowX": "auto", "maxHeight":"400px"}} >
                 <LineChart
                    data={data}
                    width={10000}

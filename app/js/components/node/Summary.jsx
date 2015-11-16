@@ -41,7 +41,7 @@ var Status = React.createClass({
 
     return (
       <div className="row">
-        <div className="col-lg-12 col-md-10 col-sm-12">
+        <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="well">
             {summaryList}
           </div>

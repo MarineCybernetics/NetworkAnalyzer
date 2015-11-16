@@ -13,14 +13,13 @@ var fs = require('fs'),
     udpProvider = require('./provider/udpProvider'),
     tcpProvider = require('./provider/tcpProvider'),
     snmpProvider = require('./provider/snmpProvider'),
-    txtData = "./dev/txtdata/",
+    txtData = "./dev/provide/",
     generatedData = "./dev/generated/",
     _ = require('underscore');    
 
 module.exports = {
   getSNMP: function() {
     var filePath = txtData + "snmp.txt";
-    console.log(snmpProvider(filePath).getLatest());
     return snmpProvider(filePath).getLatest();
   },  
   getNmapData: function(nodeId) {
@@ -52,7 +51,6 @@ module.exports = {
     var filePath1 = generatedData + nodeIP + "_tcp.txt";
     var filePath2 = generatedData + "summary.txt";
     var result = {};
-    console.log(filePath1);
     result.resolutions = tcpProvider(filePath1, nodeIP).getLatest().resolutions;
     result.sum = summaryProvider(filePath2).getLatest().resolutions;
     return result;
@@ -72,7 +70,6 @@ module.exports = {
     var nodes = topo.nodes;
     var linkmeas = [];
 
-    if(topo.linkmeas == undefined){
       topo.linkmeas = [];
 
       _.map(nodes, function(node, index){ 
@@ -115,7 +112,6 @@ module.exports = {
 
           for(var j = 0; j < linkmeas.length; j++){
             if(linkmeas[j].id == id){
-              console.log("5");
               linkmeas[j].tcpinfo = linkmeas[j].tcpinfo + "<tr><td colspan='3'>" 
                                       + TCPmeas[i].firstIP + ":" + TCPmeas[i].firstPort 
                                       + "&harr;" 
@@ -133,7 +129,6 @@ module.exports = {
 
       var filePathUDP = txtData + "iperf_UDP.txt";
       var LinkmeasUDP = linkmeasUDPProvider(filePathUDP).getLatest().resolutions;
-      console.log(JSON.stringify(LinkmeasUDP));
 
       var IPs = _.filter(LinkmeasUDP, function(o){ return o.type == "IP"; });
       var MeasData = _.filter(LinkmeasUDP, function(o){ return o.type == "Meas"; });
@@ -154,7 +149,6 @@ module.exports = {
 
           for(var j = 0; j < linkmeas.length; j++){
             if(linkmeas[j].id == id){
-              console.log("5");
               linkmeas[j].udpinfo = linkmeas[j].udpinfo + "<tr><td colspan='3'>"  
                                       + UDPmeas[i].firstIP + ":" + UDPmeas[i].firstPort 
                                       + "&harr;" 
@@ -172,17 +166,7 @@ module.exports = {
 
       }
 
-      topo.linkmeas = linkmeas;
-
-      fs.writeFile("./dev/generated/toDrawing.json", JSON.stringify(topo), function(err) {
-        if(err) {
-         return console.log(err);
-        }
-        console.log("LinkMeasto file was saved!");
-      });
-
-      return topo;
-    }   
+      topo.linkmeas = linkmeas; 
     
     return topo;
   },
@@ -192,7 +176,6 @@ module.exports = {
     var newlink = true;
     var id;
 
-    if(topo.tcpchannels == undefined){
       var filePath = generatedData + "TCPcov.txt";
       var tcpCov = tcpCovProvider(filePath).getLatest().resolutions;
       var links = [];
@@ -224,13 +207,11 @@ module.exports = {
           if(nodes[s].id < nodes[e].id){
             id = nodes[s].id + "-" + nodes[e].id;
           }else{
-            console.log("4");
             id = nodes[e].id + "-" + nodes[s].id;
           }
 
           for(var j = 0; j < links.length; j++){
             if(links[j].id == id){
-              console.log("5");
               links[j].info = links[j].info + "<br />" + tcpCov[i].firstIP + ":" + tcpCov[i].firstPort + "&harr;" + tcpCov[i].secondIP + ":" + tcpCov[i].secondPort;
               newlink = false;
               break;
@@ -256,16 +237,7 @@ module.exports = {
 
       topo.tcpchannels = [];
       topo.tcpchannels = links;
-
-      fs.writeFile("./dev/generated/toDrawing.json", JSON.stringify(topo), function(err) {
-        if(err) {
-         return console.log(err);
-        }
-        console.log("TCPto file was saved!");
-      });
-
-      return topo;
-    }   
+ 
     
     return topo;
   },  
@@ -277,7 +249,6 @@ module.exports = {
     var newlink = true;
     var id;
 
-    if(topo.udpchannels == undefined){
       var filePath = generatedData + "UDPcov.txt";
       var udpCov = udpCovProvider(filePath).getLatest().resolutions;
       var links = [];
@@ -308,13 +279,11 @@ module.exports = {
           if(nodes[s].id < nodes[e].id){
             id = nodes[s].id + "-" + nodes[e].id;
           }else{
-            console.log("4");
             id = nodes[e].id + "-" + nodes[s].id;
           }
 
           for(var j = 0; j < links.length; j++){
             if(links[j].id == id){
-              console.log("5");
               links[j].info = links[j].info + "<br />" + udpCov[i].firstIP + ":" + udpCov[i].firstPort + "&harr;" + udpCov[i].secondIP + ":" + udpCov[i].secondPort;
               newlink = false;
               break;
@@ -340,17 +309,7 @@ module.exports = {
       topo.udpchannels = [];
       topo.udpchannels = links;
 
-        fs.writeFile("./dev/generated/toDrawing.json", JSON.stringify(topo), function(err) {
-        if(err) {
-         return console.log(err);
-        }
-        console.log("UDPto file was saved!");
-      });
 
-    }   
-
-    //multicast
-    if(nodes[0].UDPMuti == undefined){
       var filePath = generatedData + "UDPMcov.txt";
       var udpCov = udpMCovProvider(filePath).getLatest().resolutions;
       for (var i = 0; i < udpCov.length; i++) {
@@ -406,16 +365,6 @@ module.exports = {
           topo.nodes[i].my = topo.nodes[i].y + 32;
         }
       }; 
-
-      fs.writeFile("./dev/generated/toDrawing.json", JSON.stringify(topo), function(err) {
-        if(err) {
-         return console.log(err);
-        }
-        console.log("UDPto file was saved!");
-      });
-
-      return topo;
-    }
 
     return topo;
   }

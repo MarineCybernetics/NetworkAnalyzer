@@ -17,7 +17,7 @@ var fs = require('fs'),
     evaStatusWatchers = [],
 
     
-    topologiesData = fs.readFileSync("./dev/generated/toDrawing.json", "utf8"),
+    topologiesData = fs.readFileSync("./dev/provide/toDrawing.json", "utf8"),
     topologies = {},
     topologyWatchers = [];
 
@@ -61,7 +61,7 @@ watchTheFile("./dev/data/automaticTests.json", notifyWatchers(automaticTestsWatc
 watchTheFile("./dev/data/custom.json", notifyWatchers(customDataWatchers));
 watchTheFile("./dev/data/evaStatus.json", notifyWatchers(evaStatusWatchers));
 
-watchTheFile("./dev/generated/toDrawing.json", notifyWatchers(topologyWatchers));
+watchTheFile("./dev/provide/toDrawing.json", notifyWatchers(topologyWatchers));
 
 
 module.exports = {

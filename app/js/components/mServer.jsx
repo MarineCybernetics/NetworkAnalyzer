@@ -5,6 +5,16 @@ var React = require('react'),
 
 var mServer = React.createClass({
   displayName: 'mServer',
+  componentWillMount: function() {
+    $('[data-toggle="tooltip"]').tooltip();     
+  },
+  getInitialState: function() {
+    $('[data-toggle="tooltip"]').tooltip(); 
+    return {};
+  },
+  componentDidMount: function() {
+    $('[data-toggle="tooltip"]').tooltip();   
+  },  
   render: function() {
     return (
       <svg title ={this.props.IP} data-container="#topo" data-toggle="tooltip" data-placement="right">

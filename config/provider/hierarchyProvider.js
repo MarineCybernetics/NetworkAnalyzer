@@ -1,4 +1,4 @@
-module.exports = function(fileName, observe) {
+module.exports = function(filename, observe) {
 
 	var fs = require('fs'),
 	    pcapReader = require('../file-reader/pcapr'),
@@ -36,7 +36,7 @@ module.exports = function(fileName, observe) {
 	};
 
 	try {
-      var stats = fs.statSync(fileName);
+      var stats = fs.statSync(filename);
     }
     catch (e) {
       fs.openSync(filename, "w");     	
@@ -44,13 +44,12 @@ module.exports = function(fileName, observe) {
     }
 
     var localResolutions = {};
-	localResolutions = fileReader.readOnce(fileName, readHandler, lineParser);
-	fileReader.startWatching(fileName, readHandler, lineParser);
+	localResolutions = fileReader.readOnce(filename, readHandler, lineParser);
+	fileReader.startWatching(filename, readHandler, lineParser);
 
 	var hierarchyProvider = {};
 
 	hierarchyProvider.getLatest = function() {
-		console.log(localResolutions);
 		return localResolutions;
 	};
 

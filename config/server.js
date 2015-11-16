@@ -30,22 +30,22 @@ module.exports = {
     });
 
     app.get("/topo", function(req, res) {
-      console.log("ttttttttttttttt");
+      console.log("require topo");
       res.json(topologies);
     });
 
     app.get("/topoLinkMeas", function(req, res) {
-      console.log("llllllllllllllll");
+      console.log("require topoLinkMeas");
       res.json(mockedTXT.getTopoLinkMeas(topologies));
     });
 
     app.get("/topoTCP", function(req, res) {
-      console.log("cccccccccccccccc");
+      console.log("require topoTCP");
       res.json(mockedTXT.getTopoTCP(topologies));
     });
 
     app.get("/topoUDP", function(req, res) {
-      console.log("uuuuuuuuuuuuuuuuu");
+      console.log("require topoUDP");
       res.json(mockedTXT.getTopoUDP(topologies));
     });
 
@@ -82,7 +82,6 @@ module.exports = {
           nodeIP = nodes[i].IP;
         }
       };
-      console.log(nodeIP);
       res.json(mockedTXT.getTCPData(nodeIP));
     });
 
@@ -94,7 +93,6 @@ module.exports = {
           nodeIP = nodes[i].IP;
         }
       };
-      console.log("aaaaa");
       res.json(mockedTXT.getUDPData(nodeIP));
     });
 

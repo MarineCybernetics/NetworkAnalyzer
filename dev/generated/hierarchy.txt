@@ -1,0 +1,59 @@
+
+===================================================================
+Protocol Hierarchy Statistics
+Filter: 
+
+eth                                      frames:95454 bytes:32983177
+  vlan                                   frames:90723 bytes:31179650
+    ip                                   frames:63782 bytes:29387395
+      udp                                frames:62305 bytes:29272987
+        data                             frames:59675 bytes:28074418
+        memcache                         frames:2152 bytes:1131952
+          _ws.malformed                  frames:2152 bytes:1131952
+        bootp                            frames:69 bytes:30252
+        dns                              frames:125 bytes:8500
+        nbns                             frames:277 bytes:26592
+        nbdgm                            frames:1 bytes:253
+          smb                            frames:1 bytes:253
+            mailslot                     frames:1 bytes:253
+              browser                    frames:1 bytes:253
+        http                             frames:6 bytes:1020
+      icmp                               frames:862 bytes:63788
+      tcp                                frames:615 bytes:50620
+        tpkt                             frames:442 bytes:39548
+          cotp                           frames:442 bytes:39548
+            data                         frames:442 bytes:39548
+    arp                                  frames:15506 bytes:992384
+    pn_mrp                               frames:10760 bytes:753200
+    pn_rt                                frames:516 bytes:31240
+      pn_dcp                             frames:516 bytes:31240
+    text                                 frames:12 bytes:768
+      arp                                frames:12 bytes:768
+    ipv6                                 frames:145 bytes:14323
+      udp                                frames:145 bytes:14323
+        dns                              frames:123 bytes:10824
+        dhcpv6                           frames:22 bytes:3499
+    llc                                  frames:2 bytes:340
+      ipx                                frames:2 bytes:340
+        nbipx                            frames:1 bytes:102
+        nmpi                             frames:1 bytes:238
+          smb                            frames:1 bytes:238
+            mailslot                     frames:1 bytes:238
+              browser                    frames:1 bytes:238
+  ip                                     frames:4339 bytes:1768845
+    udp                                  frames:2593 bytes:1574106
+      data                               frames:2583 bytes:1570722
+      bootp                              frames:10 bytes:3384
+    icmp                                 frames:862 bytes:60340
+    tcp                                  frames:884 bytes:134399
+      tpkt                               frames:442 bytes:107879
+        cotp                             frames:442 bytes:107879
+          data                           frames:442 bytes:107879
+  arp                                    frames:56 bytes:3144
+  pn_rt                                  frames:187 bytes:11468
+    pn_ptcp                              frames:179 bytes:10740
+    pn_dcp                               frames:8 bytes:728
+  llc                                    frames:107 bytes:6420
+    stp                                  frames:107 bytes:6420
+  lldp                                   frames:42 bytes:13650
+===================================================================

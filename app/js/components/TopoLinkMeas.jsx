@@ -101,7 +101,7 @@ var TopoLinkMeas = React.createClass({
           $('[data-toggle="popover"]').popover();
           var content = '<table style ="border: 1px solid pink; width: 90%">' + "<tr><td colspan='3' style='background:pink'>TCPmeas: BandWidth</td></tr>" + one.tcpinfo + "<tr><td colspan='3' style='background:pink'>UDPmeas: BandWidth/Jitter/Loss</td></tr>" + one.udpinfo + "</table>";
           return(
-            <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,255,255)","strokeWidth":"2","cursor":"pointer"}} data-trigger="click focus" data-template='<div class="popover" style= "font-size:9.5pt; width: 400px; max-width:400px">
+            <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,255,255)","strokeWidth":"2","cursor":"pointer"}} data-trigger="click focus" data-template='<div class="popover" style= "font-size:9.5pt; width: 400px; max-width:400px; border: 2px dotted red">
 <div class="arrow"></div><div class="popover-content" style= "font-size:9.5pt; width:400px; max-width:400px"></div></div>' data-html = "true" data-placement="left" data-container="#topo" data-toggle="popover" title="TCP_COV Info" data-content={content} data-animation="true"/>
           );  
         });     
