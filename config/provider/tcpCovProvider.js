@@ -20,11 +20,8 @@ module.exports = function(filename, observe) {
 		if (result.resolutions == undefined) {
 			result.resolutions = [];
 		}
-		console.log("1");
 		if (matches[0] != null) {
-			console.log("2");
 		    var l = {"firstIP": matches[0][1], "firstPort":matches[0][2], "secondIP": matches[0][3], "secondPort": matches[0][4], "f": -1, "s": -1};	
-		    console.log(l);
 			result.resolutions.push(l);
 		}
 	};
@@ -42,8 +39,7 @@ module.exports = function(filename, observe) {
     try {
       var stats = fs.statSync(filename);
     }
-    catch (e) {
-      fs.openSync(filename, "w");     	
+    catch (e) {    	
       pcapReader.extrTCPconv();
     }
 

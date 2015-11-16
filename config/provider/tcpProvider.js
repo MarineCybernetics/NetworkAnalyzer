@@ -45,7 +45,6 @@ module.exports = function(filename, nodeIP, observe) {
       var stats = fs.statSync(filename);
     }
     catch (err) {
-      fs.openSync(filename, "w"); 
       pcapReader.extrTCP(nodeIP);
     }
 
