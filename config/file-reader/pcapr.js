@@ -37,7 +37,7 @@ module.exports = {
 	},
 	extrUDP : function(nodeIP) {
     	var filePath = "./dev/generated/" + nodeIP + "_udp.txt";
-    	var command = 'tshark -r ./dev/provide/1.pcapng -qz conv,udp,"ip.addr==' + nodeIP + '"';
+    	var command = 'tshark -r ./dev/provide/1.pcapng -qz conv,udp,"ip.addr==' + nodeIP + ' and not icmp"';
 	    var stdout = child_process.execSync(command);
 	      fs.writeFileSync(filePath, stdout);
 	      console.log(nodeIP + "node UDP file is saved");
@@ -53,7 +53,7 @@ module.exports = {
 	},
 	extrTCP : function(nodeIP) {
     	var filePath = "./dev/generated/" + nodeIP + "_tcp.txt";
-    	var command = 'tshark -r ./dev/provide/1.pcapng -qz conv,tcp,"ip.addr==' + nodeIP + '"';
+    	var command = 'tshark -r ./dev/provide/1.pcapng -qz conv,tcp,"ip.addr==' + nodeIP + ' and not icmp"';
 	    var stdout = child_process.execSync(command);
 	    fs.writeFileSync(filePath, stdout);
 	    console.log(nodeIP + "node TCP file is saved");  

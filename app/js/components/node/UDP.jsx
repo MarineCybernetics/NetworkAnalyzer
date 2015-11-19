@@ -152,7 +152,7 @@ var Status = React.createClass({
           </div> 
         </div>
         <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12" style = {{"overflowX": "auto", "maxHeight":"400px"}} >
+          <div id = "chart" className="col-lg-12 col-md-12 col-sm-12" style = {{"overflowX": "auto", "maxHeight":"400px"}} >
                 <LineChart
                    data={data}
                    width={10000}
@@ -162,7 +162,6 @@ var Status = React.createClass({
                    xAxis={{label: "Time:s", tickValues: xScale.ticks(100), tickFormat: function(d) { return d + "00"; }}}
                    yAxis={{label: "Packets:bytes"}}
                    tooltipHtml={tooltipLine}
-                   tooltipContained
                    shapeColor={"red"}
                    stroke={{strokeWidth: 0.5}} />
           </div>

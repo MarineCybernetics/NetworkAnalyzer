@@ -74,7 +74,7 @@ var TopoTCP = React.createClass({
         channelsList = channels.map(function(one, index) {
           $('[data-toggle="popover"]').popover();
           return(
-            <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,0,255)","strokeWidth":"2","cursor":"pointer", "fontSize":"100"}} data-trigger="click focus" data-template='<div class="popover" style="border: 2px dotted red"> 
+            <line tapId={tapId} key={index} id={one.id} x1={one.x1} y1={one.y1} x2={one.x2} y2={one.y2} style={{"stroke":"rgb(0,0,255)","strokeWidth":"2","cursor":"pointer", "fontSize":"100"}} data-trigger="click focus" data-template='<div class="popover" style="border: 1px dotted red"> 
 <div class="arrow"></div><h3 class="popover-title" style="background:pink; text-align:center"></h3><div class="popover-content" style= "font-size:9.5pt; background:rgb(255,240,245)"></div></div>' data-html = "true" data-placement="right" data-container="#topo" data-toggle="popover" title="TCP_COV Info" data-content={one.info} data-animation="true"/>
           );  
         });                                                                                                  

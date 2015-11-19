@@ -1,6 +1,6 @@
 ================================================================================
 TCP Conversations
-Filter:ip.addr==192.168.10.107
+Filter:ip.addr==192.168.10.107 and not icmp
                                                |       <-      | |       ->      | |     Total     |    Relative    |   Duration   |
                                                | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |      Start     |              |
 192.168.10.121:52957 <-> 192.168.10.107:102       608     87272     406     33794    1014    121066     5.985365000       208.3620

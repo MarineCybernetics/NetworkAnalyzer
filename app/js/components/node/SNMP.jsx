@@ -50,8 +50,8 @@ var Status = React.createClass({
         $('[data-toggle="popover"]').popover();
         return(
               <tr>
-              <td data-trigger="hover" data-template='<div class="popover">
-<div class="arrow"></div><div class="popover-content" style= "font-size:9.5pt"></div></div>' data-html = "true" data-placement="bottom" data-container="#switch" data-toggle="popover" data-content={array[0].meta} data-animation="true">{one}</td>
+              <td data-trigger="hover" data-template='<div class="popover" style="border: 1px dotted red">
+<div class="arrow"></div><div class="popover-content" style= "font-size:9.5pt; background"></div></div>' data-html = "true" data-placement="bottom" data-container="#switch" data-toggle="popover" data-content={array[0].meta} data-animation="true">{one}</td>
               {subsnmpsArrayList}
               </tr>
           );
@@ -62,7 +62,7 @@ var Status = React.createClass({
       snmpsList = snmps.map(function(s, index) {
         return(
             <tr>
-                <td data-trigger="hover" data-template='<div class="popover">
+                <td data-trigger="hover" data-template='<div class="popover" style="border: 1px dotted red">
 <div class="arrow"></div><div class="popover-content" style= "font-size:9.5pt"></div></div>' data-html = "true" data-placement="bottom" data-container="#switch" data-toggle="popover" data-content={s.meta} data-animation="true">{s.name}</td> 
                 <td>{s.actualValue}</td> 
             </tr> 
