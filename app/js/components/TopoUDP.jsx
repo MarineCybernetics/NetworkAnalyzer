@@ -161,7 +161,7 @@ var TopoUDP = React.createClass({
         <RouteHandler />
         <div className="row">
           <div className="1" style={{"textAlign": "center"}}>
-            <svg version="1.1" id="to_1" x="0px" y="0px" width="80%" height="600" preserveAspectRatio="xMidYMid meet" style={{"textAlign": "center", "borderStyle":"solid","borderWidth":"2px","borderColor":"black","backgroundColor":"white"}} viewBox="0 0 900 600">
+            <svg version="1.1" id="to_1" x="0px" y="0px" width="80%" height="90%" preserveAspectRatio="xMidYMid meet" style={{"textAlign": "center", "borderStyle":"solid","borderWidth":"2px","borderColor":"black","backgroundColor":"white"}} viewBox="0 0 900 600">
               <g className="lines">
                 {linesList}
               </g>   

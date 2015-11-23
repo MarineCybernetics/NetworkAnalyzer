@@ -1,9 +1,13 @@
 "use strict";
 
-var React = require('react');
+var React = require('react'),
+    MetaStore = require('../../stores/MetaStore');
 
 var Metadata = React.createClass({
   displayName: "ThrusterInfo",
+  componentWillUnmount: function() {
+    MetaStore.cleanMetaData();
+  },  
   getInitialState: function() { 
     return {
       type: "Tunnel",

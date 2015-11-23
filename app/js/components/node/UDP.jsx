@@ -87,7 +87,7 @@ var Status = React.createClass({
     var sum = this.state.sum;
     var sumFrames, sumBytes, ff, fb, sf, sb, tf, tb;
 
-    if (sum !== undefined && sum[0].frames !=undefined && udps != undefined && udps.length >0) {
+    if (sum != undefined && sum[0].frames != undefined && udps != undefined && udps.length >0) {
       sumFrames = sum[0].frames;
       sumBytes = sum[0].bytes;       
 
@@ -142,7 +142,7 @@ var Status = React.createClass({
     return (
        <div>
          <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12" style = {{"overflowX": "auto"}}>
+          <div className="col-lg-12 col-md-12 col-sm-12" style = {{"overflowX": "auto", "overflowY": "auto", "maxHeight": "400px"}}>
             <div className="well" style = {{"overflowX": "auto"}}>
               <table className="table table-striped" >
               <caption>UDP Statistics</caption>

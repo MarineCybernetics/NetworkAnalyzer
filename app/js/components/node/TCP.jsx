@@ -28,7 +28,7 @@ var Status = React.createClass({
     var sum = this.state.sum;
     var sumFrames, sumBytes, ff, fb, sf, sb, tf, tb;
 
-    if (sum !== undefined && sum[0].frames != undefined && tcps !== undefined && tcps.length > 0) {
+    if (sum != undefined && sum[0].frames != undefined && tcps !== undefined && tcps.length > 0) {
       sumFrames = sum[0].frames;
       sumBytes = sum[0].bytes;        
 
@@ -70,7 +70,7 @@ var Status = React.createClass({
     return (
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="well" style = {{"overflowX": "auto"}}>
+          <div className="well" style = {{"overflowX": "auto", "overflowY": "auto", "maxHeight": "400px"}}>
             <table className="table table-striped" >
             <caption>TCP Statistics</caption>
               {tcpsList}

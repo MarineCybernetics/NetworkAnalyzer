@@ -42,7 +42,7 @@ var Status = React.createClass({
     return (
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="well">
+          <div className="well" style = {{"overflowX": "auto", "overflowY": "auto", "maxHeight": "400px"}}>
             {summaryList}
           </div>
         </div> 

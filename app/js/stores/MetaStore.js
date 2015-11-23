@@ -15,6 +15,9 @@ var MetaStore = assign({}, EventEmitter.prototype, {
   emitChange: function() {
     this.emit(CHANGE_EVENT);
   },
+  cleanMetaData: function() {
+    _metaData = {};
+  },
   addChangeListener: function(callback) {
     this.on(CHANGE_EVENT, callback);
   },

@@ -15,6 +15,9 @@ var NmapStore = assign({}, EventEmitter.prototype, {
 	emitChange: function() {
 		this.emit(CHANGE_EVENT);
 	},
+    cleanNmapData: function() {
+    	_nmapData = {};
+	},	
 	addChangeListener: function(callback) {
 		this.on(CHANGE_EVENT, callback);
 	},

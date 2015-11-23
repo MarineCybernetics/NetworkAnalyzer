@@ -17,6 +17,7 @@ var Status = React.createClass({
   componentWillUnmount: function() {
     NmapActionCreators.stopNmapDataRequest();    
     NmapStore.removeChangeListener(this._onChange);
+    NmapStore.cleanNmapData();
   },
   getInitialState: function() {
     return NmapStore.getNmapData();
@@ -36,7 +37,7 @@ var Status = React.createClass({
     return (
       <div className="row">
         <div className="col-lg-12 col-md-10 col-sm-12">
-          <div className="well">
+          <div className="well" style = {{"overflowX": "auto", "overflowY": "auto", "maxHeight": "500px"}}>
             {nmapsList}
           </div>
         </div> 

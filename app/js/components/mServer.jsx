@@ -18,7 +18,7 @@ var mServer = React.createClass({
   render: function() {
     return (
       <svg title ={this.props.IP} data-container="#topo" data-toggle="tooltip" data-placement="right">
-      <g transform={this.props.transform} className={this.props.id} onClick={this._onClick} style={{"cursor":"pointer"}}>
+      <g transform={this.props.transform} className={this.props.id} title ={this.props.IP} data-container="#topo" data-toggle="tooltip" data-placement="right" onClick={this._onClick} style={{"cursor":"pointer"}}>
 <defs id="defs4">
     <linearGradient
        x1="302.85715"

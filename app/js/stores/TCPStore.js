@@ -13,8 +13,7 @@ var TCPStore = assign({}, EventEmitter.prototype, {
 		return _tcpData;
 	},
     cleanTCPData: function() {
-    	_tcpData = {}
-		return _tcpData;
+    	_tcpData = {};
 	},
 	emitChange: function() {
 		this.emit(CHANGE_EVENT);

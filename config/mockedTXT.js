@@ -48,21 +48,32 @@ module.exports = {
     return s;
   },
   getTCPData: function(nodeIP) {
-    var filePath1 = generatedData + nodeIP + "_tcp.txt";
-    var filePath2 = generatedData + "summary.txt";
-    var result = {};
-    result.resolutions = tcpProvider(filePath1, nodeIP).getLatest().resolutions;
-    result.sum = summaryProvider(filePath2).getLatest().resolutions;
+    if(nodeIP != "N_A"){
+      var filePath1 = generatedData + nodeIP + "_tcp.txt";
+      var filePath2 = generatedData + "summary.txt";
+      var result = {};
+      result.resolutions = tcpProvider(filePath1, nodeIP).getLatest().resolutions;
+      result.sum = summaryProvider(filePath2).getLatest().resolutions;     
+    }
+    else {
+      var result = {};;
+    }
+
     return result;
   },
   getUDPData: function(nodeIP) {
-    var filePath1 = generatedData + nodeIP + "_node_udp.txt";
-    var filePath2 = generatedData + nodeIP + "_udp.txt";
-    var filePath3 = generatedData + "summary.txt";
-    var result = {};
-    result.resolutions1 = udpNodeCovProvider(filePath1, nodeIP).getLatest().resolutions;
-    result.resolutions2 = udpProvider(filePath2, nodeIP).getLatest().resolutions;
-    result.sum = summaryProvider(filePath3).getLatest().resolutions;
+    if(nodeIP != "N_A"){
+      var filePath1 = generatedData + nodeIP + "_node_udp.txt";
+      var filePath2 = generatedData + nodeIP + "_udp.txt";
+      var filePath3 = generatedData + "summary.txt";
+      var result = {};
+      result.resolutions1 = udpNodeCovProvider(filePath1, nodeIP).getLatest().resolutions;
+      result.resolutions2 = udpProvider(filePath2, nodeIP).getLatest().resolutions;
+      result.sum = summaryProvider(filePath3).getLatest().resolutions;
+    }
+    else{
+      var result = {};    
+    }
     return result;
   },  
   getTopoLinkMeas: function(topologies) {

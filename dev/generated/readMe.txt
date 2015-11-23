@@ -1,0 +1,1 @@
+The files inside this folder are all generated during the running of the applications. Can be deteted.

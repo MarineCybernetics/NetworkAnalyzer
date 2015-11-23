@@ -18,7 +18,7 @@ var mChair = React.createClass({
   render: function() {
     return (<svg
    id="svg2"  title ={this.props.IP} data-container="#topo" data-toggle="tooltip" data-placement="right">
-<g transform={this.props.transform} className={this.props.id} onClick={this._onClick} style={{"cursor":"pointer"}}>   
+<g transform={this.props.transform} className={this.props.id} title ={this.props.IP} data-container="#topo" data-toggle="tooltip" data-placement="right" onClick={this._onClick} style={{"cursor":"pointer"}}>   
   <defs
      id="defs66" />
   <g
